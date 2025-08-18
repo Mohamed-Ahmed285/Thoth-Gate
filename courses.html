@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thuth Gate - Courses</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="courses-page">
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="imgs/logo.png" alt="Thuth Gate Logo" class="logo-image">
+                <h1 class="site-logo">Thuth Gate</h1>
+            </div>
+
+            <!-- Hamburger Menu Button -->
+            <button class="hamburger-menu" id="hamburgerMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="courses.html" class="active">Courses</a></li>
+                    <li><a href="chat.html">Chat</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="#" class="logout-btn" onclick="logout()">Logout</a></li>
+                </ul>
+            </nav>
+
+            <div class="switchers-container">
+                <button class="theme-switcher" id="themeSwitcher" title="Toggle Dark Mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="language-switcher" id="languageSwitcher" title="Switch Language">
+                    <span class="language-text">EN</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Sidebar -->
+    <div class="mobile-sidebar" id="mobileSidebar">
+        <div class="sidebar-header">
+            <div class="logo-container">
+                <img src="imgs/logo.png" alt="Thuth Gate Logo" class="logo-image">
+                <h1 class="site-logo">Thuth Gate</h1>
+            </div>
+            <button class="close-sidebar" id="closeSidebar">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="courses.html" class="active">Courses</a></li>
+                <li><a href="chat.html">Chat</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="#" class="logout-btn" onclick="logout()">Logout</a></li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-switchers">
+            <button class="theme-switcher" id="sidebarThemeSwitcher" title="Toggle Dark Mode">
+                <span class="theme-icon">🌙</span>
+            </button>
+            <button class="language-switcher" id="sidebarLanguageSwitcher" title="Switch Language">
+                <span class="language-text">EN</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <main>
+        <section class="courses-section">
+            <div class="container">
+                <h2 class="section-title">Subjects</h2>
+                <div class="courses-grid">
+                    <div class="course-card" data-course-id="mathematics">
+                        <div class="course-image">
+                            <img src="imgs/maths.jpg" alt="Mathematics">
+                        </div>
+                        <div class="course-content">
+                            <div class="course-header">
+                                <h3>Mathematics</h3>
+                                <span class="course-price">$99</span>
+                            </div>
+                            <p>Master the ancient art of numbers and logic</p>
+                            <div class="course-meta">
+                                <span class="instructor">Dr. Ahmed Hassan</span>
+                                <span class="duration">12 weeks</span>
+                                <span class="level">Intermediate</span>
+                            </div>
+                            <a href="course-detail.html?courseId=mathematics" class="course-btn">Buy Now</a>
+                        </div>
+                    </div>
+
+                    <div class="course-card" data-course-id="science">
+                        <div class="course-image">
+                            <img src="imgs/science.jpg" alt="Science">
+                        </div>
+                        <div class="course-content">
+                            <div class="course-header">
+                                <h3>Science</h3>
+                                <span class="course-price">Free</span>
+                            </div>
+                            <p>Explore the mysteries of the natural world</p>
+                            <div class="course-meta">
+                                <span class="instructor">Dr. Sarah Johnson</span>
+                                <span class="duration">10 weeks</span>
+                                <span class="level">Beginner</span>
+                            </div>
+                            <a href="course-detail.html?courseId=science" class="course-btn">Open Course</a>
+                        </div>
+                    </div>
+
+                    <div class="course-card" data-course-id="language">
+                        <div class="course-image">
+                            <img src="imgs/language.jpg" alt="Languages">
+                        </div>
+                        <div class="course-content">
+                            <div class="course-header">
+                                <h3>Languages</h3>
+                                <span class="course-price">$79</span>
+                            </div>
+                            <p>Unlock the power of communication</p>
+                            <div class="course-meta">
+                                <span class="instructor">Prof. Maria Rodriguez</span>
+                                <span class="duration">8 weeks</span>
+                                <span class="level">All Levels</span>
+                            </div>
+                            <a href="course-detail.html?courseId=language" class="course-btn">Buy Now</a>
+                        </div>
+                    </div>
+
+                    <div class="course-card" data-course-id="history">
+                        <div class="course-image">
+                            <img src="imgs/history.jpg" alt="History">
+                        </div>
+                        <div class="course-content">
+                            <div class="course-header">
+                                <h3>History</h3>
+                                <span class="course-price">Free</span>
+                            </div>
+                            <p>Journey through time and civilizations</p>
+                            <div class="course-meta">
+                                <span class="instructor">Dr. Omar Khalil</span>
+                                <span class="duration">14 weeks</span>
+                                <span class="level">Advanced</span>
+                            </div>
+                            <a href="course-detail.html?courseId=history" class="course-btn">Open Course</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Thuth Gate</h3>
+                    <p>Gateway to Ancient Wisdom, Modern Learning</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="chat.html">Chat</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@thuthgate.edu.eg</p>
+                    <p>Phone: +20 123 456 789</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">📘</a>
+                        <a href="#" class="social-icon">📷</a>
+                        <a href="#" class="social-icon">🐦</a>
+                        <a href="#" class="social-icon">💼</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Thuth Gate Learning Center. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

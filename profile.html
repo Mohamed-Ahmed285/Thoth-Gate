@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thuth Gate - Profile</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="profile-page">
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="imgs/logo.png" alt="Thuth Gate Logo" class="logo-image">
+                <h1 class="site-logo">Thuth Gate</h1>
+            </div>
+            
+            <!-- Hamburger Menu Button -->
+            <button class="hamburger-menu" id="hamburgerMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="chat.html">Chat</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="profile.html" class="active">Profile</a></li>
+                    <li><a href="#" class="logout-btn" onclick="logout()">Logout</a></li>
+                </ul>
+            </nav>
+            
+            <div class="switchers-container">
+                <button class="theme-switcher" id="themeSwitcher" title="Toggle Dark Mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="language-switcher" id="languageSwitcher" title="Switch Language">
+                    <span class="language-text">EN</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Sidebar -->
+    <div class="mobile-sidebar" id="mobileSidebar">
+        <div class="sidebar-header">
+            <div class="logo-container">
+                <img src="imgs/logo.png" alt="Thuth Gate Logo" class="logo-image">
+                <h1 class="site-logo">Thuth Gate</h1>
+            </div>
+            <button class="close-sidebar" id="closeSidebar">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="chat.html">Chat</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="profile.html" class="active">Profile</a></li>
+                <li><a href="#" class="logout-btn" onclick="logout()">Logout</a></li>
+            </ul>
+        </nav>
+        
+        <div class="sidebar-switchers">
+            <button class="theme-switcher" id="sidebarThemeSwitcher" title="Toggle Dark Mode">
+                <span class="theme-icon">🌙</span>
+            </button>
+            <button class="language-switcher" id="sidebarLanguageSwitcher" title="Switch Language">
+                <span class="language-text">EN</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <main class="profile-main">
+        <div class="container">
+            <div class="profile-header">
+                <h2 class="section-title">Student Profile</h2>
+                <button class="edit-profile-btn" onclick="toggleEditMode()">Edit Profile</button>
+            </div>
+
+            <div class="profile-content">
+                <div class="profile-info-section">
+                    <div class="profile-card">
+                        <div class="profile-image-container">
+                            <img src="imgs/profile.png" alt="Student Profile" id="profileImage" class="profile-image">
+                            <div class="image-upload" id="imageUpload" style="display: none;">
+                                <input type="file" id="imageInput" accept="image/*">
+                                <label for="imageInput" class="upload-label">Change Photo</label>
+                            </div>
+                        </div>
+                        
+                        <div class="profile-details">
+                            <div class="detail-group">
+                                <label>Full Name:</label>
+                                <span id="studentName">Mohamed Ahmed</span>
+                                <input type="text" id="nameInput" value="Mohamed Ahmed" class="edit-input" style="display: none;">
+                            </div>
+                            
+                            <div class="detail-group">
+                                <label>Email:</label>
+                                <span id="studentEmail">Mohamed.ahmed@gmail.com</span>
+                                <input type="email" id="emailInput" value="Mohamed.ahmed@gmail.com" class="edit-input" style="display: none;">
+                            </div>
+                            
+                            <div class="detail-group">
+                                <label>Grade Level:</label>
+                                <span>11th Grade</span>
+                            </div>
+                            
+                            <div class="detail-group">
+                                <label>Student ID:</label>
+                                <span>ST2024001</span>
+                            </div>
+                        </div>
+                        
+                        <div class="profile-actions" id="profileActions" style="display: none;">
+                            <button class="save-btn" onclick="saveProfile()">Save Changes</button>
+                            <button class="cancel-btn" onclick="cancelEdit()">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="enrolled-courses-section">
+                    <h3 class="subsection-title">Enrolled Courses</h3>
+                    <div class="enrolled-courses-grid">
+                        <div class="enrolled-course-card">
+                            <div class="course-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 75%;"></div>
+                                </div>
+                                <span class="progress-text">75% Complete</span>
+                            </div>
+                            <h4>Advanced Mathematics</h4>
+                            <p>Instructor: Dr. Ahmed Hassan</p>
+                            <p class="course-status">In Progress</p>
+                        </div>
+                        
+                        <div class="enrolled-course-card">
+                            <div class="course-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 45%;"></div>
+                                </div>
+                                <span class="progress-text">45% Complete</span>
+                            </div>
+                            <h4>Physics Fundamentals</h4>
+                            <p>Instructor: Dr. Ahmed Hassan</p>
+                            <p class="course-status">In Progress</p>
+                        </div>
+                        
+                        <div class="enrolled-course-card">
+                            <div class="course-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 100%;"></div>
+                                </div>
+                                <span class="progress-text">100% Complete</span>
+                            </div>
+                            <h4>English Literature</h4>
+                            <p>Instructor: Mr. Omar Khalil</p>
+                            <p class="course-status completed">Completed</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="academic-stats-section">
+                    <h3 class="subsection-title">Academic Statistics</h3>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">4</div>
+                            <div class="stat-label">Level</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">12</div>
+                            <div class="stat-label">Points</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">8</div>
+                            <div class="stat-label">Certificates</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">Attendance</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Thuth Gate</h3>
+                    <p>Gateway to Ancient Wisdom, Modern Learning</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="chat.html">Chat</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@thuthgate.edu.eg</p>
+                    <p>Phone: +20 123 456 789</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">📘</a>
+                        <a href="#" class="social-icon">📷</a>
+                        <a href="#" class="social-icon">🐦</a>
+                        <a href="#" class="social-icon">💼</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Thuth Gate Learning Center. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
