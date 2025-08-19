@@ -4402,12 +4402,16 @@ body.login-page.dark-mode {
 }
 
 
-body.login-page.register-page .language-text {
+body.register-page .language-text,
+body.login-page .language-text{
     font-family: 'Cinzel', serif;
     font-size: 0.9rem;
     color: #243a6b;
 }
-body.dark-mode.login-page.register-page .language-text {
+
+
+body.dark-mode.register-page .language-text,
+body.dark-mode.login-page .language-text {
     font-family: 'Cinzel', serif;
     font-size: 0.9rem;
     color: #f5deb3;

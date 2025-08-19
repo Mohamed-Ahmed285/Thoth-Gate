@@ -1,3 +1,12 @@
+// Ensure profile edit buttons work even if script loads before DOM
+document.addEventListener('DOMContentLoaded', function() {
+    var saveBtn = document.querySelector('.save-btn');
+    var cancelBtn = document.querySelector('.cancel-btn');
+    var editBtn = document.querySelector('.edit-profile-btn');
+    if (saveBtn) saveBtn.onclick = saveProfile;
+    if (cancelBtn) cancelBtn.onclick = cancelEdit;
+    if (editBtn) editBtn.onclick = toggleEditMode;
+});
 let isLoggedIn = false;
 let currentUser = null;
 let currentTheme = localStorage.getItem('thuthGateTheme') || 'light';
@@ -10,12 +19,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function initializeApp() {
     checkAuthStatus();
-    
     initializeTheme();
     initializeLanguage();
-    
     addEventListeners();
-    
     initializePageFunctionality();
 }
 
@@ -103,158 +109,17 @@ function getCurrentPage() {
 }
 
 
-async function handleLogin(event) {
+function handleLogin(event) {
     event.preventDefault();
-    
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    
-    // Show loading state
-    const loginBtn = document.querySelector('.login-btn');
-    const originalText = loginBtn.textContent;
-    loginBtn.textContent = 'Entering...';
-    loginBtn.disabled = true;
-    
-    try {
-        const success = await simulateLogin(email, password);
-        
-        if (success) {
-            // Store user data
-            const userData = {
-                id: 'ST2024001',
-                name: 'Mohamed ahmed',
-                email: email,
-                grade: '11th Grade',
-                avatar: 'imgs/profile.png'
-            };
-            
-            localStorage.setItem('thuthGateToken', 'dummy-token-' + Date.now());
-            localStorage.setItem('thuthGateUser', JSON.stringify(userData));
-            
-            
-            window.location.href = 'home.html';
-        } else {
-            showMessage('Invalid credentials. Please try again.', 'error');
-        }
-    } catch (error) {
-        showMessage('Login failed. Please try again.', 'error');
-        console.error('Login error:', error);
-    } finally {
-        // Reset button state
-        loginBtn.textContent = originalText;
-        loginBtn.disabled = false;
-    }
+    window.location.href = 'home.html';
 }
 
-// Handle register form submission
-async function handleRegister(event) {
+function handleRegister(event) {
     event.preventDefault();
-    
-    const fullName = document.getElementById('fullName').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
-    const dateOfBirth = document.getElementById('dateOfBirth').value;
-    const password = document.getElementById('password').value;
-    const confirmPassword = document.getElementById('confirmPassword').value;
-    const grade = document.getElementById('grade').value;
-    const terms = document.getElementById('terms').checked;
-    
-    // Validation
-    if (!fullName || !email || !phone || !dateOfBirth || !password || !confirmPassword || !grade) {
-        showMessage('Please fill in all required fields.', 'error');
-        return;
-    }
-    
-    if (!isValidEmail(email)) {
-        showMessage('Please enter a valid email address.', 'error');
-        return;
-    }
-    
-    if (password !== confirmPassword) {
-        showMessage('Passwords do not match.', 'error');
-        return;
-    }
-    
-    if (password.length < 8) {
-        showMessage('Password must be at least 8 characters long.', 'error');
-        return;
-    }
-    
-    if (!terms) {
-        showMessage('Please accept the Terms of Service and Privacy Policy.', 'error');
-        return;
-    }
-    
-    // Show loading state
-    const registerBtn = document.querySelector('.login-btn');
-    const originalText = registerBtn.textContent;
-    registerBtn.textContent = 'Creating Account...';
-    registerBtn.disabled = true;
-    
-    try {
-        const success = await simulateRegister({
-            fullName,
-            email,
-            phone,
-            dateOfBirth,
-            password,
-            grade
-        });
-        
-        if (success) {
-            showMessage('Account created successfully! Please log in.', 'success');
-            
-            // Clear form
-            event.target.reset();
-            
-            // Redirect to login page after a short delay
-            setTimeout(() => {
-                window.location.href = 'index.html';
-            }, 2000);
-        } else {
-            showMessage('Registration failed. Please try again.', 'error');
-        }
-    } catch (error) {
-        showMessage('Registration failed. Please try again.', 'error');
-        console.error('Registration error:', error);
-    } finally {
-        // Reset button state
-        registerBtn.textContent = originalText;
-        registerBtn.disabled = false;
-    }
+    showMessage('Registration functionality is disabled. No backend simulation.', 'error');
 }
 
-// Simulate login
-async function simulateLogin(email, password) {
-
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    // Simple validation
-    return email === 'student@thuthgate.edu.eg' && password === 'password123';
-}
-
-// Simulate register
-async function simulateRegister(userData) {
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    console.log('Registration data:', userData);
-
-    return Math.random() > 0.1;
-}
-
-// Handle logout
-function logout() {
-    // Clear stored data
-    localStorage.removeItem('thuthGateToken');
-    localStorage.removeItem('thuthGateUser');
-    
-   
-    isLoggedIn = false;
-    currentUser = null;
-    
-    
-    window.location.href = 'index.html';
-}
+// ...existing code...
 
 // Update UI for logged in user
 function updateUIForLoggedInUser() {
@@ -347,72 +212,51 @@ function cancelEdit() {
     const imageUpload = document.getElementById('imageUpload');
     const profileActions = document.getElementById('profileActions');
     const editBtn = document.querySelector('.edit-profile-btn');
-    
-    if (nameSpan && emailSpan && nameInput && emailInput) {
-        // Reset input values
-        nameInput.value = currentUser.name;
-        emailInput.value = currentUser.email;
-        
-        // Switch back to view mode
-        nameSpan.style.display = 'inline';
-        emailSpan.style.display = 'inline';
-        nameInput.style.display = 'none';
-        emailInput.style.display = 'none';
-        imageUpload.style.display = 'none';
-        profileActions.style.display = 'none';
+
+    // Always restore view mode, even if currentUser is null
+    if (nameSpan) nameSpan.style.display = 'inline';
+    if (emailSpan) emailSpan.style.display = 'inline';
+    if (nameInput) nameInput.style.display = 'none';
+    if (emailInput) emailInput.style.display = 'none';
+    if (imageUpload) imageUpload.style.display = 'none';
+    if (profileActions) profileActions.style.display = 'none';
+    if (editBtn) {
         editBtn.textContent = 'Edit Profile';
         editBtn.onclick = toggleEditMode;
     }
+
+    // Optionally reset input values if user data exists
+    if (currentUser && nameInput && emailInput) {
+        nameInput.value = currentUser.name;
+        emailInput.value = currentUser.email;
+    }
 }
 
-// Save profile changes
-async function saveProfile() {
+function saveProfile() {
     const nameInput = document.getElementById('nameInput');
     const emailInput = document.getElementById('emailInput');
-    
     if (nameInput && emailInput) {
         const newName = nameInput.value.trim();
         const newEmail = emailInput.value.trim();
-        
-        // Basic validation
         if (!newName || !newEmail) {
             showMessage('Please fill in all fields.', 'error');
             return;
         }
-        
         if (!isValidEmail(newEmail)) {
             showMessage('Please enter a valid email address.', 'error');
             return;
         }
-        
-        try {
-            await simulateUpdateProfile(newName, newEmail);
-            
-            // Update local storage
+        // Update local storage
+        if (currentUser) {
             currentUser.name = newName;
             currentUser.email = newEmail;
             localStorage.setItem('thuthGateUser', JSON.stringify(currentUser));
-            
-            // Update display
             updateProfileDisplay();
-            
-            // Switch back to view mode
-            cancelEdit();
-            
-            showMessage('Profile updated successfully!', 'success');
-        } catch (error) {
-            showMessage('Failed to update profile. Please try again.', 'error');
         }
+        showMessage('Profile updated successfully!', 'success');
     }
-}
-
-// Simulate profile update
-async function simulateUpdateProfile(name, email) {
-
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-
-    return true;
+    // Always exit edit mode after save attempt
+    cancelEdit();
 }
 
 // Handle image upload
