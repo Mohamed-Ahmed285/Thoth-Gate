@@ -3802,6 +3802,7 @@ body.dark-mode .video-info p {
 @media (max-width: 480px) {
     .course-header {
         padding: 1rem;
+        flex-direction: column;
     }
     
     .course-details h1 {
