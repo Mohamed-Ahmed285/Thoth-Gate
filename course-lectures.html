@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thuth Gate - Courses</title>
+    <title>Course Lectures - Thuth Gate</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="courses-page">
     <header class="main-header">
@@ -15,7 +15,7 @@
                 <h1 class="site-logo">Thuth Gate</h1>
             </div>
 
-            <!-- Hamburger Menu Button -->
+   <!-- Hamburger Menu Button -->
             <button class="hamburger-menu" id="hamburgerMenu">
                 <span></span>
                 <span></span>
@@ -32,7 +32,6 @@
                     <li><a href="#" class="logout-btn" onclick="logout()">Logout</a></li>
                 </ul>
             </nav>
-
             <div class="switchers-container">
                 <button class="theme-switcher" id="themeSwitcher" title="Toggle Dark Mode">
                     <span class="theme-icon">🌙</span>
@@ -43,8 +42,7 @@
             </div>
         </div>
     </header>
-
-    <!-- Mobile Sidebar -->
+     <!-- Mobile Sidebar -->
     <div class="mobile-sidebar" id="mobileSidebar">
         <div class="sidebar-header">
             <div class="logo-container">
@@ -80,94 +78,35 @@
 
     <!-- Sidebar Overlay -->
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
-
-    <main>
-        <section class="courses-section">
+    <main class="container">
+        <h2 class="section-title" style="margin:revert;">Course Lectures</h2>
+        <section class="egyptian-wisdom-section-lectures" style="padding: 3rem 0;">
             <div class="container">
-                <h2 class="section-title">Subjects</h2>
-                <div class="courses-grid">
-                    <div class="course-card" data-course-id="mathematics">
-                        <div class="course-image">
-                            <img src="imgs/maths.jpg" alt="Mathematics">
-                        </div>
+                <div class="lectures-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
+                    <!-- Example lectures, replace with dynamic content as needed -->
+                    <div class="course-card lecture-card" onclick="window.location.href='course-detail.html'" style="cursor:pointer;">
                         <div class="course-content">
-                            <div class="course-header">
-                                <h3>Mathematics</h3>
-                                <span class="course-price">$99</span>
-                            </div>
-                            <p>Master the ancient art of numbers and logic</p>
-                            <div class="course-meta">
-                                <span class="instructor">Dr. Ahmed Hassan</span>
-                                <span class="duration">12 weeks</span>
-                                <span class="level">Intermediate</span>
-                            </div>
-                            <a href="course-lectures.html" class="course-btn">Buy Now</a>
+                            <h3 class="lecture-title">Lecture 1: Introduction to Mathematics</h3>
+                            <p class="lecture-description">Overview of key concepts and course structure.</p>
                         </div>
                     </div>
-
-                    <div class="course-card" data-course-id="science">
-                        <div class="course-image">
-                            <img src="imgs/science.jpg" alt="Science">
-                        </div>
+                    <div class="course-card lecture-card" onclick="window.location.href='course-detail.html'" style="cursor:pointer;">
                         <div class="course-content">
-                            <div class="course-header">
-                                <h3>Science</h3>
-                                <span class="course-price">Free</span>
-                            </div>
-                            <p>Explore the mysteries of the natural world</p>
-                            <div class="course-meta">
-                                <span class="instructor">Dr. Sarah Johnson</span>
-                                <span class="duration">10 weeks</span>
-                                <span class="level">Beginner</span>
-                            </div>
-                            <a href="course-lectures.html" class="course-btn">Open Course</a>
+                            <h3 class="lecture-title">Lecture 2: Algebraic Foundations</h3>
+                            <p class="lecture-description">Fundamentals of algebra and problem solving.</p>
                         </div>
                     </div>
-
-                    <div class="course-card" data-course-id="language">
-                        <div class="course-image">
-                            <img src="imgs/language.jpg" alt="Languages">
-                        </div>
+                    <div class="course-card lecture-card" onclick="window.location.href='course-detail.html'" style="cursor:pointer;">
                         <div class="course-content">
-                            <div class="course-header">
-                                <h3>Languages</h3>
-                                <span class="course-price">$79</span>
-                            </div>
-                            <p>Unlock the power of communication</p>
-                            <div class="course-meta">
-                                <span class="instructor">Prof. Maria Rodriguez</span>
-                                <span class="duration">8 weeks</span>
-                                <span class="level">All Levels</span>
-                            </div>
-                            <a href="course-lectures.html" class="course-btn">Buy Now</a>
+                            <h3 class="lecture-title">Lecture 3: Geometry Essentials</h3>
+                            <p class="lecture-description">Shapes, theorems, and geometric reasoning.</p>
                         </div>
                     </div>
-
-                    <div class="course-card" data-course-id="history">
-                        <div class="course-image">
-                            <img src="imgs/history.jpg" alt="History">
-                        </div>
-                        <div class="course-content">
-                            <div class="course-header">
-                                <h3>History</h3>
-                                <span class="course-price">Free</span>
-                            </div>
-                            <p>Journey through time and civilizations</p>
-                            <div class="course-meta">
-                                <span class="instructor">Dr. Omar Khalil</span>
-                                <span class="duration">14 weeks</span>
-                                <span class="level">Advanced</span>
-                            </div>
-                            <a href="course-lectures.html" class="course-btn">Open Course</a>
-                        </div>
-                    </div>
+                    <!-- Add more lectures as needed -->
                 </div>
             </div>
         </section>
     </main>
-
-    </main>
-
     <footer class="main-footer">
         <div class="container">
             <div class="footer-content">
@@ -205,7 +144,6 @@
             </div>
         </div>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>

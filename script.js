@@ -600,6 +600,19 @@ function translateToArabic() {
         'Scientific Discovery': 'الاكتشاف العلمي',
         'Advancements in medicine, engineering, and architecture': 'تقدم في الطب والهندسة والعمارة',
         
+        
+        // course lectures
+
+        "Course Lectures": "محاضرات المادة",
+        "Lecture 1: Introduction to Mathematics": "المحاضرة 1: مقدمة في الرياضيات",
+        "Lecture 2: Algebraic Foundations": "المحاضرة 2: أسس الجبر",
+        "Lecture 3: Geometry Essentials": "المحاضرة 3: أساسيات الهندسة",
+        "Overview of key concepts and course structure.": "نظرة عامة على المفاهيم الأساسية وهيكل المادة.",
+        "Fundamentals of algebra and problem solving.": "أساسيات الجبر وحل المسائل.",
+        "Shapes, theorems, and geometric reasoning.": "الأشكال، النظريات، والتفكير الهندسي.",
+        "Quick Links": "روابط سريعة",
+        
+        
         // Chat page
         'Grade Chat': 'دردشة المستوى الدراسي',
         'Online': 'متصل',
@@ -750,8 +763,21 @@ function translateToEnglish() {
         'الكيمياء والأحياء': 'Chemistry & Biology',
         'الإنجليزية والأدب': 'English & Literature',
         'سنوات من الخبرة في التدريس': 'years of teaching experience',
-         'المواد': 'Subjects',
+        'المواد': 'Subjects',
         
+        "محاضرات المادة": "Course Lectures",
+        "المحاضرة 1: مقدمة في الرياضيات": "Lecture 1: Introduction to Mathematics",
+        "المحاضرة 2: أسس الجبر": "Lecture 2: Algebraic Foundations",    
+        "المحاضرة 3: أساسيات الهندسة": "Lecture 3: Geometry Essentials",
+        "نظرة عامة على المفاهيم الأساسية وهيكل المادة.": "Overview of key concepts and course structure.",
+        "أساسيات الجبر وحل المسائل.": "Fundamentals of algebra and problem solving.",
+        "الأشكال، النظريات، والتفكير الهندسي.": "Shapes, theorems, and geometric reasoning.",
+        "روابط سريعة": "Quick Links",
+
+
+
+
+
         // Heritage section
         'المكتبات القديمة': 'Ancient Libraries',
         'موطن أول مراكز التعلم العظيمة في العالم': 'Home to the world\'s first great centers of learning',
