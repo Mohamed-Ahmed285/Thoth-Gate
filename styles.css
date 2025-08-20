@@ -2060,9 +2060,6 @@ body.dark-mode .hamburger-menu.active span {
     direction: rtl;
 }
 
-[dir="rtl"] .detail-group {
-    flex-direction: row-reverse;
-}
 
 [dir="rtl"] .detail-group label {
     text-align: right;
