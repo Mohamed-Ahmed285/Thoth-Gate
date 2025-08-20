@@ -2157,7 +2157,6 @@ body.dark-mode .hamburger-menu.active span {
     
     .detail-group {
         flex-direction: column;
-        align-items: stretch;
         gap: 0.5rem;
     }
     
