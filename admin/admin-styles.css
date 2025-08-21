@@ -1,0 +1,370 @@
+/* Admin-specific styles. Reuse color scheme, typography, and button styles from styles.css. */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cinzel', serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #f5deb3 0%, #f4e4c1 100%);
+    min-height: 100vh;
+
+}
+
+.admin-layout {
+    display: flex;
+    min-height: 80vh;
+    background: #f8f9fa;
+}
+.admin-sidebar {
+    width: 220px;
+    background: rgb(36, 58, 107);
+    color: #fff;
+    padding: 2rem 1rem;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.04);
+    z-index: 1;
+}
+.admin-sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+.admin-sidebar li {
+    margin-bottom: 1.5rem;
+}
+.admin-sidebar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: block;
+    transition: background 0.2s;
+}
+.admin-sidebar a.active,
+.admin-sidebar a:hover {
+    background: #3a4a63;
+}
+
+
+
+.admin-main-content {
+
+    background:linear-gradient(135deg, #f8f4f0 0%, #e8dcc0 50%, #f5deb3 100%);
+    flex: auto;
+    padding: 2rem;
+    z-index: 0;
+     position: relative; /* ensures ::before and ::after are bound to this container */
+    overflow: hidden; 
+    /*    background: linear-gradient(135deg, #e5e1b0 0%, #e7ecb2 100%);  */
+    /* background: linear-gradient(135deg, #f3ebdb 0%, #e6d3a3 100%); */
+
+    
+}
+
+
+.admin-main-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(36, 58, 107, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 90% 20%, rgba(36, 58, 107, 0.05) 0%, transparent 50%);
+    background-size: 400px 400px, 300px 300px, 500px 500px, 350px 350px;
+    background-position: 0 0, 100px 100px, 200px 200px, 300px 300px;
+    animation: backgroundFloat 20s ease-in-out infinite;
+    pointer-events: none;
+    z-index: -1;
+overflow: hidden;
+
+}
+
+.admin-main-content::after {
+    
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="8" fill="rgba(212, 175, 55, 0.03)" font-family="serif">☥</text></svg>'),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="6" fill="rgba(36, 58, 107, 0.02)" font-family="serif">𓃭</text></svg>'),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="10" fill="rgba(212, 175, 55, 0.02)" font-family="serif">𓂀</text></svg>');
+    background-size: 200px 200px, 150px 150px, 250px 250px;
+    background-position: 0 0, 50px 50px, 100px 100px;
+    animation: hieroglyphFloat 30s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+
+
+.admin-section {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    padding: 2rem;
+    margin-bottom: 2rem;
+        height: 100%;
+
+}
+.admin-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+}
+.admin-table th, .admin-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e5e5e5;
+    text-align: left;
+}
+.admin-table th {
+    background: #f0f2f5;
+    font-weight: 600;
+}
+.admin-table tr:last-child td {
+    border-bottom: none;
+}
+.btn {
+    background: #243a6b;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-right: 0.5rem;
+    transition: background 0.2s;
+}
+
+.btn:hover {
+    background: #222e3c;
+}
+.btn-edit {
+    background: #4caf50;
+}
+.btn-edit:hover {
+    background: #388e3c;
+}
+.btn-delete, .btn-remove {
+    background: #f44336;
+}
+.btn-delete:hover, .btn-remove:hover {
+    background: #c62828;
+}
+.btn-view {
+    /* background: #2196f3; */
+}
+.btn-view:hover {
+    background: #1565c0;
+}
+
+
+.search-bar
+ {
+    padding: 0.5rem 1rem;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 50%;
+    margin: auto;
+}
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+.page-numbers {
+    font-weight: 500;
+    color: #3a4a63;
+}
+.dashboard-widgets {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding-bottom: 30px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: stretch;
+    width: 1200px;
+     align-self: center; 
+    justify-self: center;
+
+}
+.widget {
+    background: #f0f2f5;
+    border-radius: 8px;
+    padding: 2rem;
+    flex: 1;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #3a4a63;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* Message Cards */
+.messages-card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.message-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(36, 58, 107, 0.08);
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-left: 6px solid #d4af37;
+    transition: box-shadow 0.2s;
+}
+.message-card:hover {
+    box-shadow: 0 6px 24px rgba(36, 58, 107, 0.18);
+}
+.message-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.message-id {
+    font-weight: 700;
+    color: #243a6b;
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.1rem;
+}
+.message-card-body {
+    flex: 1;
+}
+.message-name {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.2rem;
+    color: #d4af37;
+    margin-bottom: 0.5rem;
+}
+.message-email, .message-text, .message-date {
+    font-size: 1rem;
+    color: #243a6b;
+    margin-bottom: 0.3rem;
+}
+.btn-delete {
+    background: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.4rem 1rem;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+.btn-delete:hover {
+    background: #c62828;
+}
+
+
+
+.contact-content-admin {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 35px;
+
+}
+
+
+/* Dashboard Stats Cards */
+.dashboard-stats-cards {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.stats-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(36, 58, 107, 0.08);
+    padding: 1.5rem 2rem;
+    min-width: 180px;
+    text-align: center;
+    border-left: 6px solid #d4af37;
+    transition: box-shadow 0.2s;
+}
+.stats-card:hover {
+    box-shadow: 0 6px 24px rgba(36, 58, 107, 0.18);
+}
+.stats-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.1rem;
+    color: #243a6b;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+.stats-value {
+    font-size: 2rem;
+    color: #d4af37;
+    font-family: 'Cinzel Decorative', serif;
+    font-weight: 900;
+}
+
+@media (max-width: 900px) {
+    .admin-layout {
+        flex-direction: column;
+    }
+    .admin-sidebar {
+        width: 100%;
+        box-shadow: none;
+        padding: 1rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .admin-main-content {
+        padding: 1rem;
+    }
+    .dashboard-widgets {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .dashboard-stats-cards {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .stats-card {
+        min-width: unset;
+    }
+}
+@media (max-width: 600px) {
+    .admin-section {
+        padding: 1rem;
+    }
+    .admin-table th, .admin-table td {
+        padding: 0.5rem;
+        font-size: 0.95rem;
+    }
+    .search-bar {
+        width: 100%;
+    }
+}
