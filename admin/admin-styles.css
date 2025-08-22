@@ -329,6 +329,7 @@ overflow: hidden;
     font-weight: 900;
 }
 
+
 @media (max-width: 900px) {
     .admin-layout {
         flex-direction: column;
