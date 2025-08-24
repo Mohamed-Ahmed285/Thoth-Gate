@@ -4916,3 +4916,28 @@ body.dark-mode .restricted-btn:hover {
         gap: 12px;
     }
 }
+
+.profile-card-exam{
+
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 2px solid #f5deb3;
+    padding: 2rem;
+    text-align: left;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: grid;
+    gap: 1rem;
+
+}
+
+body.dark-mode .profile-card-exam {
+    background: #1a1a1a;
+    border-color: #2d2d2d;
+    color: #e7eef8;
+}
+
+.session-detials{
+        background: linear-gradient(135deg, #e9ce9d 0%, #ffffff 100%);
+}
