@@ -757,3 +757,8 @@ color: #d2d2d2;
 .course.open > strong::after {
     content: " ▲";
 }
+
+.widget-container{
+    display: flex;
+    gap: 4rem;
+}

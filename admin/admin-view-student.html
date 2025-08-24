@@ -108,7 +108,8 @@
 </ul>
                      </div>
 				</div>
-				<div class="widget">
+				<div class="widget-container">
+<div class="widget">
 					<h3>Grant Access</h3>
 					<form id="grantAccessForm">
 						<label for="courseSelect"><strong>Course:</strong></label>
@@ -126,10 +127,32 @@
 							<option value="lecture3">Lecture 3</option>
 						</select>
 						<button type="submit" class="btn btn-edit" id="Grant" onclick="Grant()" style="margin-top:1rem;">Grant Access</button>
+
+					</form>
+				</div>
+				<div class="widget">
+					<h3>Remove Access</h3>
+					<form id="grantAccessForm">
+						<label for="courseSelect"><strong>Course:</strong></label>
+						<select id="courseSelect" class="search-bar" style="width:100%;margin-bottom:1rem;">
+							<option value="">-- Select Course --</option>
+							<option value="database">Database</option>
+							<option value="maths">Maths</option>
+							<option value="history">History</option>
+						</select>
+						<label for="lectureSelect"><strong>Lecture:</strong></label>
+						<select id="lectureSelect" class="search-bar" style="width:100%;margin-bottom:1rem;">
+							<option value="">-- Select Lecture --</option>
+							<option value="lecture1">Lecture 1</option>
+							<option value="lecture2">Lecture 2</option>
+							<option value="lecture3">Lecture 3</option>
+						</select>
                         <button class="btn btn-remove">Remove Access</button>
 
 					</form>
 				</div>
+				</div>
+				
 				<div id="accessMessage" style="margin-top:1rem;"></div>
 			</section>
 		</main>
