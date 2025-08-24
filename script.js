@@ -1264,18 +1264,18 @@ function showQuizModal(lectureId, lectureTitle) {
     modalOverlay.innerHTML = `
         <div class="quiz-modal">
             <div class="quiz-modal-header">
-                <h3>📝 Quiz: ${lectureTitle}</h3>
+                <h3>📝 Quiz: one</h3>
                 <button class="close-quiz-modal">×</button>
             </div>
             <div class="quiz-modal-content">
                 <div class="quiz-info">
-                    <p><strong>Lecture:</strong> ${lectureTitle}</p>
+                    <p><strong>Lecture:</strong> q</p>
                     <p><strong>Questions:</strong> 10 Multiple Choice</p>
                     <p><strong>Time Limit:</strong> 15 minutes</p>
                     <p><strong>Passing Score:</strong> 70%</p>
                 </div>
                 <div class="quiz-actions">
-                    <button class="start-quiz-btn" data-lecture-id="${lectureId}">
+                    <button class="start-quiz-btn"">
                         <span class="quiz-icon">🚀</span>
                         Start Quiz
                     </button>
@@ -1685,3 +1685,10 @@ function logout() {
     localStorage.removeItem('thuthGateUser');
     window.location.href = 'index.html';
 }
+
+
+// Example: update progress
+let current = 3, total = 10;
+document.getElementById("currentQ").textContent = current;
+document.getElementById("totalQ").textContent = total;
+document.getElementById("quizProgress").style.width = `${(current/total)*100}%`;

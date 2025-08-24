@@ -4498,6 +4498,8 @@ body.dark-mode.login-page .language-text {
     margin-top: 1.5rem;
     transition: background 0.2s, box-shadow 0.2s;
     box-shadow: 0 2px 8px rgba(36, 58, 107, 0.08);
+    width: fit-content;
+    align-self: center;
 }
 .quiz-submit-btn:hover {
     /* background: linear-gradient(90deg, #243a6b 0%, #d4af37 100%); */
@@ -4552,3 +4554,117 @@ body.dark-mode .quiz-submit-btn {
     transition: background 0.2s, box-shadow 0.2s;
     box-shadow: 0 2px 8px rgba(36, 58, 107, 0.08);
 }
+/* 
+.quiz-timer {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #243a6b;
+    margin-bottom: 1.5rem;
+    padding: 0.6rem 1.2rem;
+    border: 2px solid #d4af37;
+    border-radius: 25px;
+    background: rgba(245, 222, 179, 0.2);
+    display: inline-block;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+body.dark-mode .quiz-timer {
+    color: #f5deb3;
+    border-color: #d4af37;
+    background: rgba(36, 58, 107, 0.3);
+} */
+
+
+
+
+/* Quiz Timer Styles */
+.quiz-timer {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #243a6b;
+    margin: 1.5rem auto;
+    padding: 0.8rem 2rem;
+    border: 3px solid #d4af37;
+    border-radius: 35px;
+    background: linear-gradient(135deg, #fdf5e6, #f5deb3);
+   display: block;
+    width: fit-content;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    letter-spacing: 1px;
+    font-family: 'Cinzel Decorative', serif;
+    position: relative;
+}
+
+/* Subtle golden glow */
+.quiz-timer::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 40px;
+    background: linear-gradient(90deg, #d4af37, #f5deb3, #243a6b, #d4af37);
+    background-size: 300% 300%;
+    animation: shimmer-border 6s linear infinite;
+    z-index: -1;
+    opacity: 0.6;
+}
+
+@keyframes shimmer-border {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Dark mode support */
+body.dark-mode .quiz-timer {
+    color: #f5deb3;
+    border-color: #d4af37;
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    box-shadow: 0 6px 18px rgba(212,175,55,0.3);
+}
+
+
+/* Quiz Progress Bar */
+.quiz-progress {
+    width: 80%;
+    max-width: 600px;
+    height: 14px;
+    background: rgba(245, 222, 179, 0.3);
+    border: 2px solid #d4af37;
+    border-radius: 10px;
+    margin: 1.5rem auto 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.quiz-progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #d4af37, #f5deb3);
+    transition: width 0.4s ease;
+    border-radius: 10px;
+}
+
+.quiz-progress-text {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #243a6b;
+    margin-bottom: 1rem;
+    font-family: 'Cinzel Decorative', serif;
+}
+
+body.dark-mode .quiz-progress {
+    background: rgba(36, 58, 107, 0.3);
+    border-color: #d4af37;
+}
+
+body.dark-mode .quiz-progress-fill {
+    background: linear-gradient(90deg, #d4af37, #b8941f);
+}
+
+body.dark-mode .quiz-progress-text {
+    color: #f5deb3;
+}
+
