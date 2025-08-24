@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Admin - View Student</title>
+	<link rel="icon" href="../imgs/logo.png" type="image/x-icon" />
+	<link rel="stylesheet" href="../styles.css" />
+	<link rel="stylesheet" href="admin-styles.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body class="view-student">
+	<header class="main-header">
+		<div class="header-content">
+			<div class="logo-container">
+				<img src="../imgs/logo.png" alt="Thuth Gate Logo" class="logo-image">
+				<h1 class="site-logo">Thoth Gate</h1>
+			</div>
+			<button class="hamburger-menu" id="hamburgerMenu">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+			<nav class="main-nav">
+				<ul>
+					<li><a href="admin-home.html">Dashboard</a></li>
+					<li><a href="admin-instructors.html">Instructors</a></li>
+					<li><a href="admin-students.html" class="active">Students</a></li>
+					<li><a href="admin-messages.html">Messages</a></li>
+					<li><a href="#" class="logout-btn" onclick="adminlogout()">Logout</a></li>
+				</ul>
+			</nav>
+			<div class="switchers-container">
+				<button class="theme-switcher" id="themeSwitcher" title="Toggle Dark Mode">
+					<span class="theme-icon">🌙</span>
+				</button>
+				<button class="language-switcher" id="languageSwitcher" title="Switch Language">
+					<span class="language-text">EN</span>
+				</button>
+			</div>
+		</div>
+	</header>
+        <div class="mobile-sidebar" id="mobileSidebar">
+        <div class="sidebar-header">
+            <div class="logo-container">
+                <img src="../imgs/logo.png" alt="Thuth Gate Logo" class="logo-image">
+                <h1 class="site-logo">Thoth Gate</h1>
+            </div>
+            <button class="close-sidebar" id="closeSidebar">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="admin-home.html">Home</a></li>
+                <li><a href="admin-instructors.html">Instructors</a></li>
+                <li><a href="admin-students.html">Students</a></li>
+                <li><a href="admin-messages.html">Messages</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-switchers">
+            <button class="theme-switcher" id="sidebarThemeSwitcher" title="Toggle Dark Mode">
+                <span class="theme-icon">🌙</span>
+            </button>
+            <button class="language-switcher" id="sidebarLanguageSwitcher" title="Switch Language">
+                <span class="language-text">EN</span>
+            </button>
+        </div>
+    </div>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+	<div class="admin-layout">
+		<main class="admin-main-content">
+			<section class="admin-section" style="margin: auto;">
+				<div class="admin-section-header">
+					<h2 class="section-title">View Student</h2>
+					<a href="admin-students.html" class="btn">Back to Students</a>
+				</div>
+				<div class="widget" style="margin-bottom:2rem;">
+					<h3>Student Information</h3>
+					<ul class="student-info" style="list-style:none; padding:0;">
+						<li><strong>ID:</strong> 001</li>
+						<li><strong>Name:</strong> Mohamed Ahmed</li>
+						<li><strong>Email:</strong> mido@example.com</li>
+						<li><strong>Current Grade:</strong> 1st secoundry</li>
+					</ul>
+                     <div style="display: contents;";>
+                            <h3>Lectures Access:</h3>
+                            <ul class="course-list">
+    <li class="course">
+        <strong>Course 1</strong>
+        <ul class="lectures">
+            <li>Lecture 1</li>
+            <li>Lecture 2</li>
+            <li>Lecture 3</li>
+        </ul>
+    </li>
+
+    <li class="course">
+        <strong>Course 2</strong>
+        <ul class="lectures">
+            <li>Lecture 1</li>
+            <li>Lecture 2</li>
+        </ul>
+    </li>
+</ul>
+                     </div>
+				</div>
+				<div class="widget">
+					<h3>Grant Access</h3>
+					<form id="grantAccessForm">
+						<label for="courseSelect"><strong>Course:</strong></label>
+						<select id="courseSelect" class="search-bar" style="width:100%;margin-bottom:1rem;">
+							<option value="">-- Select Course --</option>
+							<option value="database">Database</option>
+							<option value="maths">Maths</option>
+							<option value="history">History</option>
+						</select>
+						<label for="lectureSelect"><strong>Lecture:</strong></label>
+						<select id="lectureSelect" class="search-bar" style="width:100%;margin-bottom:1rem;">
+							<option value="">-- Select Lecture --</option>
+							<option value="lecture1">Lecture 1</option>
+							<option value="lecture2">Lecture 2</option>
+							<option value="lecture3">Lecture 3</option>
+						</select>
+						<button type="submit" class="btn btn-edit" id="Grant" onclick="Grant()" style="margin-top:1rem;">Grant Access</button>
+                        <button class="btn btn-remove">Remove Access</button>
+
+					</form>
+				</div>
+				<div id="accessMessage" style="margin-top:1rem;"></div>
+			</section>
+		</main>
+	</div>
+
+
+
+	<footer class="main-footer">
+		<div class="container">
+			<div class="footer-content">
+				<div class="footer-section">
+					<h3>Thuth Gate Admin</h3>
+					<p>Gateway to Ancient Wisdom, Modern Learning</p>
+				</div>
+				<div class="footer-section">
+					<h4>Quick Links</h4>
+					<ul>
+						<li><a href="admin-home.html">Dashboard</a></li>
+						<li><a href="admin-instructors.html">Instructors</a></li>
+						<li><a href="admin-students.html">Students</a></li>
+					</ul>
+				</div>
+				<div class="footer-section">
+					<h4>Contact</h4>
+					<p>Email: info@thuthgate.edu.eg</p>
+					<p>Phone: +20 123 456 789</p>
+				</div>
+				<div class="footer-section">
+					<h4>Follow Us</h4>
+					<div class="social-icons">
+						<a href="#" class="social-icon">📘</a>
+						<a href="#" class="social-icon">📷</a>
+						<a href="#" class="social-icon">🐦</a>
+						<a href="#" class="social-icon">💼</a>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<p>© 2025 Thuth Gate Admin. All rights reserved.</p>
+			</div>
+		</div>
+	</footer>
+    <script>  
+
+                
+document.getElementById('grantAccessForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var course = document.getElementById('courseSelect').value;
+    var lecture = document.getElementById('lectureSelect').value;
+    var msg = '';
+
+    if(course && lecture) {
+        msg = 'Access granted to ' + course + ' / ' + lecture;
+    } else if(course) {
+        msg = 'Access granted to course: ' + course;
+    } else if(lecture) {
+        msg = 'Access granted to lecture: ' + lecture;
+    } else {
+        msg = 'Please select a course or lecture.';
+    }
+
+    var messageDiv = document.getElementById('accessMessage');
+    messageDiv.innerHTML = '<div class="admin-message">'+msg+'</div>';
+
+    // Make the message disappear after 3 seconds (3000ms)
+    setTimeout(function() {
+        messageDiv.innerHTML = '';
+    }, 3000);
+});
+        
+        
+        
+        
+        
+        
+document.querySelectorAll(".course > strong").forEach(course => {
+    course.addEventListener("click", () => {
+        course.parentElement.classList.toggle("open");
+    });
+});
+
+
+</script>
+	<script src="admin.js"></script>
+	<script src="../script.js"></script>
+</body>
+</html>

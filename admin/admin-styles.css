@@ -134,7 +134,7 @@ body.dark-mode .admin-main-content::after {
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     padding: 2rem;
     margin-bottom: 2rem;
-        height: 100%;
+    height: 100%;
 
 }
 .admin-section-header {
@@ -666,7 +666,7 @@ body.dark-mode .widget canvas {
   transform: translateY(-4px);
 }
 
-/* Export Data - Minimal Buttons */
+
 .export-grid {
   display: flex;
   gap: 1rem;
@@ -693,7 +693,67 @@ body.dark-mode .widget canvas {
 
 .dashboard-widgets-quick{
     display: flex;
-gap: 2rem;
-  margin-bottom: 2.5rem;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
 }
 
+body.dark-mode.view-student option{
+
+background-color: #1f1f1f;
+
+}
+
+.admin-message{
+
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    height: 100%;
+    background:#f0f2f5;
+    color:#243a6b;
+
+}
+
+
+body.dark-mode.view-student .admin-message{
+
+background-color: rgba(26, 26, 26, 0.6);
+color: #d2d2d2;
+
+}
+
+.student-info li{
+
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.course {
+    list-style: none;
+    margin-bottom: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.course > strong::after {
+    content: " ▼";
+    font-size: 0.8em;
+    margin-left: 5px;
+}
+
+.lectures {
+    display: none;
+    margin: 5px 0 0 15px;
+    padding: 0;
+    list-style: disc;
+}
+
+.course.open .lectures {
+    display: block;
+}
+
+.course.open > strong::after {
+    content: " ▲";
+}
