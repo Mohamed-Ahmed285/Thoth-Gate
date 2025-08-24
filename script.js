@@ -1458,6 +1458,7 @@ function showQuizModal(lectureId, lectureTitle) {
     `;
     document.head.appendChild(modalStyles);
 
+    
     const closeBtn = modalOverlay.querySelector('.close-quiz-modal');
     const cancelBtn = modalOverlay.querySelector('.cancel-quiz-btn');
     const startBtn = modalOverlay.querySelector('.start-quiz-btn');
@@ -1491,6 +1492,9 @@ if (document.querySelector('.course-detail-page')) {
     initializeCourseDetailPage();
 }
 
+function cancelQuiz() {
+    window.location.href = 'course-detail.html';
+}
 function initializeContactForm() {
     const contactForm = document.getElementById('contactForm');
     
