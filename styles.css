@@ -4833,3 +4833,86 @@ body.dark-mode .quiz-progress-text {
                 justify-content: center;
             }
         }
+
+/* Restricted Access Page Styles (Improved) */
+.restricted-access-container {
+    background: rgba(255, 255, 255, 0.97);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(36, 58, 107, 0.12);
+    max-width: 420px;
+    margin: 60px auto;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    border: 2px solid #d4af37;
+    position: relative;
+}
+.restricted-access-container .logo-image {
+    width: 80px;
+    margin-bottom: 18px;
+}
+.restricted-access-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 2.1rem;
+    color: #243a6b;
+    margin-bottom: 1rem;
+}
+.restricted-access-message {
+    font-size: 1.15rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+.restricted-btn-group {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+.restricted-btn {
+    padding: 0.8rem 1.6rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: none;
+    background: linear-gradient(135deg, #d4af37, #b8941f);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: box-shadow 0.2s, transform 0.2s;
+    box-shadow: 0 2px 8px rgba(212, 175, 55, 0.12);
+    text-decoration: none;
+    display: inline-block;
+  
+}
+.restricted-btn:hover {
+    box-shadow: 0 6px 18px rgba(212, 175, 55, 0.22);
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #b8941f, #d4af37);
+}
+body.dark-mode .restricted-access-container {
+    background: #1b2c50f7;
+    border-color: #f5deb3;
+}
+body.dark-mode .restricted-access-title {
+    color: #f5deb3;
+}
+body.dark-mode .restricted-access-message {
+    color: #e7eef8;
+}
+body.dark-mode .restricted-btn {
+    background: linear-gradient(135deg, #f5deb3, #d4af37);
+    color: #243a6b;
+}
+body.dark-mode .restricted-btn:hover {
+    background: linear-gradient(135deg, #fff5e3, #b8941f);
+    /* color: #f5deb3; */
+}
+@media (max-width: 600px) {
+    .restricted-access-container {
+        max-width: 95vw;
+        padding: 1.2rem 0.5rem;
+        margin: 30px auto;
+    }
+    .restricted-btn-group {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
