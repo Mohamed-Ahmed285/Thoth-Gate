@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructor Chat</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="instructor.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="../imgs/logo.png" alt="Thuth Gate Logo" class="logo-image">
+                <h1 class="site-logo">Thuth Gate</h1>
+            </div>
+            <button class="hamburger-menu" id="hamburgerMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="instructor-home.html">Home</a></li>
+                    <li><a href="instructor-create-exam.html">Create Exam</a></li>
+                    <li><a href="instructor-add-lecture.html">Add Lecture</a></li>
+                    <li><a href="instructor-chats.html" class="active">Chats</a></li>
+                    <li><a href="#" class="logout-btn" onclick="logout()">Logout</a></li>
+                </ul>
+            </nav>
+            <div class="switchers-container">
+                <button class="theme-switcher" id="themeSwitcher" title="Toggle Dark Mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="language-switcher" id="languageSwitcher" title="Switch Language">
+                    <span class="language-text">EN</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <div class="mobile-sidebar" id="mobileSidebar">
+        <div class="sidebar-header">
+            <div class="logo-container">
+                <img src="../imgs/logo.png" alt="Thuth Gate Logo" class="logo-image">
+                <h1 class="site-logo">Thuth Gate</h1>
+            </div>
+            <button class="close-sidebar" id="closeSidebar">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="instructor-home.html">Home</a></li>
+                <li><a href="instructor-create-exam.html">Create Exam</a></li>
+                <li><a href="instructor-add-lecture.html">Add Lecture</a></li>
+                <li><a href="instructor-chats.html" class="active">Chats</a></li>
+                <li><a href="#" class="logout-btn" onclick="logout()">Logout</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-switchers">
+            <button class="theme-switcher" id="sidebarThemeSwitcher" title="Toggle Dark Mode">
+                <span class="theme-icon">🌙</span>
+            </button>
+            <button class="language-switcher" id="sidebarLanguageSwitcher" title="Switch Language">
+                <span class="language-text">EN</span>
+            </button>
+        </div>
+    </div>
+    <main class="chat-main">
+        <div class="container">
+            <div class="chat-header">
+                <h2 class="section-title">Instructor Chat for Grade <span id="grade-number"></span></h2>
+                <div class="grade-info">
+                    <span class="grade-badge" id="gradeBadge">Grade <span id="grade-number-badge"></span></span>
+                    <span class="online-count">Online: <span id="onlineCount">1</span></span>
+                </div>
+            </div>
+            <div class="chat-container">
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message system-message">
+                        <div class="message-content">
+                            <p>Welcome to the instructor chat for this grade! Communicate with your students here.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-input-container">
+                    <form id="chatForm" class="chat-form">
+                        <div class="input-group">
+                            <input type="text" id="messageInput" placeholder="Type your message..." maxlength="500" required>
+                            <button type="submit" class="send-btn">
+                                <span class="send-icon">📤</span>
+                            </button>
+                        </div>
+                        <div class="message-actions">
+                            <span class="char-count">0/500</span>
+                            <button type="button" class="emoji-btn" id="emojiBtn">😊</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="chat-sidebar">
+                <div class="sidebar-section">
+                    <h3>Online Students</h3>
+                    <div class="online-students" id="onlineStudents">
+                        <div class="online-student">
+                            <div class="student-avatar">
+                                <img src="../imgs/profile.png" alt="Student">
+                                <span class="online-indicator"></span>
+                            </div>
+                            <div class="student-info">
+                                <span class="student-name">Student Name</span>
+                                <span class="student-status">Online</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-section">
+                    <h3>Chat Rules</h3>
+                    <ul class="chat-rules">
+                        <li>Be respectful to all members</li>
+                        <li>No inappropriate content</li>
+                        <li>Stay on topic - academic discussions</li>
+                        <li>Use appropriate language</li>
+                        <li>Report any violations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="../script.js"></script>
+    <script src="instructor.js"></script>
+</body>
+</html>

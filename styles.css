@@ -4880,20 +4880,23 @@ body.dark-mode .quiz-progress-text {
     box-shadow: 0 2px 8px rgba(212, 175, 55, 0.12);
     text-decoration: none;
     display: inline-block;
-  
 }
+
 .restricted-btn:hover {
     box-shadow: 0 6px 18px rgba(212, 175, 55, 0.22);
     transform: translateY(-2px);
     background: linear-gradient(135deg, #b8941f, #d4af37);
 }
+
 body.dark-mode .restricted-access-container {
     background: #1b2c50f7;
     border-color: #f5deb3;
 }
+
 body.dark-mode .restricted-access-title {
     color: #f5deb3;
 }
+
 body.dark-mode .restricted-access-message {
     color: #e7eef8;
 }
