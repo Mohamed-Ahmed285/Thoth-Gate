@@ -1,32 +1,32 @@
 
-if (window.location.pathname.endsWith('instructor-chat.html')) {
-    const urlParams = new URLSearchParams(window.location.search);
-    const grade = urlParams.get('grade');
-    document.getElementById('grade-number').textContent = grade || '';
+// if (window.location.pathname.endsWith('instructor-chat.html')) {
+//     const urlParams = new URLSearchParams(window.location.search);
+//     const grade = urlParams.get('grade');
+//     document.getElementById('grade-number').textContent = grade || '';
 
-    // Chat message handler with card layout
-    const chatForm = document.getElementById('chat-form');
-    const chatBox = document.getElementById('chat-box');
-    chatForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const input = document.getElementById('chat-input');
-        if (input.value.trim()) {
-            const card = document.createElement('div');
-            card.className = 'chat-card';
-            const author = document.createElement('div');
-            author.className = 'chat-author';
-            author.textContent = 'Instructor';
-            const message = document.createElement('div');
-            message.className = 'chat-message';
-            message.textContent = input.value;
-            card.appendChild(author);
-            card.appendChild(message);
-            chatBox.appendChild(card);
-            input.value = '';
-            chatBox.scrollTop = chatBox.scrollHeight;
-        }
-    });
-}
+//     // Chat message handler with card layout
+//     const chatForm = document.getElementById('chat-form');
+//     const chatBox = document.getElementById('chat-box');
+//     chatForm.addEventListener('submit', function(e) {
+//         e.preventDefault();
+//         const input = document.getElementById('chat-input');
+//         if (input.value.trim()) {
+//             const card = document.createElement('div');
+//             card.className = 'chat-card';
+//             const author = document.createElement('div');
+//             author.className = 'chat-author';
+//             author.textContent = 'Instructor';
+//             const message = document.createElement('div');
+//             message.className = 'chat-message';
+//             message.textContent = input.value;
+//             card.appendChild(author);
+//             card.appendChild(message);
+//             chatBox.appendChild(card);
+//             input.value = '';
+//             chatBox.scrollTop = chatBox.scrollHeight;
+//         }
+//     });
+// }
 
 
 

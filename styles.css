@@ -1487,6 +1487,72 @@ body.dark-mode .hamburger-menu.active span {
     overflow: hidden;
 }
 
+/* Quiz Modal Exam Instructions Styling */
+.quiz-modal-fullpage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background:#eae0c7;
+    z-index: 9999;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 3rem 1rem;
+}
+.quiz-modal {
+    max-width: 500px;
+    width: 100%;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(36,58,107,0.12);
+    padding: 2rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+body.dark-mode .quiz-modal-fullpage {
+    background: rgba(15, 23, 36, 0.98);
+}
+body.dark-mode .quiz-modal {
+    background: #1a1a1a;
+    color: #f5deb3;
+    box-shadow: 0 8px 32px rgba(212,175,55,0.18);
+}
+.exam-instructions {
+    margin-top: 1.5rem;
+    background: #fff8e1;
+    border: 2px solid #d4af37;
+    border-radius: 8px;
+    padding: 1rem;
+    color: #243a6b;
+    box-shadow: 0 2px 8px rgba(212,175,55,0.08);
+}
+.exam-instructions h4 {
+    margin-bottom: 0.5rem;
+    color: #d4af37;
+    font-family: 'Cinzel Decorative',serif;
+}
+.exam-instructions ul {
+    margin-left: 1.2em;
+}
+body.dark-mode .exam-instructions {
+    background: #1a1a1a;
+    color: #f5deb3;
+    border-color: #d4af37;
+    box-shadow: 0 2px 8px rgba(212,175,55,0.18);
+}
+body.dark-mode .exam-instructions h4 {
+    color: #d4af37;
+}
+body.dark-mode .exam-instructions ul li {
+    color: #e9ce8e;
+}
+
 .egyptian-heritage-section::before {
     content: '';
     position: absolute;

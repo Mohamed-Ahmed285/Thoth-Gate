@@ -319,3 +319,14 @@ body.dark-mode .createExamForm {
     flex-direction: row;
     gap: 2rem; */
 }
+
+
+body.instructor-home{
+
+    background:#eae0c7 ;
+}
+
+body.dark-mode.instructor-home {
+    background: linear-gradient(135deg, #0f1724 0%, #0b0f1a 100%);
+    color: #e7eef8;
+}

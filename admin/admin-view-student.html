@@ -98,59 +98,73 @@
         </ul>
     </li>
 
-    <li class="course">
-        <strong>Course 2</strong>
+    							<li class="course">
+      						  <strong>Course 2</strong>
         <ul class="lectures">
             <li>Lecture 1</li>
             <li>Lecture 2</li>
-        </ul>
-    </li>
-</ul>
-                     </div>
+      			  </ul>
+   			 </li>
+			</ul>
+            </div>
 				</div>
 				<div class="widget-container">
-<div class="widget">
-					<h3>Grant Access</h3>
-					<form id="grantAccessForm">
-						<label for="courseSelect"><strong>Course:</strong></label>
-						<select id="courseSelect" class="search-bar" style="width:100%;margin-bottom:1rem;">
-							<option value="">-- Select Course --</option>
-							<option value="database">Database</option>
-							<option value="maths">Maths</option>
-							<option value="history">History</option>
-						</select>
-						<label for="lectureSelect"><strong>Lecture:</strong></label>
-						<select id="lectureSelect" class="search-bar" style="width:100%;margin-bottom:1rem;">
-							<option value="">-- Select Lecture --</option>
-							<option value="lecture1">Lecture 1</option>
-							<option value="lecture2">Lecture 2</option>
-							<option value="lecture3">Lecture 3</option>
-						</select>
-						<button type="submit" class="btn btn-edit" id="Grant" onclick="Grant()" style="margin-top:1rem;">Grant Access</button>
-
-					</form>
-				</div>
-				<div class="widget">
-					<h3>Remove Access</h3>
-					<form id="grantAccessForm">
-						<label for="courseSelect"><strong>Course:</strong></label>
-						<select id="courseSelect" class="search-bar" style="width:100%;margin-bottom:1rem;">
-							<option value="">-- Select Course --</option>
-							<option value="database">Database</option>
-							<option value="maths">Maths</option>
-							<option value="history">History</option>
-						</select>
-						<label for="lectureSelect"><strong>Lecture:</strong></label>
-						<select id="lectureSelect" class="search-bar" style="width:100%;margin-bottom:1rem;">
-							<option value="">-- Select Lecture --</option>
-							<option value="lecture1">Lecture 1</option>
-							<option value="lecture2">Lecture 2</option>
-							<option value="lecture3">Lecture 3</option>
-						</select>
-                        <button class="btn btn-remove">Remove Access</button>
-
-					</form>
-				</div>
+					<div class="widget">
+						<h3>Grant Access</h3>
+						<form id="grantAccessForm">
+							<label for="courseSelect"><strong>Course:</strong></label>
+							<select id="courseSelect" class="search-bar" style="width:100%;margin-bottom:1rem;">
+								<option value="">-- Select Course --</option>
+								<option value="database">Database</option>
+								<option value="maths">Maths</option>
+								<option value="history">History</option>
+							</select>
+							<label for="lectureSelect"><strong>Lecture:</strong></label>
+							<select id="lectureSelect" class="search-bar" style="width:100%;margin-bottom:1rem;">
+								<option value="">-- Select Lecture --</option>
+								<option value="lecture1">Lecture 1</option>
+								<option value="lecture2">Lecture 2</option>
+								<option value="lecture3">Lecture 3</option>
+							</select>
+							<button type="submit" class="btn btn-edit" id="Grant" onclick="Grant()" style="margin-top:1rem;">Grant Access</button>
+						</form>
+					</div>
+					<div class="widget">
+						<h3>Remove Access</h3>
+						<form id="removeAccessForm">
+							<label for="removeCourseSelect"><strong>Course:</strong></label>
+							<select id="removeCourseSelect" class="search-bar" style="width:100%;margin-bottom:1rem;">
+								<option value="">-- Select Course --</option>
+								<option value="database">Database</option>
+								<option value="maths">Maths</option>
+								<option value="history">History</option>
+							</select>
+							<label for="removeLectureSelect"><strong>Lecture:</strong></label>
+							<select id="removeLectureSelect" class="search-bar" style="width:100%;margin-bottom:1rem;">
+								<option value="">-- Select Lecture --</option>
+								<option value="lecture1">Lecture 1</option>
+								<option value="lecture2">Lecture 2</option>
+								<option value="lecture3">Lecture 3</option>
+							</select>
+							<button class="btn btn-remove">Remove Access</button>
+						</form>
+					</div>
+					<div class="widget">
+						<h3>Grade Chat Access</h3>
+						<form id="gradeChatAccessForm">
+							<div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+								<input type="checkbox" id="chatAccessCheckbox" name="chatAccessCheckbox">
+								<label for="chatAccessCheckbox" style="margin:0;">
+									<strong>Enable chat access for current grade (1st secoundry)</strong>
+								</label>
+							</div>
+							<div id="chatEndDateContainer" style="display:none;">
+								<label for="chatEndDate"><strong>End Date for Chat Access:</strong></label>
+								<input type="date" id="chatEndDate" name="chatEndDate" style="width:100%;margin-bottom:1rem;">
+							</div>
+							<button type="submit" class="btn btn-edit" style="margin-top:1rem;">Save</button>
+						</form>
+					</div>
 				</div>
 				
 				<div id="accessMessage" style="margin-top:1rem;"></div>
@@ -234,6 +248,29 @@ document.querySelectorAll(".course > strong").forEach(course => {
     });
 });
 
+document.getElementById('chatAccessCheckbox').addEventListener('change', function() {
+	document.getElementById('chatEndDateContainer').style.display = this.checked ? 'block' : 'none';
+});
+
+document.getElementById('gradeChatAccessForm').addEventListener('submit', function(e) {
+	e.preventDefault();
+	var checked = document.getElementById('chatAccessCheckbox').checked;
+	var endDate = document.getElementById('chatEndDate').value;
+	var msg = '';
+	if (checked) {
+		msg = 'Grade chat access enabled for current grade';
+		if (endDate) {
+			msg += ' until ' + endDate;
+		}
+	} else {
+		msg = 'Grade chat access removed for current grade';
+	}
+	var messageDiv = document.getElementById('accessMessage');
+	messageDiv.innerHTML = '<div class="admin-message">'+msg+'</div>';
+	setTimeout(function() {
+		messageDiv.innerHTML = '';
+	}, 3000);
+});
 
 </script>
 	<script src="admin.js"></script>

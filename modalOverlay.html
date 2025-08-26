@@ -9,12 +9,8 @@
 
 </head>
 <body class="modal-overlay">
-    <div class="div" style="    display: flex
-;
-    align-items: center;
-    height: 100vh;
-    justify-content: center;">
-          <div class="quiz-modal">
+    <div class="quiz-modal-fullpage">
+        <div class="quiz-modal">
             <div class="quiz-modal-header">
                 <h3>📝 Quiz: one</h3>
                 <button class="close-quiz-modal" onclick="cancelQuiz()">×</button>
@@ -25,6 +21,16 @@
                     <p><strong>Questions:</strong> 10 Multiple Choice</p>
                     <p><strong>Time Limit:</strong> 15 minutes</p>
                     <p><strong>Passing Score:</strong> 70%</p>
+                    <div class="exam-instructions">
+                        <h4 style="margin-bottom:0.5rem; color:#d4af37; font-family:'Cinzel Decorative',serif;">Exam Instructions</h4>
+                        <ul style="margin-left:1.2em;">
+                            <li>Do not open another tab or window during the exam. <strong>If you do, the exam will be automatically submitted.</strong></li>
+                            <li>Do not refresh the page or close the browser.</li>
+                            <li>Read each question carefully before answering.</li>
+                            <li>Once submitted, you cannot retake the exam.</li>
+                            <li>Keep track of your time; the exam will auto-submit when time runs out.</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="quiz-actions">
                     <button class="start-quiz-btn" onclick="window.location.href = 'quiz.html';">
@@ -37,7 +43,7 @@
                     </button>
                 </div>
             </div>
-         </div>
+        </div>
     </div>
 </body>
 <script src="script.js"></script>
