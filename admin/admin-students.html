@@ -80,7 +80,8 @@
                     <h2 class="section-title">Students</h2>
                     <input type="text" class="search-bar" placeholder="Search students...">
                 </div>
-                <table class="admin-table">
+                <div class="admin-table-responsive">
+                       <table class="admin-table">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -96,7 +97,7 @@
                             <td>Mohamed Ahmed</td>
                             <td>mido@example.com</td>
                             <td>database</td>
-                            <td>
+                            <td class="btns-td">
                                 <button class="btn btn-view" onclick="  window.location.href = 'admin-view-student.html';">View</button>
                                 <button class="btn btn-remove">Remove</button>
                             </td>
@@ -106,7 +107,7 @@
                             <td>Ammar mohamed</td>
                             <td>Ammar@example.com</td>
                             <td>Archi</td>
-                            <td>
+                            <td class="btns-td">
                                 <button class="btn btn-view" onclick="  window.location.href = 'admin-view-student.html';">View</button>
                                 <button class="btn btn-remove">Remove</button>
                             </td>
@@ -114,6 +115,8 @@
                         <!-- More rows as needed -->
                     </tbody>
                 </table>
+                </div>
+             
                 <div class="pagination">
                     <button class="btn">Previous</button>
                     <span class="page-numbers">1 | 2 | 3</span>
