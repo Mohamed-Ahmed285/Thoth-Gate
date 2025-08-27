@@ -82,173 +82,88 @@
     <!-- Sidebar Overlay -->
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-    <main class="chat-main">
-        <div class="container">
-            <div class="chat-header">
-                <h2 class="section-title">Grade Chat</h2>
-                <div class="grade-info">
-                    <span class="grade-badge" id="gradeBadge">Grade 10</span>
-                    <span class="online-count">Online: <span id="onlineCount">4</span></span>
-                </div>
+<main class="chat-main">
+    <!-- Header -->
+    <div class="chat-header">
+      <h2 class="section-title">Grade Chat</h2>
+      <div class="grade-info">
+        <span class="grade-badge" id="gradeBadge">Grade 10</span>
+        <span class="online-count">Online: <span id="onlineCount">4</span></span>
+      </div>
+    </div>
+
+    <!-- Layout: left = chat, right = sidebar -->
+      <!-- LEFT COLUMN: messages + input -->
+      <section class="chat-column">
+        <div class="chat-messages" id="chatMessages">
+          <!-- example messages (keep or replace with your own) -->
+          <div class="message system-message">
+            <div class="message-content">
+              <p>Welcome to your grade chat! Connect with your classmates and share knowledge.</p>
             </div>
+          </div>
 
-            <div class="chat-container">
-                <div class="chat-messages" id="chatMessages">
-                    <div class="message system-message">
-                        <div class="message-content">
-                            <p>Welcome to your grade chat! Connect with your classmates and share knowledge.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="message user-message">
-                        <div class="message-avatar">
-                            <img src="imgs/profile.png" alt="Student">
-                        </div>
-                        <div class="message-content">
-                            <div class="message-header">
-                                <span class="message-author">Ahmed Hassan</span>
-                                <span class="message-time">10:30 AM</span>
-                            </div>
-                            <p>Hello everyone! Does anyone have the solution for the math problem from yesterday's homework?</p>
-                        </div>
-                    </div>
-
-                    <div class="message other-message">
-                        <div class="message-avatar">
-                            <img src="imgs/profile.png" alt="Student">
-                        </div>
-                        <div class="message-content">
-                            <div class="message-header">
-                                <span class="message-author">Sarah Johnson</span>
-                                <span class="message-time">10:32 AM</span>
-                            </div>
-                            <p>Yes! I worked on it last night. The key is to use the quadratic formula. Do you want me to explain the steps?</p>
-                        </div>
-                    </div>
-
-                    <div class="message user-message">
-                        <div class="message-avatar">
-                            <img src="imgs/profile.png" alt="Student">
-                        </div>
-                        <div class="message-content">
-                            <div class="message-header">
-                                <span class="message-author">Ahmed Hassan</span>
-                                <span class="message-time">10:35 AM</span>
-                            </div>
-                            <p>That would be great! I'm stuck on step 3 where we need to factor the equation.</p>
-                        </div>
-                    </div>
-
-                    <div class="message other-message">
-                        <div class="message-avatar">
-                            <img src="imgs/profile.png" alt="Student">
-                        </div>
-                        <div class="message-content">
-                            <div class="message-header">
-                                <span class="message-author">Omar Khalil</span>
-                                <span class="message-time">10:37 AM</span>
-                            </div>
-                            <p>I can help too! The factoring part is tricky. You need to find two numbers that multiply to give you the constant term and add to give you the coefficient of x.</p>
-                        </div>
-                    </div>
-
-                    <div class="message other-message">
-                        <div class="message-avatar">
-                            <img src="imgs/profile.png" alt="Student">
-                        </div>
-                        <div class="message-content">
-                            <div class="message-header">
-                                <span class="message-author">Maria Rodriguez</span>
-                                <span class="message-time">10:40 AM</span>
-                            </div>
-                            <p>Don't forget to check your work by plugging the values back into the original equation! That's how I caught my mistake.</p>
-                        </div>
-                    </div>
-
-                    <div class="message system-message">
-                        <div class="message-content">
-                            <p>Remember: The library is open for study groups every afternoon from 2-5 PM.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="chat-input-container">
-                    <form id="chatForm" class="chat-form">
-                        <div class="input-group">
-                            <input type="text" id="messageInput" placeholder="Type your message..." maxlength="500" required>
-                            <button type="submit" class="send-btn">
-                                <span class="send-icon">📤</span>
-                            </button>
-                        </div>
-                        <div class="message-actions">
-                            <span class="char-count">0/500</span>
-                            <button type="button" class="emoji-btn" id="emojiBtn">😊</button>
-                        </div>
-                    </form>
-                </div>
+          <div class="message user-message">
+            <div class="message-avatar"><img src="imgs/profile.png" alt="Student"></div>
+            <div class="message-content">
+              <div class="message-header">
+                <span class="message-author">Ahmed Hassan</span>
+                <span class="message-time">10:30 AM</span>
+              </div>
+              <p>Hello everyone! Does anyone have the solution for the math problem from yesterday's homework?</p>
             </div>
-
-            <div class="chat-sidebar">
-                <div class="sidebar-section">
-                    <h3>Online Students</h3>
-                    <div class="online-students" id="onlineStudents">
-                        <div class="online-student">
-                            <div class="student-avatar">
-                                <img src="imgs/profile.png" alt="Student">
-                                <span class="online-indicator"></span>
-                            </div>
-                            <div class="student-info">
-                                <span class="student-name">Ahmed Hassan</span>
-                                <span class="student-status">Online</span>
-                            </div>
-                        </div>
-                        <div class="online-student">
-                            <div class="student-avatar">
-                                <img src="imgs/profile.png" alt="Student">
-                                <span class="online-indicator"></span>
-                            </div>
-                            <div class="student-info">
-                                <span class="student-name">Sarah Johnson</span>
-                                <span class="student-status">Online</span>
-                            </div>
-                        </div>
-                        <div class="online-student">
-                            <div class="student-avatar">
-                                <img src="imgs/profile.png" alt="Student">
-                                <span class="online-indicator"></span>
-                            </div>
-                            <div class="student-info">
-                                <span class="student-name">Omar Khalil</span>
-                                <span class="student-status">Online</span>
-                            </div>
-                        </div>
-                        <div class="online-student">
-                            <div class="student-avatar">
-                                <img src="imgs/profile.png" alt="Student">
-                                <span class="online-indicator"></span>
-                            </div>
-                            <div class="student-info">
-                                <span class="student-name">Maria Rodriguez</span>
-                                <span class="student-status">Online</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="sidebar-section">
-                    <h3>Chat Rules</h3>
-                    <ul class="chat-rules">
-                        <li>Be respectful to all members</li>
-                        <li>No inappropriate content</li>
-                        <li>Stay on topic - academic discussions</li>
-                        <li>Use appropriate language</li>
-                        <li>Report any violations</li>
-                    </ul>
-                </div>
-            </div>
+          </div>
         </div>
-    </main>
 
-    <script src="script.js"></script>
+        <!-- Composer (sticky at viewport bottom) -->
+        <div class="chat-input-container sticky-composer" style="margin-top: 16px;">
+          <form id="chatForm" class="chat-form">
+            <div class="message-actions">
+              <span class="char-count">0/500</span>
+              <button type="button" class="emoji-btn" id="emojiBtn">😊</button>
+              <button type="button" class="image-btn" id="imageBtn">🔗</button>
+              <input type="file" id="imageInput" accept="image/*" style="display:none;">
+            </div>
+            <div class="input-group">
+              <input type="text" id="messageInput" placeholder="Type your message." maxlength="500" required>
+              <button type="submit" class="send-btn"><span class="send-icon">📤</span></button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- RIGHT COLUMN: sidebar (now inside the grid)
+      <aside class="chat-sidebar">
+        <div class="sidebar-section">
+          <h3>Online Students</h3>
+          <div class="online-students" id="onlineStudents">
+            <div class="online-student">
+              <div class="student-avatar"><img src="imgs/profile.png" alt="Student"><span class="online-indicator"></span></div>
+              <div class="student-info">
+                <span class="student-name">Ahmed Hassan</span>
+                <span class="student-status">Online</span>
+              </div>
+            </div>
+          
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <h3>Chat Rules</h3>
+          <ul class="chat-rules">
+            <li>Be respectful to all members</li>
+            <li>No inappropriate content</li>
+            <li>Stay on topic - academic discussions</li>
+            <li>Use appropriate language</li>
+            <li>Report any violations</li>
+          </ul>
+        </div>
+      </aside> -->
+  
+</main>
+
+    <script src="script.js">
+      
+    </script>
 </body>
 </html>

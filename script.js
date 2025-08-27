@@ -919,7 +919,6 @@ async function handleChatMessage(event) {
     
 }
 
-// Add a chat message to the chat area
 function addChatMessage(message, type = 'received', sender = 'You') {
     const chatMessages = document.getElementById('chatMessages');
     if (!chatMessages) return;
@@ -1035,7 +1034,7 @@ function showEmojiPicker() {
         '🧡', '💛', '💚', '💙', '💜', 
         '🖤', '🤍', '🎉', '🎊', '📚',
         '📖', '✏️', '🖊️', '🖋️', '📌',
-        '🌟', '✨', '💫', '💥', '💯'
+        '🌟', '✨', '💫', '💥', '💯' ,'🤪','🤪','🤪'
     ];
 
     const emojiBtn = document.getElementById('emojiBtn');
@@ -1054,7 +1053,7 @@ function showEmojiPicker() {
         padding: 0.75rem;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         display: grid;
-        grid-template-columns: repeat(6, 1fr);
+        grid-template-columns: repeat(8, 1fr);
         gap: 0.4rem;
         width: 100%;
         max-width: 100%;
@@ -1062,6 +1061,8 @@ function showEmojiPicker() {
         margin-bottom: 10px;
         margin-top: 10px;
         box-sizing: border-box;
+            justify-items: center;
+
     `;
 
     emojis.forEach(emoji => {
@@ -1107,7 +1108,7 @@ function showEmojiPicker() {
         updateCharCount();
             
             // Hide picker after selection
-            pickerElement.style.display = 'none';
+            // pickerElement.style.display = 'none';
         });
 
         pickerElement.appendChild(emojiOption);
@@ -1210,7 +1211,7 @@ function initializeCourseDetailPage() {
     const currentLectureTitle = document.getElementById('currentLectureTitle');
     const currentLectureDescription = document.getElementById('currentLectureDescription');
     const toggleSidebar = document.getElementById('toggleSidebar');
-    const lecturesSidebar = document.querySelector('.lectures-sidebar');
+    const lecturesList = document.querySelector('.lectures-list');
     const videoQuizBtn = document.getElementById('videoQuizBtn');
 
     // Handle lecture item clicks
@@ -1243,7 +1244,7 @@ function initializeCourseDetailPage() {
 
     if (toggleSidebar) {
         toggleSidebar.addEventListener('click', function() {
-            lecturesSidebar.classList.toggle('collapsed');
+            lecturesList.classList.toggle('collapsed');
         });
     }
 
@@ -1690,9 +1691,61 @@ function logout() {
     window.location.href = 'index.html';
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  // === Character Counter ===
+  const messageInput = document.getElementById("messageInput");
+  const charCount = document.querySelector(".char-count");
+
+  if (messageInput && charCount) {
+    messageInput.addEventListener("input", () => {
+      charCount.textContent = `${messageInput.value.length}/500`;
+    });
+  }
+
+  // === Image Sending ===
+  const imageBtn = document.getElementById("imageBtn");
+  const imageInput = document.getElementById("imageInput");
+  const chatMessages = document.getElementById("chatMessages");
+
+  if (imageBtn && imageInput && chatMessages) {
+    imageBtn.addEventListener("click", () => {
+      imageInput.click();
+    });
+
+    imageInput.addEventListener("change", function () {
+      const file = this.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const message = document.createElement("div");
+        message.classList.add("message", "user-message");
+
+        message.innerHTML = `
+          <div class="message-avatar"><img src="imgs/profile.png" alt="You"></div>
+          <div class="message-content">
+            <div class="message-header">
+              <span class="message-author">You</span>
+              <span class="message-time">${new Date().toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})}</span>
+            </div>
+            <img src="${e.target.result}" alt="Sent image">
+          </div>
+        `;
+
+        chatMessages.appendChild(message);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      };
+
+      reader.readAsDataURL(file);
+    });
+  }
+});
+
 
 // Example: update progress
 let current = 3, total = 10;
 document.getElementById("currentQ").textContent = current;
 document.getElementById("totalQ").textContent = total;
 document.getElementById("quizProgress").style.width = `${(current/total)*100}%`;
+
+
