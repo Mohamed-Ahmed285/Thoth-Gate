@@ -1104,11 +1104,9 @@ function showEmojiPicker() {
             messageInput.selectionStart = messageInput.selectionEnd = cursorPos + emoji.length;
         messageInput.focus();
         
-        // Update character count
         updateCharCount();
             
-            // Hide picker after selection
-            // pickerElement.style.display = 'none';
+         
         });
 
         pickerElement.appendChild(emojiOption);
@@ -1199,6 +1197,8 @@ function initializeMobileSidebar() {
 }
 
 //عشان الجلوبال اكسيس
+
+
 window.logout = logout;
 window.toggleEditMode = toggleEditMode;
 window.saveProfile = saveProfile;
