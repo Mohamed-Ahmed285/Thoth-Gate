@@ -1,5 +1,14 @@
 // Ensure profile edit buttons work even if script loads before DOM
-        // script.js
+  // Option 1: Hide after a fixed time (e.g., 3 seconds)
+//   setTimeout(function() {
+//     document.getElementById("preloader").style.display = "none";
+//   }, 3000); // 3000 milliseconds = 3 seconds
+
+  // Option 2: Hide after the entire page (including images, etc.) has loaded
+  // window.addEventListener("load", function() {
+  //   document.getElementById("preloader").style.display = "none";
+  // });
+
 window.onload = function() {
     const loader = document.getElementById('loader');
     // const content = document.getElementById('content');
@@ -510,12 +519,12 @@ function translateToArabic() {
     // Comprehensive Arabic translations
     const translations = {
         // General UI
-        'Thuth Gate': 'بوابة تحوت',
+        'Th𝕆th Gate': 'بوابة تحوت',
         'Gateway to Ancient Wisdom, Modern Learning': 'بوابة الحكمة القديمة، التعلم الحديث',
         'Enter the Gate': 'ادخل البوابة',
         'Email': 'البريد الإلكتروني',
         'Password': 'كلمة المرور',
-        'New to Thuth Gate?': 'جديد في بوابة تحوت؟',
+        'New to Th𝕆th Gate?': 'جديد في بوابة تحوت؟',
         'Register Here': 'سجل هنا',
         'Already have an account?': 'لديك حساب بالفعل؟',
         'Login Here': 'سجل دخولك هنا',
@@ -682,12 +691,12 @@ function translateToEnglish() {
     // Comprehensive English translations (reverse of Arabic)
     const translations = {
         // General UI
-        'بوابة تحوت': 'Thuth Gate',
+        'بوابة تحوت': 'Th𝕆th Gate',
         'بوابة الحكمة القديمة، التعلم الحديث': 'Gateway to Ancient Wisdom, Modern Learning',
         'ادخل البوابة': 'Enter the Gate',
         'البريد الإلكتروني': 'Email',
         'كلمة المرور': 'Password',
-        'جديد في بوابة تحوت؟': 'New to Thuth Gate?',
+        'جديد في بوابة تحوت؟': 'New to Th𝕆th Gate?',
         'سجل هنا': 'Register Here',
         'لديك حساب بالفعل؟': 'Already have an account?',
         'سجل دخولك هنا': 'Login Here',
