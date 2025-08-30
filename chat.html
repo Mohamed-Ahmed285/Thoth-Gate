@@ -9,6 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="chat-page">
+     <div id="loader">
+        <!-- You can add an image, a CSS spinner, or text here -->
+        <div class="spinner"></div>
+        <p>Loading...</p>
+    </div>
     <header class="main-header">
         <div class="header-content">
             <div class="logo-container">
@@ -82,19 +87,7 @@
     <!-- Sidebar Overlay -->
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-<main class="chat-main">
-    <!-- Header -->
-    <div class="chat-header">
-      <h2 class="section-title">Grade Chat</h2>
-      <div class="grade-info">
-        <span class="grade-badge" id="gradeBadge">Grade 10</span>
-        <span class="online-count">Online: <span id="onlineCount">4</span></span>
-      </div>
-    </div>
-
-    <!-- Layout: left = chat, right = sidebar -->
-      <!-- LEFT COLUMN: messages + input -->
-      <section class="chat-column">
+   <section class="chat-column" style="height: calc(100vh - 106px);">
         <div class="chat-messages" id="chatMessages">
           <!-- example messages (keep or replace with your own) -->
           <div class="message system-message">
@@ -116,7 +109,7 @@
         </div>
 
         <!-- Composer (sticky at viewport bottom) -->
-        <div class="chat-input-container sticky-composer" style="margin-top: 16px;">
+        <div class="chat-input-container sticky-composer" style="margin-top:8px;">
           <form id="chatForm" class="chat-form">
             <div class="message-actions">
               <span class="char-count">0/500</span>
@@ -131,37 +124,7 @@
           </form>
         </div>
       </section>
-
-      <!-- RIGHT COLUMN: sidebar (now inside the grid)
-      <aside class="chat-sidebar">
-        <div class="sidebar-section">
-          <h3>Online Students</h3>
-          <div class="online-students" id="onlineStudents">
-            <div class="online-student">
-              <div class="student-avatar"><img src="imgs/profile.png" alt="Student"><span class="online-indicator"></span></div>
-              <div class="student-info">
-                <span class="student-name">Ahmed Hassan</span>
-                <span class="student-status">Online</span>
-              </div>
-            </div>
-          
-          </div>
-        </div>
-
-        <div class="sidebar-section">
-          <h3>Chat Rules</h3>
-          <ul class="chat-rules">
-            <li>Be respectful to all members</li>
-            <li>No inappropriate content</li>
-            <li>Stay on topic - academic discussions</li>
-            <li>Use appropriate language</li>
-            <li>Report any violations</li>
-          </ul>
-        </div>
-      </aside> -->
   
-</main>
-
     <script src="script.js">
       
     </script>

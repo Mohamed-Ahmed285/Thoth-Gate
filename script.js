@@ -1,4 +1,14 @@
 // Ensure profile edit buttons work even if script loads before DOM
+        // script.js
+window.onload = function() {
+    const loader = document.getElementById('loader');
+    // const content = document.getElementById('content');
+
+    loader.style.display = 'none';
+
+    // content.style.display = 'block';
+};
+
 document.addEventListener('DOMContentLoaded', function() {
     var saveBtn = document.querySelector('.save-btn');
     var cancelBtn = document.querySelector('.cancel-btn');
@@ -1132,8 +1142,6 @@ function showEmojiPicker() {
         }
     });
 }
-
-
 
 
 // Mobile Sidebar Functionality
