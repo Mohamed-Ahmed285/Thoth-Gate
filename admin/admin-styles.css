@@ -1085,6 +1085,8 @@ body.dark-mode #chatEndDate {
     justify-content: center;
     margin-bottom: 1.5rem;
     flex-wrap: wrap;
+    flex-direction: column;
+
 }
 
 .add-btn{

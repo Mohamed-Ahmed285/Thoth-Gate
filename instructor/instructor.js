@@ -44,7 +44,7 @@ if (document.getElementById('add-question-btn')) {
                     <input type="text" name="question-${questionCount}" required placeholder="Enter question text">
                 </div>
                 <div class="choices-list"></div>
-                <button type="button" class="add-choice-btn" style="margin-bottom:1rem;"><i class='fas fa-plus'></i> Add Choice</button>
+                <button type="button" class="add-choice-btn" style="margin-bottom:1rem;"><i class='fas fa-plus'></i>Add Choice</button>
             `;
             questionsList.appendChild(qDiv);
             // Add first choice by default

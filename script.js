@@ -433,32 +433,26 @@ function updateThemeIcon() {
 }
 
 // Language Management
-function initializeLanguage() {
-    if (currentLanguage === 'ar') {
-        document.documentElement.setAttribute('dir', 'rtl');
-        document.documentElement.setAttribute('lang', 'ar');
-        updateLanguageText();
-        // Apply Arabic translations on page load
-        setTimeout(() => {
-            translateToArabic();
-        }, 100);
+async function initializeLanguage() {
+    await loadTranslations();
+
+    if (currentLanguage === "ar") {
+        document.documentElement.setAttribute("dir", "rtl");
+        document.documentElement.setAttribute("lang", "ar");
+    } else {
+        document.documentElement.setAttribute("dir", "ltr");
+        document.documentElement.setAttribute("lang", "en");
     }
+
+    applyTranslations(currentLanguage);
+    updateLanguageText();
 }
 
+
 function toggleLanguage() {
-    if (currentLanguage === 'en') {
-        currentLanguage = 'ar';
-        document.documentElement.setAttribute('dir', 'rtl');
-        document.documentElement.setAttribute('lang', 'ar');
-        translateToArabic();
-    } else {
-        currentLanguage = 'en';
-        document.documentElement.setAttribute('dir', 'ltr');
-        document.documentElement.setAttribute('lang', 'en');
-        translateToEnglish();
-    }
-    
-    localStorage.setItem('thuthGateLanguage', currentLanguage);
+    currentLanguage = currentLanguage === "en" ? "ar" : "en";
+    localStorage.setItem("thuthGateLanguage", currentLanguage);
+    initializeLanguage(); // reload + apply translations
     updateLanguageText();
 }
 
@@ -515,370 +509,32 @@ function translateButtons(translations) {
 }
 
 
-function translateToArabic() {
-    // Comprehensive Arabic translations
-    const translations = {
-        // General UI
-        'Th𝕆th Gate': 'بوابة تحوت',
-        'Gateway to Ancient Wisdom, Modern Learning': 'بوابة الحكمة القديمة، التعلم الحديث',
-        'Enter the Gate': 'ادخل البوابة',
-        'Email': 'البريد الإلكتروني',
-        'Password': 'كلمة المرور',
-        'New to Th𝕆th Gate?': 'جديد في بوابة تحوت؟',
-        'Register Here': 'سجل هنا',
-        'Already have an account?': 'لديك حساب بالفعل؟',
-        'Login Here': 'سجل دخولك هنا',
-        'Create Account': 'إنشاء حساب',
-        'Full Name': 'الاسم الكامل',
-        'Full Name:': 'الاسم الكامل:',
-        'Phone Number': 'رقم الهاتف',
-        'Date of Birth': 'تاريخ الميلاد',
-        'Confirm Password': 'تأكيد كلمة المرور',
-        'I agree to the': 'أوافق على',
-        'Terms of Service': 'شروط الخدمة',
-        'and': 'و',
-        'Privacy Policy': 'سياسة الخصوصية',
-        'Entering...': 'جاري الدخول...',
-        'Creating Account...': 'جاري إنشاء الحساب...',
-        'Invalid credentials. Please try again.': 'بيانات غير صحيحة. حاول مرة أخرى.',
-        'Login failed. Please try again.': 'فشل تسجيل الدخول. حاول مرة أخرى.',
-        'Please fill in all required fields.': 'يرجى ملء جميع الحقول المطلوبة.',
-        'Please enter a valid email address.': 'يرجى إدخال عنوان بريد إلكتروني صحيح.',
-        'Passwords do not match.': 'كلمات المرور غير متطابقة.',
-        'Password must be at least 8 characters long.': 'يجب أن تكون كلمة المرور 8 أحرف على الأقل.',
-        'Please accept the Terms of Service and Privacy Policy.': 'يرجى قبول شروط الخدمة وسياسة الخصوصية.',
-        'Account created successfully! Please log in.': 'تم إنشاء الحساب بنجاح! يرجى تسجيل الدخول.',
-        'Registration failed. Please try again.': 'فشل التسجيل. حاول مرة أخرى.',
-        'Profile picture updated!': 'تم تحديث صورة الملف الشخصي!',
-        'Please select an image file.': 'يرجى اختيار ملف صورة.',
-        'Image size should be less than 5MB.': 'يجب أن يكون حجم الصورة أقل من 5 ميجابايت.',
-        'Profile updated successfully!': 'تم تحديث الملف الشخصي بنجاح!',
-        'Failed to update profile. Please try again.': 'فشل تحديث الملف الشخصي. حاول مرة أخرى.',
-        'Please fill in all fields.': 'يرجى ملء جميع الحقول.',
-        
-        // Navigation
-        'Home': 'الرئيسية',
-        'Courses': 'الدورات',
-        'Teachers': 'المعلمون',
-        'Profile': 'الملف الشخصي',
-        'Contact': 'اتصل بنا',
-        'Logout': 'تسجيل الخروج',
-        'Chat': 'الدردشة',
-        
-        // Home page
-        'Unlock Your Potential': 'أطلق إمكانياتك',
-        'Discover the ancient wisdom of learning through modern educational excellence': 'اكتشف الحكمة القديمة للتعلم من خلال التميز التعليمي الحديث',
-        'Explore Courses': 'استكشف الدورات',
-        'Meet Our Teachers': 'تعرف على معلمينا',
-        'Ancient Wisdom': 'الحكمة القديمة',
-        'Sacred Subjects': 'المواد المقدسة',
-        'Wise Mentors': 'المرشدون الحكماء',
-        'Heritage of Learning': 'تراث التعلم',
-        'Begin Your Journey to Ancient Wisdom': 'ابدأ رحلتك إلى الحكمة القديمة',
-        
-        // Profile page
-        'Student Profile': 'ملف الطالب',
-        'Edit Profile': 'تعديل الملف',
-        'Save Changes': 'حفظ التغييرات',
-        'Cancel': 'إلغاء',
-        'Cancel Edit': 'إلغاء التعديل',
-        'Enrolled Courses': 'الدورات المسجلة',
-        'Academic Statistics': 'الإحصائيات الأكاديمية',
-        'Grade Level:': 'المستوى الدراسي:',
-        'Student ID:': 'رقم الطالب:',
-        'Instructor:': 'المعلم:',
-        'In Progress': 'قيد التقدم',
-        'Completed': 'مكتمل',
-        
-        // Grades
-        '3rd Prep': 'الثالثة إعدادي',
-        '1st Secondary': 'الأولى ثانوي',
-        '11th Grade': 'الحادية عشر',
-        'Select your grade': 'اختر مستواك الدراسي',
-        
-        // Courses
-        'Mathematics': 'الرياضيات',
-        'Master the ancient art of numbers and logic': 'أتقن الفن القديم للأرقام والمنطق',
-        'Science': 'العلوم',
-        'Explore the mysteries of the natural world': 'اكتشف أسرار العالم الطبيعي',
-        'Languages': 'اللغات',
-        'Unlock the power of communication': 'أطلق قوة التواصل',
-        'History': 'التاريخ',
-        'Journey through time and civilizations': 'رحلة عبر الزمن والحضارات',
-        'Learn More': 'اعرف المزيد',
-        'Mathematics & Physics': 'الرياضيات والفيزياء',
-        'Chemistry & Biology': 'الكيمياء والأحياء',
-        'English & Literature': 'الإنجليزية والأدب',
-        'years of teaching experience': 'سنوات من الخبرة في التدريس',
-        'Subjects': 'المواد',
-        // Heritage section
-        'Ancient Libraries': 'المكتبات القديمة',
-        'Home to the world\'s first great centers of learning': 'موطن أول مراكز التعلم العظيمة في العالم',
-        'Mathematical Genius': 'عبقرية رياضية',
-        'Pioneers of geometry, algebra, and astronomy': 'رواد الهندسة والجبر وعلم الفلك',
-        'Scientific Discovery': 'الاكتشاف العلمي',
-        'Advancements in medicine, engineering, and architecture': 'تقدم في الطب والهندسة والعمارة',
-        
-        
-        // course lectures
+let translations = {};
 
-        "Course Lectures": "محاضرات المادة",
-        "Lecture 1: Introduction to Mathematics": "المحاضرة 1: مقدمة في الرياضيات",
-        "Lecture 2: Algebraic Foundations": "المحاضرة 2: أسس الجبر",
-        "Lecture 3: Geometry Essentials": "المحاضرة 3: أساسيات الهندسة",
-        "Overview of key concepts and course structure.": "نظرة عامة على المفاهيم الأساسية وهيكل المادة.",
-        "Fundamentals of algebra and problem solving.": "أساسيات الجبر وحل المسائل.",
-        "Shapes, theorems, and geometric reasoning.": "الأشكال، النظريات، والتفكير الهندسي.",
-        "Quick Links": "روابط سريعة",
-        
-        
-        // Chat page
-        'Grade Chat': 'دردشة المستوى الدراسي',
-        'Online': 'متصل',
-        'Type your message...': 'اكتب رسالتك...',
-        'Online Students': 'الطلاب المتصلون',
-        'Chat Rules': 'قواعد الدردشة',
-        'Be respectful to all members': 'كن محترماً مع جميع الأعضاء',
-        'No inappropriate content': 'لا تضع محتوى غير مناسب',
-        'Stay on topic - academic discussions': 'التزم بالموضوع - مناقشات أكاديمية',
-        'Use appropriate language': 'استخدم لغة مناسبة',
-        'Report any violations': 'أبلغ عن أي انتهاكات',
-        'Join Grade Chat': 'انضم لدردشة المستوى الدراسي',
-        
-        // Chat responses
-        'Great question!': 'سؤال رائع!',
-        'I agree with that!': 'أوافق على ذلك!',
-        'Let me think about it...': 'دعني أفكر في ذلك...',
-        'That\'s exactly what I was thinking!': 'هذا بالضبط ما كنت أفكر فيه!',
-        'Can someone explain this further?': 'هل يمكن لأحد شرح هذا أكثر؟',
-        'Thanks for sharing!': 'شكراً للمشاركة!',
-        'I\'m learning a lot from this discussion!': 'أتعلم الكثير من هذه المناقشة!',
-        'This is really helpful!': 'هذا مفيد جداً!',
-        
-        // Sample chat messages
-        'Hi everyone! How\'s the math homework going?': 'مرحباً بالجميع! كيف تسير واجبات الرياضيات؟',
-        'I\'m stuck on question 5. Anyone can help?': 'أنا عالق في السؤال 5. هل يمكن لأحد المساعدة؟',
-        'I can help! The key is to use the quadratic formula.': 'يمكنني المساعدة! المفتاح هو استخدام المعادلة التربيعية.',
-        'Thanks Omar! That makes sense now.': 'شكراً عمر! هذا منطقي الآن.',
-        
-        // Student names
-        'Ahmed': 'أحمد',
-        'Fatima': 'فاطمة',
-        'Omar': 'عمر',
-        'Aisha': 'عائشة',
-        'Youssef': 'يوسف',
-        'Ahmed Mohamed': 'أحمد محمد',
-        'Fatima Hassan': 'فاطمة حسن',
-        'Omar Ali': 'عمر علي',
-        'Aisha Mahmoud': 'عائشة محمود',
-        'Youssef Ahmed': 'يوسف أحمد',
-        'Ahmed Mohamed Hassan': 'أحمد محمد حسن'
-    };
-    
-    // Translate text content
-    translateTextContent(translations);
-    
-    // Translate placeholder attributes
-    translatePlaceholders(translations);
-    
-    // Translate button text
-    translateButtons(translations);
+async function loadTranslations() {
+    try {
+        // Find the <script> tag that loaded this file
+        const scriptTag = document.querySelector('script[src*="script.js"]');
+        const scriptPath = scriptTag.getAttribute("src");
+
+        // Normalize path to where script.js actually lives
+        const basePath = scriptPath.substring(0, scriptPath.lastIndexOf("/"));
+
+        // translations.json lives next to script.js
+        const response = await fetch(basePath + "/translations.json");
+        translations = await response.json();
+    } catch (err) {
+        console.error("Failed to load translations:", err);
+    }
 }
 
-// Example: Call this when language switcher is clicked
-
-function translateToEnglish() {
-    // Comprehensive English translations (reverse of Arabic)
-    const translations = {
-        // General UI
-        'بوابة تحوت': 'Th𝕆th Gate',
-        'بوابة الحكمة القديمة، التعلم الحديث': 'Gateway to Ancient Wisdom, Modern Learning',
-        'ادخل البوابة': 'Enter the Gate',
-        'البريد الإلكتروني': 'Email',
-        'كلمة المرور': 'Password',
-        'جديد في بوابة تحوت؟': 'New to Th𝕆th Gate?',
-        'سجل هنا': 'Register Here',
-        'لديك حساب بالفعل؟': 'Already have an account?',
-        'سجل دخولك هنا': 'Login Here',
-        'إنشاء حساب': 'Create Account',
-        'الاسم الكامل': 'Full Name',
-        'الاسم الكامل:': 'Full Name:',
-        'رقم الهاتف': 'Phone Number',
-        'تاريخ الميلاد': 'Date of Birth',
-        'تأكيد كلمة المرور': 'Confirm Password',
-        'أوافق على': 'I agree to the',
-        'شروط الخدمة': 'Terms of Service',
-        'و': 'and',
-        'سياسة الخصوصية': 'Privacy Policy',
-        'جاري الدخول...': 'Entering...',
-        'جاري إنشاء الحساب...': 'Creating Account...',
-        'بيانات غير صحيحة. حاول مرة أخرى.': 'Invalid credentials. Please try again.',
-        'فشل تسجيل الدخول. حاول مرة أخرى.': 'Login failed. Please try again.',
-        'يرجى ملء جميع الحقول المطلوبة.': 'Please fill in all required fields.',
-        'يرجى إدخال عنوان بريد إلكتروني صحيح.': 'Please enter a valid email address.',
-        'كلمات المرور غير متطابقة.': 'Passwords do not match.',
-        'يجب أن تكون كلمة المرور 8 أحرف على الأقل.': 'Password must be at least 8 characters long.',
-        'يرجى قبول شروط الخدمة وسياسة الخصوصية.': 'Please accept the Terms of Service and Privacy Policy.',
-        'تم إنشاء الحساب بنجاح! يرجى تسجيل الدخول.': 'Account created successfully! Please log in.',
-        'فشل التسجيل. حاول مرة أخرى.': 'Registration failed. Please try again.',
-        'تم تحديث صورة الملف الشخصي!': 'Profile picture updated!',
-        'رقم الهاتف': 'Phone Number',
-        'تاريخ الميلاد': 'Date of Birth',
-        'تأكيد كلمة المرور': 'Confirm Password',
-        'أوافق على': 'I agree to the',
-        'شروط الخدمة': 'Terms of Service',
-        'و': 'and',
-        'سياسة الخصوصية': 'Privacy Policy',
-        'جاري الدخول...': 'Entering...',
-        'جاري إنشاء الحساب...': 'Creating Account...',
-        'بيانات غير صحيحة. حاول مرة أخرى.': 'Invalid credentials. Please try again.',
-        'فشل تسجيل الدخول. حاول مرة أخرى.': 'Login failed. Please try again.',
-        'يرجى ملء جميع الحقول المطلوبة.': 'Please fill in all required fields.',
-        'يرجى إدخال عنوان بريد إلكتروني صحيح.': 'Please enter a valid email address.',
-        'كلمات المرور غير متطابقة.': 'Passwords do not match.',
-        'يجب أن تكون كلمة المرور 8 أحرف على الأقل.': 'Password must be at least 8 characters long.',
-        'يرجى قبول شروط الخدمة وسياسة الخصوصية.': 'Please accept the Terms of Service and Privacy Policy.',
-        'تم إنشاء الحساب بنجاح! يرجى تسجيل الدخول.': 'Account created successfully! Please log in.',
-        'فشل التسجيل. حاول مرة أخرى.': 'Registration failed. Please try again.',
-        'تم تحديث صورة الملف الشخصي!': 'Profile picture updated!',
-        'يرجى اختيار ملف صورة.': 'Please select an image file.',
-        'الحكمة القديمة': 'Ancient Wisdom',
-        'المواد المقدسة': 'Sacred Subjects',
-        'المرشدون الحكماء': 'Wise Mentors',
-        'تراث التعلم': 'Heritage of Learning',
-        'ابدأ رحلتك إلى الحكمة القديمة': 'Begin Your Journey to Ancient Wisdom',
-        
-        // Profile page
-        'ملف الطالب': 'Student Profile',
-        'تعديل الملف': 'Edit Profile',
-        'حفظ التغييرات': 'Save Changes',
-        'إلغاء': 'Cancel',
-        'إلغاء التعديل': 'Cancel Edit',
-        'الدورات المسجلة': 'Enrolled Courses',
-        'الإحصائيات الأكاديمية': 'Academic Statistics',
-        'المستوى الدراسي:': 'Grade Level:',
-        'رقم الطالب:': 'Student ID:',
-        'المعلم:': 'Instructor:',
-        'قيد التقدم': 'In Progress',
-        'مكتمل': 'Completed',
-        
-        // Grades
-        'الثالثة إعدادي': '3rd Prep',
-        'الأولى ثانوي': '1st Secondary',
-        'الحادية عشر': '11th Grade',
-        'اختر مستواك الدراسي': 'Select your grade',
-        
-        // Courses
-        'الرياضيات': 'Mathematics',
-        'أتقن الفن القديم للأرقام والمنطق': 'Master the ancient art of numbers and logic',
-        'العلوم': 'Science',
-        'اكتشف أسرار العالم الطبيعي': 'Explore the mysteries of the natural world',
-        'اللغات': 'Languages',
-        'أطلق قوة التواصل': 'Unlock the power of communication',
-        'التاريخ': 'History',
-        'رحلة عبر الزمن والحضارات': 'Journey through time and civilizations',
-        'اعرف المزيد': 'Learn More',
-        'الرياضيات والفيزياء': 'Mathematics & Physics',
-        'الكيمياء والأحياء': 'Chemistry & Biology',
-        'الإنجليزية والأدب': 'English & Literature',
-        'سنوات من الخبرة في التدريس': 'years of teaching experience',
-        'المواد': 'Subjects',
-        
-        "محاضرات المادة": "Course Lectures",
-        "المحاضرة 1: مقدمة في الرياضيات": "Lecture 1: Introduction to Mathematics",
-        "المحاضرة 2: أسس الجبر": "Lecture 2: Algebraic Foundations",    
-        "المحاضرة 3: أساسيات الهندسة": "Lecture 3: Geometry Essentials",
-        "نظرة عامة على المفاهيم الأساسية وهيكل المادة.": "Overview of key concepts and course structure.",
-        "أساسيات الجبر وحل المسائل.": "Fundamentals of algebra and problem solving.",
-        "الأشكال، النظريات، والتفكير الهندسي.": "Shapes, theorems, and geometric reasoning.",
-        "روابط سريعة": "Quick Links",
-
-
-
-
-
-        // Heritage section
-        'المكتبات القديمة': 'Ancient Libraries',
-        'موطن أول مراكز التعلم العظيمة في العالم': 'Home to the world\'s first great centers of learning',
-        'عبقرية رياضية': 'Mathematical Genius',
-        'رواد الهندسة والجبر وعلم الفلك': 'Pioneers of geometry, algebra, and astronomy',
-        'الاكتشاف العلمي': 'Scientific Discovery',
-        'تقدم في الطب والهندسة والعمارة': 'Advancements in medicine, engineering, and architecture',
-        
-        // Chat page
-        'دردشة المستوى الدراسي': 'Grade Chat',
-        'متصل': 'Online',
-        'اكتب رسالتك...': 'Type your message...',
-        'الطلاب المتصلون': 'Online Students',
-        'قواعد الدردشة': 'Chat Rules',
-        'كن محترماً مع جميع الأعضاء': 'Be respectful to all members',
-        'لا تضع محتوى غير مناسب': 'No inappropriate content',
-        'التزم بالموضوع - مناقشات أكاديمية': 'Stay on topic - academic discussions',
-        'استخدم لغة مناسبة': 'Use appropriate language',
-        'أبلغ عن أي انتهاكات': 'Report any violations',
-        'انضم لدردشة المستوى الدراسي': 'Join Grade Chat',
-        
-        // Chat responses
-        'سؤال رائع!': 'Great question!',
-        'أوافق على ذلك!': 'I agree with that!',
-        'دعني أفكر في ذلك...': 'Let me think about it...',
-        'هذا بالضبط ما كنت أفكر فيه!': 'That\'s exactly what I was thinking!',
-        'هل يمكن لأحد شرح هذا أكثر؟': 'Can someone explain this further?',
-        'شكراً للمشاركة!': 'Thanks for sharing!',
-        'أتعلم الكثير من هذه المناقشة!': 'I\'m learning a lot from this discussion!',
-        'هذا مفيد جداً!': 'This is really helpful!',
-        
-        // Sample chat messages
-        'مرحباً بالجميع! كيف تسير واجبات الرياضيات؟': 'Hi everyone! How\'s the math homework going?',
-        'أنا عالق في السؤال 5. هل يمكن لأحد المساعدة؟': 'I\'m stuck on question 5. Anyone can help?',
-        'يمكنني المساعدة! المفتاح هو استخدام المعادلة التربيعية.': 'I can help! The key is to use the quadratic formula.',
-        'شكراً عمر! هذا منطقي الآن.': 'Thanks Omar! That makes sense now.',
-        
-        // Student names
-        'أحمد': 'Ahmed',
-        'فاطمة': 'Fatima',
-        'عمر': 'Omar',
-        'عائشة': 'Aisha',
-        'يوسف': 'Youssef',
-        'أحمد محمد': 'Ahmed Mohamed',
-        'فاطمة حسن': 'Fatima Hassan',
-        'عمر علي': 'Omar Ali',
-        'عائشة محمود': 'Aisha Mahmoud',
-        'يوسف أحمد': 'Youssef Ahmed',
-        'أحمد محمد حسن': 'Ahmed Mohamed Hassan',
-
-
-        // Navigation
-        'الرئيسية': 'Home',
-        'الدورات': 'Courses',
-        'المعلمون': 'Teachers',
-        'الملف الشخصي': 'Profile',  
-        'اتصل بنا': 'Contact',
-        'تسجيل الخروج': 'Logout',
-        'الدردشة': 'Chat',
-
-        //home
-        'أطلق إمكانياتك': 'Unlock Your Potential',
-        'اكتشف الحكمة القديمة للتعلم من خلال التميز التعليمي الحديث': 'Discover the ancient wisdom of learning through modern educational excellence',
-        'استكشف الدورات': 'Explore Courses',
-        'تعرف على معلمينا': 'Meet Our Teachers',
-        'الحكمة القديمة': 'Ancient Wisdom',
-        'المواد المقدسة': 'Sacred Subjects',
-        'المرشدون الحكماء': 'Wise Mentors',
-        'تراث التعلم': 'Heritage of Learning',
-        'ابدأ رحلتك إلى الحكمة القديمة': 'Begin Your Journey to Ancient Wisdom',
-
-    };
-    
-    // Translate text content
-    translateTextContent(translations);
-    
-    // Translate placeholder attributes
-    translatePlaceholders(translations);
-    
-    // Translate button text
-    translateButtons(translations);
+function applyTranslations(lang) {
+    if (!translations[lang]) return;
+    translateTextContent(translations[lang]);
+    translatePlaceholders(translations[lang]);
+    translateButtons(translations[lang]);
 }
+
 
 
 function initializeChatPage() {
@@ -1764,5 +1420,3 @@ let current = 3, total = 10;
 document.getElementById("currentQ").textContent = current;
 document.getElementById("totalQ").textContent = total;
 document.getElementById("quizProgress").style.width = `${(current/total)*100}%`;
-
-

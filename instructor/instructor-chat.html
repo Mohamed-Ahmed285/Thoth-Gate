@@ -71,67 +71,46 @@
             </button>
         </div>
     </div>
-    <main class="chat-main">
-        <div class="container">
-            <div class="chat-header">
-                <h2 class="section-title">Instructor Chat for Grade 1</h2>
-                <div class="grade-info">
-                    <span class="grade-badge" id="gradeBadge">Grade 1</span>
-                    <span class="online-count">Online: <span id="onlineCount">1</span></span>
-                </div>
+      <section class="chat-column" style="height: calc(100vh - 106px);">
+        <div class="chat-messages" id="chatMessages">
+          <!-- example messages (keep or replace with your own) -->
+          <div class="message system-message">
+            <div class="message-content">
+              <p>Welcome to your grade chat! Connect with your classmates and share knowledge.</p>
             </div>
-            <div class="chat-container">
-                <div class="chat-messages" id="chatMessages">
-                    <div class="message system-message">
-                        <div class="message-content">
-                            <p>Welcome to the instructor chat for this grade! Communicate with your students here.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="chat-input-container">
-                    <form id="chatForm" class="chat-form">
-                        <div class="input-group">
-                            <input type="text" id="messageInput" placeholder="Type your message..." maxlength="500" required>
-                            <button type="submit" class="send-btn">
-                                <span class="send-icon">📤</span>
-                            </button>
-                        </div>
-                        <div class="message-actions">
-                            <span class="char-count">0/500</span>
-                            <button type="button" class="emoji-btn" id="emojiBtn">😊</button>
-                        </div>
-                    </form>
-                </div>
+          </div>
+
+          <div class="message user-message">
+            <div class="message-avatar"><img src="../imgs/profile.png" alt="Student"></div>
+            <div class="message-content">
+              <div class="message-header">
+                <span class="message-author">Ahmed Hassan</span>
+                <span class="message-time">10:30 AM</span>
+              </div>
+              <p>Hello everyone! Does anyone have the solution for the math problem from yesterday's homework?</p>
             </div>
-            <div class="chat-sidebar">
-                <div class="sidebar-section">
-                    <h3>Online Students</h3>
-                    <div class="online-students" id="onlineStudents">
-                        <div class="online-student">
-                            <div class="student-avatar">
-                                <img src="../imgs/profile.png" alt="Student">
-                                <span class="online-indicator"></span>
-                            </div>
-                            <div class="student-info">
-                                <span class="student-name">Student Name</span>
-                                <span class="student-status">Online</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="sidebar-section">
-                    <h3>Chat Rules</h3>
-                    <ul class="chat-rules">
-                        <li>Be respectful to all members</li>
-                        <li>No inappropriate content</li>
-                        <li>Stay on topic - academic discussions</li>
-                        <li>Use appropriate language</li>
-                        <li>Report any violations</li>
-                    </ul>
-                </div>
-            </div>
+          </div>
         </div>
-    </main>
+
+        <!-- Composer (sticky at viewport bottom) -->
+        <div class="chat-input-container sticky-composer" style="margin-top:8px;">
+     
+
+          <form id="chatForm" class="chat-form">
+
+            <div class="message-actions">
+              <span class="char-count">0/500</span>
+              <button type="button" class="emoji-btn" id="emojiBtn">😊</button>
+              <button type="button" class="image-btn" id="imageBtn">🔗</button>
+              <input type="file" id="imageInput" accept="image/*" style="display:none;">
+            </div>
+            <div class="input-group">
+              <input type="text" id="messageInput" placeholder="Type your message." maxlength="500" required>
+              <button type="submit" class="send-btn"><span class="send-icon">📤</span></button>
+            </div>
+          </form>
+        </div>
+      </section>
     <script src="../script.js"></script>
     <script src="instructor.js"></script>
 </body>
