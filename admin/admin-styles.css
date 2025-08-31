@@ -1092,3 +1092,28 @@ body.dark-mode #chatEndDate {
 .add-btn{
     text-align: center;
 }
+
+.notifications .widget li{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    .notifications .widget li .btn {
+        width: min-content;
+        max-width: 300px;
+    }
+   
+}
+
+
+@media (max-width: 600px) {
+ .notifications .widget li{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items:center;
+    gap: 1rem;
+ }
+}

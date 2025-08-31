@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Notifications</title>
+  <link rel="icon" href="../imgs/logo.png" type="image/x-icon" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="admin-styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body class="notifications">
+  <header class="main-header">
+    <div class="header-content">
+      <div class="logo-container">
+        <img src="../imgs/logo.png" alt="Th𝕆th Gate Logo" class="logo-image">
+        <h1 class="site-logo">Thoth Gate</h1>
+      </div>
+        <button class="hamburger-menu" id="hamburgerMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="admin-home.html">Dashboard</a></li>
+          <li><a href="admin-instructors.html">Instructors</a></li>
+          <li><a href="admin-students.html">Students</a></li>
+          <li><a href="admin-messages.html">Messages</a></li>
+          <li><a href="admin-notifications.html" class="active">Notifications</a></li>
+        </ul>
+      </nav>
+      <div class="switchers-container">
+        <button class="theme-switcher" id="themeSwitcher" title="Toggle Dark Mode">
+          <span class="theme-icon">🌙</span>
+        </button>
+        <button class="language-switcher" id="languageSwitcher" title="Switch Language">
+          <span class="language-text">EN</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+   <div class="mobile-sidebar" id="mobileSidebar">
+        <div class="sidebar-header">
+            <div class="logo-container">
+                <img src="../imgs/logo.png" alt="Th𝕆th Gate Logo" class="logo-image">
+                <h1 class="site-logo">Thoth Gate</h1>
+            </div>
+            <button class="close-sidebar" id="closeSidebar">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="admin-home.html">Home</a></li>
+                <li><a href="admin-instructors.html">Instructors</a></li>
+                <li><a href="admin-students.html">Students</a></li>
+                <li><a href="admin-messages.html">Messages</a></li>
+                <li><a href="admin-notifications.html" class="active">Notifications</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-switchers">
+            <button class="theme-switcher" id="sidebarThemeSwitcher" title="Toggle Dark Mode">
+                <span class="theme-icon">🌙</span>
+            </button>
+            <button class="language-switcher" id="sidebarLanguageSwitcher" title="Switch Language">
+                <span class="language-text">EN</span>
+            </button>
+        </div>
+    </div>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <div class="admin-layout">
+    <main class="admin-main-content">
+      <h2 class="section-title">Notifications</h2>
+      <section class="admin-section" style="    height: auto;">
+        <div class="admin-section-header">
+          <h3>Recent Notifications</h3>
+        </div>
+        <ul class="widget">
+          <li>📢 New student registered <button class="btn btn-delete" title="Delete">Delete</button></li>
+          <li>📢 Instructor updated a course <button class="btn btn-delete" title="Delete">Delete</button></li>
+          <li>📢 System backup completed <button class="btn btn-delete" title="Delete">Delete</button></li>
+          <li>📢 New message received <button class="btn btn-delete" title="Delete">Delete</button></li>
+          <li>📢 Course enrollment increased <button class="btn btn-delete" title="Delete">Delete</button></li>
+        </ul>
+      </section>
+    </main>
+  </div>
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Th𝕆th Gate Admin</h3>
+          <p>Gateway to Ancient Wisdom, Modern Learning</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="admin-home.html">Dashboard</a></li>
+            <li><a href="admin-instructors.html">Instructors</a></li>
+            <li><a href="admin-students.html">Students</a></li>
+            <li><a href="admin-messages.html">Messages</a></li>
+            <li><a href="admin-notifications.html" class="active">Notifications</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <p>Email: info@thuthgate.edu.eg</p>
+          <p>Phone: +20 123 456 789</p>
+        </div>
+        <div class="footer-section">
+          <h4>Follow Us</h4>
+          <div class="social-icons">
+            <a href="#" class="social-icon">📘</a>
+            <a href="#" class="social-icon">📷</a>
+            <a href="#" class="social-icon">🐦</a>
+            <a href="#" class="social-icon">💼</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Th𝕆th Gate Admin. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="admin.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>
