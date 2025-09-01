@@ -76,15 +76,16 @@
     <main class="admin-main-content">
       <h2 class="section-title">Notifications</h2>
       <section class="admin-section" style="    height: auto;">
-        <div class="admin-section-header">
+        <div class="admin-section-header" style="justify-content: space-between; align-items: center; display: flex;">
           <h3>Recent Notifications</h3>
+          <button class="btn" title="Read All">Read All</button>
         </div>
         <ul class="widget">
-          <li>📢 New student registered <button class="btn btn-delete" title="Delete">Delete</button></li>
-          <li>📢 Instructor updated a course <button class="btn btn-delete" title="Delete">Delete</button></li>
-          <li>📢 System backup completed <button class="btn btn-delete" title="Delete">Delete</button></li>
-          <li>📢 New message received <button class="btn btn-delete" title="Delete">Delete</button></li>
-          <li>📢 Course enrollment increased <button class="btn btn-delete" title="Delete">Delete</button></li>
+          <li>📢 New student registered <div class="notification-actions"><button class="btn read-btn" title="Read">Read</button> <button class="btn btn-delete" title="Delete">Delete</button></div></li>
+          <li>📢 Instructor updated a course <div class="notification-actions"><button class="btn read-btn" title="Read">Read</button> <button class="btn btn-delete" title="Delete">Delete</button></div></li>
+          <li>📢 System backup completed <div class="notification-actions"><button class="btn read-btn" title="Read">Read</button> <button class="btn btn-delete" title="Delete">Delete</button></div></li>
+          <li>📢 New message received <div class="notification-actions"><button class="btn read-btn" title="Read">Read</button> <button class="btn btn-delete" title="Delete">Delete</button></div></li>
+          <li>📢 Course enrollment increased <div class="notification-actions"><button class="btn read-btn" title="Read">Read</button> <button class="btn btn-delete" title="Delete">Delete</button></div></li>
         </ul>
       </section>
     </main>
