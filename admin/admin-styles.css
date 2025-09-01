@@ -190,7 +190,6 @@ body.dark-mode .admin-main-content::after {
     background: #1565c0;
 }
 
-
 .search-bar
  {
     padding: 0.5rem 1rem;
@@ -1130,4 +1129,57 @@ body.dark-mode .read-btn {
 
 body.dark-mode .read-btn:hover {
     background: #388e3c;
+}
+
+.widgets-not{
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+/* Notifications List Styles */
+.new-notifications {
+    border: 2px solid #4caf50;
+    background: #e8f5e9;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.08);
+}
+.new-notifications li {
+    background: #f1fff0;
+    border-left: 6px solid #4caf50;
+    margin-bottom: 0.5rem;
+}
+.read-notifications {
+    border: 2px solid #bdbdbd;
+    background: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(189, 189, 189, 0.08);
+}
+.read-notifications li {
+    background: #fafafa;
+    border-left: 6px solid #bdbdbd;
+    margin-bottom: 0.5rem;
+    opacity: 0.7;
+}
+body.dark-mode .new-notifications {
+    border-color: #388e3c;
+    background: #1b2e1b;
+    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.18);
+}
+body.dark-mode .new-notifications li {
+    background: #223322;
+    border-left-color: #388e3c;
+}
+body.dark-mode .read-notifications {
+    border-color: #444;
+    background: #222;
+    box-shadow: 0 2px 8px rgba(189, 189, 189, 0.18);
+}
+body.dark-mode .read-notifications li {
+    background: #232323;
+    border-left-color: #444;
+    opacity: 0.5;
 }
