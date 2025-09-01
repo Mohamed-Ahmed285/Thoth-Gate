@@ -3,32 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Admin Notifications</title>
+  <title>Student Quiz History</title>
   <link rel="icon" href="../imgs/logo.png" type="image/x-icon" />
   <link rel="stylesheet" href="../styles.css" />
   <link rel="stylesheet" href="admin-styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet" />
 </head>
-<body class="notifications">
+<body class="view-student">
   <header class="main-header">
     <div class="header-content">
       <div class="logo-container">
         <img src="../imgs/logo.png" alt="Th𝕆th Gate Logo" class="logo-image">
-        <h1 class="site-logo">Th𝕆th Gate</h1>
+        <h1 class="site-logo">Thoth Gate</h1>
       </div>
-        <button class="hamburger-menu" id="hamburgerMenu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
+      <button class="hamburger-menu" id="hamburgerMenu">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
       <nav class="main-nav">
         <ul>
           <li><a href="admin-home.html">Dashboard</a></li>
           <li><a href="admin-instructors.html">Instructors</a></li>
-          <li><a href="admin-students.html">Students</a></li>
+          <li><a href="admin-students.html" class="active">Students</a></li>
           <li><a href="admin-messages.html">Messages</a></li>
-          <li><a href="admin-notifications.html" class="active">Notifications</a></li>
+          <li><a href="admin-notifications.html">Notifications</a></li>
         </ul>
       </nav>
       <div class="switchers-container">
@@ -39,10 +38,9 @@
           <span class="language-text">EN</span>
         </button>
       </div>
-
     </div>
   </header>
-   <div class="mobile-sidebar" id="mobileSidebar">
+      <div class="mobile-sidebar" id="mobileSidebar">
         <div class="sidebar-header">
             <div class="logo-container">
                 <img src="../imgs/logo.png" alt="Th𝕆th Gate Logo" class="logo-image">
@@ -59,7 +57,7 @@
                 <li><a href="admin-instructors.html">Instructors</a></li>
                 <li><a href="admin-students.html">Students</a></li>
                 <li><a href="admin-messages.html">Messages</a></li>
-                <li><a href="admin-notifications.html" class="active">Notifications</a></li>
+				<li><a href="admin-notifications.html">Notifications</a></li>
             </ul>
         </nav>
         <div class="sidebar-switchers">
@@ -72,31 +70,53 @@
         </div>
     </div>
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
   <div class="admin-layout">
     <main class="admin-main-content">
-      <h2 class="section-title">Notifications</h2>
-      <section class="admin-section" style="    height: auto;">
-        <div class="admin-section-header" style="justify-content: space-between; align-items: center; display: flex;">
-          <h3>Recent Notifications</h3>
-          <button class="btn" style="width: fit-content;" title="Read All">Read All</button>
+      <section class="admin-section">
+        <div class="admin-section-header">
+          <h2 class="section-title">Quiz History</h2>
+          <a href="admin-view-student.html" class="btn" style="    max-width: fit-content;">Back to Student</a>
         </div>
-        <div class="widgets-not">
-
-           <ul class="widget new-notifications">
-          <li>📢 New student registered <div class="notification-actions"><button class="btn read-btn" title="Read">Read</button> <button class="btn btn-delete" title="Delete">Delete</button></div></li>
-          <li>📢 Instructor updated a course <div class="notification-actions"><button class="btn read-btn" title="Read">Read</button> <button class="btn btn-delete" title="Delete">Delete</button></div></li>
-          <li>📢 System backup completed <div class="notification-actions"><button class="btn read-btn" title="Read">Read</button> <button class="btn btn-delete" title="Delete">Delete</button></div></li>
-        </ul>
-        <ul class="widget read-notifications">
-          <li>📢 New student registered <div class="notification-actions"><button class="btn read-btn" title="Read">Read</button> <button class="btn btn-delete" title="Delete">Delete</button></div></li>
-          <li>📢 Instructor updated a course <div class="notification-actions"><button class="btn read-btn" title="Read">Read</button> <button class="btn btn-delete" title="Delete">Delete</button></div></li>
-          <li>📢 System backup completed <div class="notification-actions"><button class="btn read-btn" title="Read">Read</button> <button class="btn btn-delete" title="Delete">Delete</button></div></li>
-        </ul>
-
+        <div class="quiz-history-list">
+          <!-- Example quiz card -->
+          <div class="quiz-card">
+            <div class="quiz-info">
+              <p><strong>Lecture Number:</strong> 1</p>
+              <p><strong>Lecture Name:</strong> Introduction to Algebra</p>
+              <p><strong>Course:</strong> Maths</p>
+              <p><strong>Score:</strong> 8/10</p>
+            </div>
+            <button class="btn btn-view" onclick=" window.location.href = '../modelAnswer.html';">View Answers</button>
+          </div>
+          <div class="quiz-card">
+            <div class="quiz-info">
+              <p><strong>Lecture Number:</strong> 2</p>
+              <p><strong>Lecture Name:</strong> Linear Equations</p>
+              <p><strong>Course:</strong> Maths</p>
+              <p><strong>Score:</strong> 10/10</p>
+            </div>
+            <button class="btn btn-view" onclick=" window.location.href = '../modelAnswer.html';">View Answers</button>
+          </div>
+          <!-- Add more quiz cards as needed -->
         </div>
-       
       </section>
     </main>
+  </div>
+  <!-- Modal Example (hidden by default) -->
+  <div id="modal1" class="modalOverlay" style="display:none;">
+    <div class="modal-content">
+      <h3>Quiz Answers - Lecture 1</h3>
+      <p>Answers and details go here...</p>
+      <button class="btn" onclick="closeModal('modal1')">Close</button>
+    </div>
+  </div>
+  <div id="modal2" class="modalOverlay" style="display:none;">
+    <div class="modal-content">
+      <h3>Quiz Answers - Lecture 2</h3>
+      <p>Answers and details go here...</p>
+      <button class="btn" onclick="closeModal('modal2')">Close</button>
+    </div>
   </div>
   <footer class="main-footer">
     <div class="container">
@@ -111,8 +131,6 @@
             <li><a href="admin-home.html">Dashboard</a></li>
             <li><a href="admin-instructors.html">Instructors</a></li>
             <li><a href="admin-students.html">Students</a></li>
-            <li><a href="admin-messages.html">Messages</a></li>
-            <li><a href="admin-notifications.html" class="active">Notifications</a></li>
           </ul>
         </div>
         <div class="footer-section">
@@ -135,6 +153,14 @@
       </div>
     </div>
   </footer>
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = 'block';
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+  </script>
   <script src="admin.js"></script>
   <script src="../script.js"></script>
 </body>

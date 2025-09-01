@@ -1195,3 +1195,49 @@ body.dark-mode .read-notifications li {
 .notification-actions{
         margin: 0px 6px;
 }
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Quiz History Cards */
+.quiz-history-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+    justify-content: center;
+}
+.quiz-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(36, 58, 107, 0.10);
+    padding: 1.5rem 2rem;
+    min-width: 260px;
+    max-width: 340px;
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+.quiz-card .quiz-info p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+.quiz-card .btn-view {
+    margin-top: 1rem;
+    align-self: flex-end;
+}
+body.dark-mode .quiz-card {
+    background: #232323;
+    color: #f5deb3;
+    box-shadow: 0 2px 8px rgba(212,175,55,0.18);
+}
