@@ -1035,9 +1035,11 @@ body.dark-mode #chatEndDate {
             background: #1a1a1a;
     }
     .pagination {
+
         flex-direction: column;
         gap: 0.5rem;
         align-items: center;
+        
     }
      .pagination .btn {
         width: 100px;
