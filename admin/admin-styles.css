@@ -1031,10 +1031,16 @@ body.dark-mode #chatEndDate {
         box-shadow: 0 1px 4px rgba(36,58,107,0.06);
         background: #fff;
     }
+    body.dark-mode .admin-table tr{
+            background: #1a1a1a;
+    }
     .pagination {
         flex-direction: column;
         gap: 0.5rem;
         align-items: center;
+    }
+     .pagination .btn {
+        width: 100px;
     }
     .add-instructor-form {
         padding: 0.5rem;

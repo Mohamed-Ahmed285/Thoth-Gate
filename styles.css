@@ -3206,6 +3206,11 @@ body.dark-mode .online-count {
         width: 100%;
     }
 
+    .btns-td{
+                display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    }
     .send-btn {
         width: 100%;
         padding: 14px 20px;
