@@ -101,7 +101,7 @@ A responsive multi-page website frontend for a high school learning center in Eg
 ### File Structure
 
 ```
-Thoth Gate/
+Th𝕆th Gate/
 ├── index.html          # Login page
 ├── home.html           # Home page
 ├── profile.html        # Profile page
