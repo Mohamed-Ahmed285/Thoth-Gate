@@ -1183,3 +1183,7 @@ body.dark-mode .read-notifications li {
     border-left-color: #444;
     opacity: 0.5;
 }
+
+.notification-actions{
+        margin: 0px 6px;
+}
