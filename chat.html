@@ -135,8 +135,77 @@
       </form>
     </div>
   </section>
+  <!-- Delete confirmation modal -->
+  <div id="deleteMsgModal" class="delete-modal" style="display:none;">
+    <div class="delete-modal-content">
+      <p>Are you sure you want to delete this message?</p>
+      <div class="delete-modal-actions">
+        <button id="deleteMsgYes" class="btn btn-delete">Delete</button>
+        <button id="deleteMsgNo" class="btn">Cancel</button>
+      </div>
+    </div>
+  </div>
   <script>
-    // WhatsApp-style scroll-to-bottom button logic
+    let msgToDelete = null;
+    document.addEventListener('DOMContentLoaded', function () {
+      const chatMessages = document.getElementById('chatMessages');
+      const modal = document.getElementById('deleteMsgModal');
+      const yesBtn = document.getElementById('deleteMsgYes');
+      const noBtn = document.getElementById('deleteMsgNo');
+      let longPressTimer = null;
+
+      chatMessages.addEventListener('contextmenu', function (e) {
+        let msg = e.target.closest('.message');
+        if (msg && !msg.classList.contains('deleted-message')) {
+          e.preventDefault();
+          msgToDelete = msg;
+          modal.style.display = 'flex';
+        }
+      });
+
+      // Mobile: long-press
+      chatMessages.addEventListener('touchstart', function (e) {
+        let msg = e.target.closest('.message');
+        if (msg && !msg.classList.contains('deleted-message')) {
+          longPressTimer = setTimeout(function () {
+            msgToDelete = msg;
+            modal.style.display = 'flex';
+          }, 600); // 600ms for long-press
+        }
+      });
+      chatMessages.addEventListener('touchend', function (e) {
+        clearTimeout(longPressTimer);
+      });
+      chatMessages.addEventListener('touchmove', function (e) {
+        clearTimeout(longPressTimer);
+      });
+
+      yesBtn.onclick = function () {
+        if (msgToDelete) {
+          msgToDelete.classList.add('deleted-message');
+          msgToDelete.querySelectorAll('.message-content, .message-avatar').forEach(el => {
+            if (el) el.innerHTML = '<span>This message was deleted.</span>';
+          });
+        }
+        modal.style.display = 'none';
+        msgToDelete = null;
+      };
+      noBtn.onclick = function () {
+        modal.style.display = 'none';
+        msgToDelete = null;
+      };
+
+      modal.addEventListener('click', function (e) {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+          msgToDelete = null;
+        }
+      });
+    });
+
+
+
+    //scroll-to-bottom
     const chatMessages = document.getElementById('chatMessages');
     const scrollBtn = document.getElementById('scrollToBottomBtn');
     function checkScrollBtn() {

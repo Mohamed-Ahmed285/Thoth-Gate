@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Th𝕆th Gate - Profile</title>
     <link rel="icon" href="imgs/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body class="profile-page">
-       <div id="loader">
+    <div id="loader">
         <!-- You can add an image, a CSS spinner, or text here -->
         <div class="spinner"></div>
         <p>Loading...</p>
@@ -20,14 +24,14 @@
                 <img src="imgs/logo.png" alt="Th𝕆th Gate Logo" class="logo-image">
                 <h1 class="site-logo">Th𝕆th Gate</h1>
             </div>
-            
+
             <!-- Hamburger Menu Button -->
             <button class="hamburger-menu" id="hamburgerMenu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            
+
             <nav class="main-nav">
                 <ul>
                     <li><a href="home.html">Home</a></li>
@@ -38,7 +42,7 @@
                     <li><a href="#" class="logout-btn" onclick="logout()">Logout</a></li>
                 </ul>
             </nav>
-            
+
             <div class="switchers-container">
                 <button class="theme-switcher" id="themeSwitcher" title="Toggle Dark Mode">
                     <span class="theme-icon">🌙</span>
@@ -62,7 +66,7 @@
                 <span></span>
             </button>
         </div>
-        
+
         <nav class="sidebar-nav">
             <ul>
                 <li><a href="home.html">Home</a></li>
@@ -73,7 +77,7 @@
                 <li><a href="#" class="logout-btn" onclick="logout()">Logout</a></li>
             </ul>
         </nav>
-        
+
         <div class="sidebar-switchers">
             <button class="theme-switcher" id="sidebarThemeSwitcher" title="Toggle Dark Mode">
                 <span class="theme-icon">🌙</span>
@@ -91,7 +95,11 @@
         <div class="container">
             <div class="profile-header">
                 <h2 class="section-title">Student Profile</h2>
-                <button class="edit-profile-btn" onclick="toggleEditMode()">Edit Profile</button>
+                <div class="profile-btns" style="display: flex; flex-direction:row; gap:1rem;">
+                    <button class="edit-profile-btn" onclick="toggleEditMode()">Edit Profile</button>
+                    <button class="delete-profile-btn">Delete Profile</button>
+                </div>
+
             </div>
 
             <div class="profile-content">
@@ -104,31 +112,33 @@
                                 <label for="imageInput" class="upload-label">Change Photo</label>
                             </div>
                         </div>
-                        
+
                         <div class="profile-details">
                             <div class="detail-group">
                                 <label>Full Name:</label>
                                 <span id="studentName">Mohamed Ahmed</span>
-                                <input type="text" id="nameInput" value="Mohamed Ahmed" class="edit-input" style="display: none;">
+                                <input type="text" id="nameInput" value="Mohamed Ahmed" class="edit-input"
+                                    style="display: none;">
                             </div>
-                            
+
                             <div class="detail-group">
                                 <label>Email:</label>
                                 <span id="studentEmail">Mohamed.ahmed@gmail.com</span>
-                                <input type="email" id="emailInput" value="Mohamed.ahmed@gmail.com" class="edit-input" style="display: none;">
+                                <input type="email" id="emailInput" value="Mohamed.ahmed@gmail.com" class="edit-input"
+                                    style="display: none;">
                             </div>
-                            
+
                             <div class="detail-group">
                                 <label>Grade Level:</label>
                                 <span>11th Grade</span>
                             </div>
-                            
+
                             <div class="detail-group">
                                 <label>Student ID:</label>
                                 <span>ST2024001</span>
                             </div>
                         </div>
-                        
+
                         <div class="profile-actions" id="profileActions" style="display: none;">
                             <button class="save-btn" onclick="saveProfile()">Save Changes</button>
                             <button class="cancel-btn" onclick="cancelEdit()">Cancel</button>
@@ -150,7 +160,7 @@
                             <p>Instructor: Dr. Ahmed Hassan</p>
                             <p class="course-status">In Progress</p>
                         </div>
-                        
+
                         <div class="enrolled-course-card">
                             <div class="course-progress">
                                 <div class="progress-bar">
@@ -162,7 +172,7 @@
                             <p>Instructor: Dr. Ahmed Hassan</p>
                             <p class="course-status">In Progress</p>
                         </div>
-                        
+
                         <div class="enrolled-course-card">
                             <div class="course-progress">
                                 <div class="progress-bar">
@@ -242,4 +252,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
