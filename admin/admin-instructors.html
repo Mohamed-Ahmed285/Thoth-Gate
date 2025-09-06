@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,12 @@
     <link rel="icon" href="../imgs/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="admin-styles.css">
-        <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 
 </head>
+
 <body>
     <header class="main-header">
         <div class="header-content">
@@ -17,7 +21,7 @@
                 <img src="../imgs/logo.png" alt="Th𝕆th Gate Logo" class="logo-image">
                 <h1 class="site-logo">Th𝕆th Gate</h1>
             </div>
-                <button class="hamburger-menu" id="hamburgerMenu">
+            <button class="hamburger-menu" id="hamburgerMenu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -33,7 +37,7 @@
 
                 </ul>
             </nav>
-             <div class="switchers-container">
+            <div class="switchers-container">
                 <button class="theme-switcher" id="themeSwitcher" title="Toggle Dark Mode">
                     <span class="theme-icon">🌙</span>
                 </button>
@@ -43,7 +47,7 @@
             </div>
         </div>
     </header>
-   <div class="mobile-sidebar" id="mobileSidebar">
+    <div class="mobile-sidebar" id="mobileSidebar">
         <div class="sidebar-header">
             <div class="logo-container">
                 <img src="../imgs/logo.png" alt="Th𝕆th Gate Logo" class="logo-image">
@@ -57,10 +61,10 @@
         <nav class="sidebar-nav">
             <ul>
                 <li><a href="admin-home.html">Home</a></li>
-                <li><a href="admin-instructors.html"  class="active">Instructors</a></li>
+                <li><a href="admin-instructors.html" class="active">Instructors</a></li>
                 <li><a href="admin-students.html">Students</a></li>
                 <li><a href="admin-messages.html">Messages</a></li>
-                                    <li><a href="admin-notifications.html">Notifications</a></li>
+                <li><a href="admin-notifications.html">Notifications</a></li>
 
             </ul>
         </nav>
@@ -75,42 +79,43 @@
     </div>
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
     <div class="admin-layout ">
-   
+
         <main class="admin-main-content">
             <section class="admin-section">
                 <div class="admin-section-header">
                     <h2 class="section-title">Instructors</h2>
-                    <button class="btn" onclick="  window.location.href = 'admin-add-instructor.html';">Add Instructor</button>
+                    <button class="btn" onclick="  window.location.href = 'admin-add-instructor.html';">Add
+                        Instructor</button>
                 </div>
                 <div class="admin-table-responsive">
                     <table class="admin-table">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Subject</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Jane Doe</td>
-                            <td>jane@example.com</td>
-                            <td>Maths</td>
-                            <td>
-                                <button class="btn btn-delete">Delete</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>John Smith</td>
-                            <td>john@example.com</td>
-                            <td>Science</td>
-                            <td>
-                                <button class="btn btn-delete">Delete</button>
-                            </td>
-                        </tr>
-                        <!-- More rows as needed -->
-                    </tbody>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Subject</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Jane Doe</td>
+                                <td>jane@example.com</td>
+                                <td>Maths</td>
+                                <td>
+                                    <button class="btn btn-delete">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>John Smith</td>
+                                <td>john@example.com</td>
+                                <td>Science</td>
+                                <td>
+                                    <button class="btn btn-delete">Delete</button>
+                                </td>
+                            </tr>
+                            <!-- More rows as needed -->
+                        </tbody>
                     </table>
                 </div>
                 <div class="pagination">
@@ -156,9 +161,10 @@
             </div>
         </div>
     </footer>
-            <script src="admin.js"></script>
-              <script src="../script.js"></script>
+    <script src="admin.js"></script>
+    <script src="../script.js"></script>
 
 
 </body>
+
 </html>
