@@ -90,7 +90,12 @@
   <!-- Sidebar Overlay -->
   <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-  <section class="chat-column" style="height: calc(100vh - 106px);">
+  <section class="chat-column">
+    <div id="scrollToBottomBtn" class="scroll-to-bottom-btn" title="Scroll to latest message" style="display:none;"
+      onclick="scrollToLatestMessage()">
+      <span class="scroll-arrow">⬇</span>
+    </div>
+
     <div class="chat-messages" id="chatMessages">
       <!-- example messages (keep or replace with your own) -->
       <div class="message system-message">
@@ -130,9 +135,26 @@
       </form>
     </div>
   </section>
-  <script src="script.js">
-
+  <script>
+    // WhatsApp-style scroll-to-bottom button logic
+    const chatMessages = document.getElementById('chatMessages');
+    const scrollBtn = document.getElementById('scrollToBottomBtn');
+    function checkScrollBtn() {
+      if (!chatMessages || !scrollBtn) return;
+      const atBottom = chatMessages.scrollHeight - chatMessages.scrollTop - chatMessages.clientHeight < 10;
+      scrollBtn.style.display = atBottom ? 'none' : 'flex';
+    }
+    function scrollToLatestMessage() {
+      if (chatMessages) {
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+    }
+    if (chatMessages && scrollBtn) {
+      chatMessages.addEventListener('scroll', checkScrollBtn);
+      setTimeout(checkScrollBtn, 500);
+    }
   </script>
+  <script src="script.js"></script>
 </body>
 
 </html>

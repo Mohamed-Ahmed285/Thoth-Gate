@@ -83,7 +83,6 @@ function addEventListeners() {
 
     
     initializeMobileSidebar();
-    
     addSmoothScrolling();
 }
 
