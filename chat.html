@@ -170,7 +170,7 @@
           longPressTimer = setTimeout(function () {
             msgToDelete = msg;
             modal.style.display = 'flex';
-          }, 600); // 600ms for long-press
+          }, 600);
         }
       });
       chatMessages.addEventListener('touchend', function (e) {
@@ -183,7 +183,7 @@
       yesBtn.onclick = function () {
         if (msgToDelete) {
           msgToDelete.classList.add('deleted-message');
-          msgToDelete.querySelectorAll('.message-content, .message-avatar').forEach(el => {
+          msgToDelete.querySelectorAll('.message-content').forEach(el => {
             if (el) el.innerHTML = '<span>This message was deleted.</span>';
           });
         }
