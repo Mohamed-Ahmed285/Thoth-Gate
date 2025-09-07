@@ -1,33 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Exam Session Details</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Session Details</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 
 </head>
+
 <body class="session-detials">
-       <div id="loader">
+    <div id="loader">
         <!-- You can add an image, a CSS spinner, or text here -->
         <div class="spinner"></div>
         <p>Loading...</p>
     </div>
-	 <header class="main-header">
+    <header class="main-header">
         <div class="header-content">
             <div class="logo-container">
                 <img src="imgs/logo.png" alt="Th𝕆th Gate Logo" class="logo-image">
                 <h1 class="site-logo">Th𝕆th Gate</h1>
             </div>
-            
+
             <!-- Hamburger Menu Button -->
             <button class="hamburger-menu" id="hamburgerMenu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            
+
             <nav class="main-nav">
                 <ul>
                     <li><a href="home.html" class="active">Home</a></li>
@@ -38,7 +42,7 @@
                     <li><a href="#" class="logout-btn" onclick="logout()">Logout</a></li>
                 </ul>
             </nav>
-            
+
             <div class="switchers-container">
                 <button class="theme-switcher" id="themeSwitcher" title="Toggle Dark Mode">
                     <span class="theme-icon">🌙</span>
@@ -62,7 +66,7 @@
                 <span></span>
             </button>
         </div>
-        
+
         <nav class="sidebar-nav">
             <ul>
                 <li><a href="home.html" class="active">Home</a></li>
@@ -73,7 +77,7 @@
                 <li><a href="#" class="logout-btn" onclick="logout()">Logout</a></li>
             </ul>
         </nav>
-        
+
         <div class="sidebar-switchers">
             <button class="theme-switcher" id="sidebarThemeSwitcher" title="Toggle Dark Mode">
                 <span class="theme-icon">🌙</span>
@@ -87,43 +91,44 @@
     <!-- Sidebar Overlay -->
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-	<main class="container" style="max-width:600px; margin-top:3rem;">
-		<h2 class="section-title">Exam Session Details</h2>
-		<div class="profile-card-exam" style="padding:2rem; text-align:left; margin-top:50px;margin-bottom:50px;">
-			<div class="detail-group">
-				<label>Student:</label>
-				<span id="studentName">Student</span>
-			</div>
-			<div class="detail-group">
-				<label>Exam:</label>
-				<span id="examName">Grammer</span>
-			</div>
+    <main class="container" style="max-width:600px; margin-top:3rem;">
+        <h2 class="section-title">Exam Session Details</h2>
+        <div class="profile-card-exam" style="padding:2rem; text-align:left; margin-top:50px;margin-bottom:50px;">
             <div class="detail-group">
-				<label>Lecture:</label>
-				<span id="examName">Grammer</span>
-			</div>
+                <label>Student:</label>
+                <span id="studentName">Student</span>
+            </div>
             <div class="detail-group">
-				<label>Subject:</label>
-				<span id="examName">Grammer</span>
-			</div>
-			<div class="detail-group">
-				<label>Score:</label>
-				<span id="examScore">2 / 2</span>
-			</div>
-			<div class="detail-group">
-				<label>Status:</label>
-				<span id="examStatus">Submitted</span>
-			</div>
-			<div class="detail-group">
-				<label>Time Taken:</label>
-				<span id="timeTaken">15s</span>
-			</div>
+                <label>Exam:</label>
+                <span id="examName">Grammer</span>
+            </div>
+            <div class="detail-group">
+                <label>Lecture:</label>
+                <span id="examName">Grammer</span>
+            </div>
+            <div class="detail-group">
+                <label>Subject:</label>
+                <span id="examName">Grammer</span>
+            </div>
+            <div class="detail-group">
+                <label>Score:</label>
+                <span id="examScore">2 / 2</span>
+            </div>
+            <div class="detail-group">
+                <label>Status:</label>
+                <span id="examStatus">Submitted</span>
+            </div>
+            <div class="detail-group">
+                <label>Time Taken:</label>
+                <span id="timeTaken">15s</span>
+            </div>
 
-        <a href="#" class="course-btn" style="width: max-content; justify-self: center; margin-top:15px">Model Answer</a>
+            <a href="modelAnswer.html" class="course-btn"
+                style="width: max-content; justify-self: center; margin-top:15px">Model Answer</a>
 
-		</div>
-	</main>
-  <footer class="main-footer">
+        </div>
+    </main>
+    <footer class="main-footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
@@ -161,6 +166,7 @@
         </div>
     </footer>
 
-	<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>

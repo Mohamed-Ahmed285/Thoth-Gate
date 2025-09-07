@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Th𝕆th Gate - Quiz</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="imgs/logo.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body class="quiz-page">
-       <div id="loader">
+    <div id="loader">
         <!-- You can add an image, a CSS spinner, or text here -->
         <div class="spinner"></div>
         <p>Loading...</p>
@@ -43,14 +47,14 @@
         <div class="container">
             <h2 class="section-title">Quiz</h2>
             <div class="quiz-timer" id="quizTimer">
-    ⏳ Time Left: <span id="time">10:00</span>
-</div>
-<div class="quiz-progress">
-    <div class="quiz-progress-fill" id="quizProgress"></div>
-</div>
-<p class="quiz-progress-text">Question <span id="currentQ">1</span> of <span id="totalQ">10</span></p>
+                ⏳ Time Left: <span id="time">10:00</span>
+            </div>
+            <div class="quiz-progress">
+                <div class="quiz-progress-fill" id="quizProgress"></div>
+            </div>
+            <p class="quiz-progress-text">Question <span id="currentQ">1</span> of <span id="totalQ">10</span></p>
 
-            <form class="quiz-form">
+            <form class="quiz-form" action="exam-session-detials.html">
                 <!-- Multiple Choice Question Example -->
                 <div class="quiz-question-box">
                     <h3 class="quiz-question">1. Who is the goat?</h3>
@@ -73,10 +77,12 @@
                 <!-- Text Answer Question Example -->
                 <div class="quiz-question-box">
                     <h3 class="quiz-question">2. Explain the importance of pedri in barca team .</h3>
-                    <textarea name="q2" rows="4" class="quiz-text-field" placeholder="Type your answer here..."></textarea>
+                    <textarea name="q2" rows="4" class="quiz-text-field"
+                        placeholder="Type your answer here..."></textarea>
                 </div>
                 <!-- More questions can be added here -->
-                <button type="submit" class="btn quiz-submit-btn">Submit Answers</button>
+                <button class="btn quiz-submit-btn" type="submit">Submit
+                    Answers</button>
             </form>
         </div>
     </main>
@@ -119,4 +125,5 @@
     </footer>
     <script src="script.js"></script>
 </body>
+
 </html>
