@@ -1,117 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instructor Chat</title>
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="instructor.css">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-            <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instructor Chat</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="instructor.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
 
 
 </head>
-<body  class="instructor-home">
-    <header class="main-header">
-        <div class="header-content">
-            <div class="logo-container">
-                <img src="../imgs/logo.png" alt="Th𝕆th Gate Logo" class="logo-image">
-                <h1 class="site-logo">Th𝕆th Gate</h1>
-            </div>
-            <button class="hamburger-menu" id="hamburgerMenu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="instructor-home.html">Home</a></li>
-                    <li><a href="instructor-create-exam.html">Create Exam</a></li>
-                    <li><a href="instructor-add-lecture.html">Add Lecture</a></li>
-                    <li><a href="instructor-chats.html" class="active">Chats</a></li>
-                    <li><a href="#" class="logout-btn" onclick="logout()">Logout</a></li>
-                </ul>
-            </nav>
-            <div class="switchers-container">
-                <button class="theme-switcher" id="themeSwitcher" title="Toggle Dark Mode">
-                    <span class="theme-icon">🌙</span>
-                </button>
-                <button class="language-switcher" id="languageSwitcher" title="Switch Language">
-                    <span class="language-text">EN</span>
-                </button>
-            </div>
-        </div>
-    </header>
-    <div class="mobile-sidebar" id="mobileSidebar">
-        <div class="sidebar-header">
-            <div class="logo-container">
-                <img src="../imgs/logo.png" alt="Th𝕆th Gate Logo" class="logo-image">
-                <h1 class="site-logo">Th𝕆th Gate</h1>
-            </div>
-            <button class="close-sidebar" id="closeSidebar">
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-        <nav class="sidebar-nav">
-            <ul>
-                <li><a href="instructor-home.html">Home</a></li>
-                <li><a href="instructor-create-exam.html">Create Exam</a></li>
-                <li><a href="instructor-add-lecture.html">Add Lecture</a></li>
-                <li><a href="instructor-chats.html" class="active">Chats</a></li>
-                <li><a href="#" class="logout-btn" onclick="logout()">Logout</a></li>
-            </ul>
-        </nav>
-        <div class="sidebar-switchers">
-            <button class="theme-switcher" id="sidebarThemeSwitcher" title="Toggle Dark Mode">
-                <span class="theme-icon">🌙</span>
-            </button>
-            <button class="language-switcher" id="sidebarLanguageSwitcher" title="Switch Language">
-                <span class="language-text">EN</span>
-            </button>
-        </div>
+
+<body class="instructor-home">
+  <header class="main-header">
+    <div class="header-content">
+      <div class="logo-container">
+        <img src="../imgs/logo.png" alt="Th𝕆th Gate Logo" class="logo-image">
+        <h1 class="site-logo">Th𝕆th Gate</h1>
+      </div>
+      <button class="hamburger-menu" id="hamburgerMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="instructor-home.html">Home</a></li>
+          <li><a href="instructor-create-exam.html">Create Exam</a></li>
+          <li><a href="instructor-add-lecture.html">Add Lecture</a></li>
+          <li><a href="instructor-chats.html" class="active">Chats</a></li>
+          <li><a href="instructor-students.html">Students</a></li>
+
+          <li><a href="#" class="logout-btn" onclick="logout()">Logout</a></li>
+        </ul>
+      </nav>
+      <div class="switchers-container">
+        <button class="theme-switcher" id="themeSwitcher" title="Toggle Dark Mode">
+          <span class="theme-icon">🌙</span>
+        </button>
+        <button class="language-switcher" id="languageSwitcher" title="Switch Language">
+          <span class="language-text">EN</span>
+        </button>
+      </div>
     </div>
-      <section class="chat-column" style="height: calc(100vh - 106px);">
-        <div class="chat-messages" id="chatMessages">
-          <!-- example messages (keep or replace with your own) -->
-          <div class="message system-message">
-            <div class="message-content">
-              <p>Welcome to your grade chat! Connect with your classmates and share knowledge.</p>
-            </div>
-          </div>
+  </header>
+  <div class="mobile-sidebar" id="mobileSidebar">
+    <div class="sidebar-header">
+      <div class="logo-container">
+        <img src="../imgs/logo.png" alt="Th𝕆th Gate Logo" class="logo-image">
+        <h1 class="site-logo">Th𝕆th Gate</h1>
+      </div>
+      <button class="close-sidebar" id="closeSidebar">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <nav class="sidebar-nav">
+      <ul>
+        <li><a href="instructor-home.html">Home</a></li>
+        <li><a href="instructor-create-exam.html">Create Exam</a></li>
+        <li><a href="instructor-add-lecture.html">Add Lecture</a></li>
+        <li><a href="instructor-chats.html" class="active">Chats</a></li>
+        <li><a href="instructor-students.html">Students</a></li>
+        <li><a href="#" class="logout-btn" onclick="logout()">Logout</a></li>
+      </ul>
+    </nav>
+    <div class="sidebar-switchers">
+      <button class="theme-switcher" id="sidebarThemeSwitcher" title="Toggle Dark Mode">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="language-switcher" id="sidebarLanguageSwitcher" title="Switch Language">
+        <span class="language-text">EN</span>
+      </button>
+    </div>
+  </div>
 
-          <div class="message user-message">
-            <div class="message-avatar"><img src="../imgs/profile.png" alt="Student"></div>
-            <div class="message-content">
-              <div class="message-header">
-                <span class="message-author">Ahmed Hassan</span>
-                <span class="message-time">10:30 AM</span>
-              </div>
-              <p>Hello everyone! Does anyone have the solution for the math problem from yesterday's homework?</p>
-            </div>
-          </div>
+
+  <section class="chat-column" style="height: calc(100vh - 106px);">
+    <div class="chat-messages" id="chatMessages">
+      <!-- example messages (keep or replace with your own) -->
+      <div class="message system-message">
+        <div class="message-content">
+          <p>Welcome to your grade chat! Connect with your classmates and share knowledge.</p>
         </div>
+      </div>
 
-        <!-- Composer (sticky at viewport bottom) -->
-        <div class="chat-input-container sticky-composer" style="margin-top:8px;">
-     
-
-          <form id="chatForm" class="chat-form">
-
-            <div class="message-actions">
-              <span class="char-count">0/500</span>
-              <button type="button" class="emoji-btn" id="emojiBtn">😊</button>
-              <button type="button" class="image-btn" id="imageBtn">🔗</button>
-              <input type="file" id="imageInput" accept="image/*" style="display:none;">
-            </div>
-            <div class="input-group">
-              <input type="text" id="messageInput" placeholder="Type your message." maxlength="500" required>
-              <button type="submit" class="send-btn"><span class="send-icon">📤</span></button>
-            </div>
-          </form>
+      <div class="message user-message">
+        <div class="message-avatar"><img src="../imgs/profile.png" alt="Student"></div>
+        <div class="message-content">
+          <div class="message-header">
+            <span class="message-author">Ahmed Hassan</span>
+            <span class="message-time">10:30 AM</span>
+          </div>
+          <p>Hello everyone! Does anyone have the solution for the math problem from yesterday's homework?</p>
         </div>
-      </section>
-    <script src="../script.js"></script>
-    <script src="instructor.js"></script>
+      </div>
+    </div>
+
+    <!-- Composer (sticky at viewport bottom) -->
+    <div class="chat-input-container sticky-composer" style="margin-top:8px;">
+
+
+      <form id="chatForm" class="chat-form">
+
+        <div class="message-actions">
+          <span class="char-count">0/500</span>
+          <button type="button" class="emoji-btn" id="emojiBtn">😊</button>
+          <button type="button" class="image-btn" id="imageBtn">🔗</button>
+          <input type="file" id="imageInput" accept="image/*" style="display:none;">
+        </div>
+        <div class="input-group">
+          <input type="text" id="messageInput" placeholder="Type your message." maxlength="500" required>
+          <button type="submit" class="send-btn"><span class="send-icon">📤</span></button>
+        </div>
+      </form>
+    </div>
+  </section>
+  <script src="../script.js"></script>
+  <script src="instructor.js"></script>
 </body>
+
 </html>

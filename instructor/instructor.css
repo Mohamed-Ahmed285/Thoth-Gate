@@ -459,3 +459,14 @@ body.dark-mode.createxam .form-group .upload-label:hover {
     background: #243a6b;
 
 }
+
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}

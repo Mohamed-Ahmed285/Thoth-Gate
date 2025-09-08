@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instructor Chats</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="instructor.css">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-            <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 
 
 </head>
+
 <body class="instructor-home">
     <header class="main-header">
         <div class="header-content">
@@ -29,6 +33,8 @@
                     <li><a href="instructor-create-exam.html">Create Exam</a></li>
                     <li><a href="instructor-add-lecture.html">Add Lecture</a></li>
                     <li><a href="instructor-chats.html" class="active">Chats</a></li>
+                    <li><a href="instructor-students.html">Students</a></li>
+
                     <li><a href="#" class="logout-btn" onclick="logout()">Logout</a></li>
                 </ul>
             </nav>
@@ -59,6 +65,8 @@
                 <li><a href="instructor-create-exam.html">Create Exam</a></li>
                 <li><a href="instructor-add-lecture.html">Add Lecture</a></li>
                 <li><a href="instructor-chats.html" class="active">Chats</a></li>
+                <li><a href="instructor-students.html">Students</a></li>
+
                 <li><a href="#" class="logout-btn" onclick="logout()">Logout</a></li>
             </ul>
         </nav>
@@ -75,32 +83,38 @@
         <h2 class="section-title">Chats by Grade</h2>
         <section class="egyptian-wisdom-section-lectures" style="padding: 2rem 0;">
             <div class="container">
-                <div class="lectures-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 340px)); gap: 2rem; justify-content: center;">
-                    <div class="course-card lecture-card" onclick="window.location.href='instructor-chat.html?grade=1'" style="cursor:pointer;">
+                <div class="lectures-grid"
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 340px)); gap: 2rem; justify-content: center;">
+                    <div class="course-card lecture-card" onclick="window.location.href='instructor-chat.html?grade=1'"
+                        style="cursor:pointer;">
                         <div class="course-content">
                             <h3 class="lecture-title">Grade 1</h3>
                             <p class="lecture-description">Chat with Grade 1 students</p>
                         </div>
                     </div>
-                    <div class="course-card lecture-card" onclick="window.location.href='instructor-chat.html?grade=2'" style="cursor:pointer;">
+                    <div class="course-card lecture-card" onclick="window.location.href='instructor-chat.html?grade=2'"
+                        style="cursor:pointer;">
                         <div class="course-content">
                             <h3 class="lecture-title">Grade 2</h3>
                             <p class="lecture-description">Chat with Grade 2 students</p>
                         </div>
                     </div>
-                    <div class="course-card lecture-card" onclick="window.location.href='instructor-chat.html?grade=3'" style="cursor:pointer;">
+                    <div class="course-card lecture-card" onclick="window.location.href='instructor-chat.html?grade=3'"
+                        style="cursor:pointer;">
                         <div class="course-content">
                             <h3 class="lecture-title">Grade 3</h3>
                             <p class="lecture-description">Chat with Grade 3 students</p>
                         </div>
                     </div>
-                    <div class="course-card lecture-card" onclick="window.location.href='instructor-chat.html?grade=4'" style="cursor:pointer;">
+                    <div class="course-card lecture-card" onclick="window.location.href='instructor-chat.html?grade=4'"
+                        style="cursor:pointer;">
                         <div class="course-content">
                             <h3 class="lecture-title">Grade 4</h3>
                             <p class="lecture-description">Chat with Grade 4 students</p>
                         </div>
                     </div>
-                    <div class="course-card lecture-card" onclick="window.location.href='instructor-chat.html?grade=5'" style="cursor:pointer;">
+                    <div class="course-card lecture-card" onclick="window.location.href='instructor-chat.html?grade=5'"
+                        style="cursor:pointer;">
                         <div class="course-content">
                             <h3 class="lecture-title">Grade 5</h3>
                             <p class="lecture-description">Chat with Grade 5 students</p>
@@ -113,4 +127,5 @@
     <script src="../script.js"></script>
     <script src="instructor.js"></script>
 </body>
+
 </html>

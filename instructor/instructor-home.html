@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,12 @@
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="instructor.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-            <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 
 </head>
+
 <body class="instructor-home">
     <header class="main-header">
         <div class="header-content">
@@ -28,6 +32,8 @@
                     <li><a href="instructor-create-exam.html">Create Exam</a></li>
                     <li><a href="instructor-add-lecture.html">Add Lecture</a></li>
                     <li><a href="instructor-chats.html">Chats</a></li>
+                    <li><a href="instructor-students.html">Students</a></li>
+
                     <li><a href="#" class="logout-btn" onclick="logout()">Logout</a></li>
                 </ul>
             </nav>
@@ -59,6 +65,8 @@
                 <li><a href="instructor-create-exam.html">Create Exam</a></li>
                 <li><a href="instructor-add-lecture.html">Add Lecture</a></li>
                 <li><a href="instructor-chats.html">Chats</a></li>
+                <li><a href="instructor-students.html">Students</a></li>
+
                 <li><a href="#" class="logout-btn" onclick="logout()">Logout</a></li>
             </ul>
         </nav>
@@ -78,23 +86,26 @@
         <p style="text-align:center;">Manage your lectures, exams, and student chats from your dashboard.</p>
         <div class="inst-grid">
             <div class="inst-card" onclick="window.location.href='instructor-add-lecture.html'">
-                <img src="../imgs/language.jpg" alt="Add Lecture" style="width:60px;height:60px;border-radius:50%;margin-bottom:1rem;object-fit:cover;">
+                <img src="../imgs/language.jpg" alt="Add Lecture"
+                    style="width:60px;height:60px;border-radius:50%;margin-bottom:1rem;object-fit:cover;">
                 <h3>Add Lecture</h3>
                 <p>Create and share new lectures with your students.</p>
             </div>
             <div class="inst-card" onclick="window.location.href='instructor-create-exam.html'">
-                <img src="../imgs/history.jpg" alt="Create Exam" style="width:60px;height:60px;border-radius:50%;margin-bottom:1rem;object-fit:cover;">
+                <img src="../imgs/history.jpg" alt="Create Exam"
+                    style="width:60px;height:60px;border-radius:50%;margin-bottom:1rem;object-fit:cover;">
                 <h3>Create Exam</h3>
                 <p>Design exams and assign them to grades.</p>
             </div>
             <div class="inst-card" onclick="window.location.href='instructor-chats.html'">
-                <img src="../imgs/profile.png" alt="Chats" style="width:60px;height:60px;border-radius:50%;margin-bottom:1rem;object-fit:cover;">
+                <img src="../imgs/profile.png" alt="Chats"
+                    style="width:60px;height:60px;border-radius:50%;margin-bottom:1rem;object-fit:cover;">
                 <h3>Chats</h3>
                 <p>Access and communicate with students by grade.</p>
             </div>
         </div>
     </main>
-       <footer class="main-footer">
+    <footer class="main-footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
@@ -108,7 +119,7 @@
                         <li><a href="instructor-add-lecture.html">Add Lecture</a></li>
                         <li><a href="instructor-create-exam.html">Create Exam</a></li>
                         <li><a href="instructor-chats.html">Chats</a></li>
-
+                        <li><a href="instructor-students.html">Students</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -134,4 +145,5 @@
     <script src="../script.js"></script>
     <script src="instructor.js"></script>
 </body>
+
 </html>
