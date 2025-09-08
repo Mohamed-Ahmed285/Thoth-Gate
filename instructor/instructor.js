@@ -1,4 +1,6 @@
-
+function instructorlogout() {
+    window.location.href = '../index.html';
+}
 // if (window.location.pathname.endsWith('instructor-chat.html')) {
 //     const urlParams = new URLSearchParams(window.location.search);
 //     const grade = urlParams.get('grade');
