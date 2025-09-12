@@ -373,7 +373,7 @@ body:has(.register-form) .login-container {
 /* Header Styles */
 .main-header {
     background: linear-gradient(135deg, #243a6b 0%, #1a2a4a 100%);
-    padding: 0.5rem 0;
+    /* padding: 0.5rem 0; */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
@@ -5511,7 +5511,11 @@ body.dark-mode #messageInput {
 
 @media (max-width: 768px) {
     .landing-page .header-content {
-        justify-content: center;
+        justify-content: space-between;
+    }
+
+    .landing-page .header-content .big {
+        display: none;
     }
 
 }
@@ -5569,6 +5573,10 @@ body.dark-mode #messageInput {
 
     .chat-messages {
         max-height: -webkit-fill-available;
+    }
+
+    .emoji-btn {
+        display: none;
     }
 }
 
