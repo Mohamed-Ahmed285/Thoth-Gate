@@ -2277,6 +2277,10 @@ body.dark-mode .exam-instructions ul li {
         font-size: 2rem;
     }
 
+    .main-header {
+        padding: 0.5rem 0;
+    }
+
     .login-page .switchers-container {
         display: flex;
     }
