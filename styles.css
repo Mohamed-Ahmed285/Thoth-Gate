@@ -5829,6 +5829,7 @@ body.profile-page-points .stat-card .stat-label {
 @media (max-width:1200px) {
     .header-content {
         justify-content: space-around;
+        padding: 10px;
     }
 }
 
@@ -5867,5 +5868,6 @@ body.dark-mode .student-points-side {
 
     .header-content {
         justify-content: space-between;
+
     }
 }
