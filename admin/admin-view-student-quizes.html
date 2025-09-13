@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,8 +8,13 @@
   <link rel="icon" href="../imgs/logo.png" type="image/x-icon" />
   <link rel="stylesheet" href="../styles.css" />
   <link rel="stylesheet" href="admin-styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
 </head>
+
 <body class="view-student">
   <header class="main-header">
     <div class="header-content">
@@ -17,10 +23,10 @@
         <h1 class="site-logo">Thoth Gate</h1>
       </div>
       <button class="hamburger-menu" id="hamburgerMenu">
-				<span></span>
-				<span></span>
-				<span></span>
-			</button>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <nav class="main-nav">
         <ul>
           <li><a href="admin-home.html">Dashboard</a></li>
@@ -40,36 +46,36 @@
       </div>
     </div>
   </header>
-      <div class="mobile-sidebar" id="mobileSidebar">
-        <div class="sidebar-header">
-            <div class="logo-container">
-                <img src="../imgs/logo.png" alt="Th𝕆th Gate Logo" class="logo-image">
-                <h1 class="site-logo">Th𝕆th Gate</h1>
-            </div>
-            <button class="close-sidebar" id="closeSidebar">
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-        <nav class="sidebar-nav">
-            <ul>
-                <li><a href="admin-home.html">Home</a></li>
-                <li><a href="admin-instructors.html">Instructors</a></li>
-                <li><a href="admin-students.html">Students</a></li>
-                <li><a href="admin-messages.html">Messages</a></li>
-				<li><a href="admin-notifications.html">Notifications</a></li>
-            </ul>
-        </nav>
-        <div class="sidebar-switchers">
-            <button class="theme-switcher" id="sidebarThemeSwitcher" title="Toggle Dark Mode">
-                <span class="theme-icon">🌙</span>
-            </button>
-            <button class="language-switcher" id="sidebarLanguageSwitcher" title="Switch Language">
-                <span class="language-text">EN</span>
-            </button>
-        </div>
+  <div class="mobile-sidebar" id="mobileSidebar">
+    <div class="sidebar-header">
+      <div class="logo-container">
+        <img src="../imgs/logo.png" alt="Th𝕆th Gate Logo" class="logo-image">
+        <h1 class="site-logo">Th𝕆th Gate</h1>
+      </div>
+      <button class="close-sidebar" id="closeSidebar">
+        <span></span>
+        <span></span>
+      </button>
     </div>
-    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <nav class="sidebar-nav">
+      <ul>
+        <li><a href="admin-home.html">Home</a></li>
+        <li><a href="admin-instructors.html">Instructors</a></li>
+        <li><a href="admin-students.html">Students</a></li>
+        <li><a href="admin-messages.html">Messages</a></li>
+        <li><a href="admin-notifications.html">Notifications</a></li>
+      </ul>
+    </nav>
+    <div class="sidebar-switchers">
+      <button class="theme-switcher" id="sidebarThemeSwitcher" title="Toggle Dark Mode">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="language-switcher" id="sidebarLanguageSwitcher" title="Switch Language">
+        <span class="language-text">EN</span>
+      </button>
+    </div>
+  </div>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
   <div class="admin-layout">
     <main class="admin-main-content">
@@ -141,10 +147,10 @@
         <div class="footer-section">
           <h4>Follow Us</h4>
           <div class="social-icons">
-            <a href="#" class="social-icon">📘</a>
-            <a href="#" class="social-icon">📷</a>
-            <a href="#" class="social-icon">🐦</a>
-            <a href="#" class="social-icon">💼</a>
+            <a href="#" class="social-icon facebook"> <i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon instagram"> <i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
       </div>
@@ -164,4 +170,5 @@
   <script src="admin.js"></script>
   <script src="../script.js"></script>
 </body>
+
 </html>

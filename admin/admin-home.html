@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,11 +10,13 @@
   <link rel="stylesheet" href="admin-styles.css" />
   <link
     href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
+    rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
   <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
   <header class="main-header">
     <div class="header-content" style="max-width: 1400px; margin: 0 auto;">
@@ -21,11 +24,11 @@
         <img src="../imgs/logo.png" alt="Th𝕆th Gate Logo" class="logo-image">
         <h1 class="site-logo">Th𝕆th Gate</h1>
       </div>
-       <button class="hamburger-menu" id="hamburgerMenu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+      <button class="hamburger-menu" id="hamburgerMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <nav class="main-nav">
         <ul>
           <li><a href="admin-home.html" class="active">Dashboard</a></li>
@@ -36,47 +39,47 @@
           <li><a href="#" class="logout-btn" onclick="adminlogout()">Logout</a></li>
         </ul>
       </nav>
-           <div class="switchers-container">
-                <button class="theme-switcher" id="themeSwitcher" title="Toggle Dark Mode">
-                    <span class="theme-icon">🌙</span>
-                </button>
-                <button class="language-switcher" id="languageSwitcher" title="Switch Language">
-                    <span class="language-text">EN</span>
-                </button>
-            </div>
+      <div class="switchers-container">
+        <button class="theme-switcher" id="themeSwitcher" title="Toggle Dark Mode">
+          <span class="theme-icon">🌙</span>
+        </button>
+        <button class="language-switcher" id="languageSwitcher" title="Switch Language">
+          <span class="language-text">EN</span>
+        </button>
+      </div>
     </div>
   </header>
-   <div class="mobile-sidebar" id="mobileSidebar">
-        <div class="sidebar-header">
-            <div class="logo-container">
-                <img src="../imgs/logo.png" alt="Th𝕆th Gate Logo" class="logo-image">
-                <h1 class="site-logo">Th𝕆th Gate</h1>
-            </div>
-            <button class="close-sidebar" id="closeSidebar">
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-        <nav class="sidebar-nav">
-            <ul>
-                <li><a href="admin-home.html" class="active">Home</a></li>
-                <li><a href="admin-instructors.html">Instructors</a></li>
-                <li><a href="admin-students.html">Students</a></li>
-                <li><a href="admin-messages.html">Messages</a></li>
-                <li><a href="admin-notifications.html">Notifications</a></li>
-
-            </ul>
-        </nav>
-        <div class="sidebar-switchers">
-            <button class="theme-switcher" id="sidebarThemeSwitcher" title="Toggle Dark Mode">
-                <span class="theme-icon">🌙</span>
-            </button>
-            <button class="language-switcher" id="sidebarLanguageSwitcher" title="Switch Language">
-                <span class="language-text">EN</span>
-            </button>
-        </div>
+  <div class="mobile-sidebar" id="mobileSidebar">
+    <div class="sidebar-header">
+      <div class="logo-container">
+        <img src="../imgs/logo.png" alt="Th𝕆th Gate Logo" class="logo-image">
+        <h1 class="site-logo">Th𝕆th Gate</h1>
+      </div>
+      <button class="close-sidebar" id="closeSidebar">
+        <span></span>
+        <span></span>
+      </button>
     </div>
-    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <nav class="sidebar-nav">
+      <ul>
+        <li><a href="admin-home.html" class="active">Home</a></li>
+        <li><a href="admin-instructors.html">Instructors</a></li>
+        <li><a href="admin-students.html">Students</a></li>
+        <li><a href="admin-messages.html">Messages</a></li>
+        <li><a href="admin-notifications.html">Notifications</a></li>
+
+      </ul>
+    </nav>
+    <div class="sidebar-switchers">
+      <button class="theme-switcher" id="sidebarThemeSwitcher" title="Toggle Dark Mode">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="language-switcher" id="sidebarLanguageSwitcher" title="Switch Language">
+        <span class="language-text">EN</span>
+      </button>
+    </div>
+  </div>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
   <div class="admin-layout">
     <main class="admin-main-content">
@@ -84,7 +87,7 @@
       <h2 class="section-title">Dashboard</h2>
 
 
-      
+
       <!-- Top Stats Cards -->
       <div class="dashboard-stats-cards">
         <div class="stats-card">
@@ -109,23 +112,26 @@
       <section class="dashboard-stats-cards">
         <div class="widget stats-card">
           <h3 class="stats-title">Student Growth</h3>
-          <canvas id="studentGrowthChart" width="697" height="348" style="display: block; box-sizing: border-box; height: 174px; width: 348px;"></canvas>
+          <canvas id="studentGrowthChart" width="697" height="348"
+            style="display: block; box-sizing: border-box; height: 174px; width: 348px;"></canvas>
         </div>
         <div class="widget stats-card">
           <h3 class="stats-title">Enrollments by Course</h3>
-          <canvas id="enrollmentsChart" width="697" height="348" style="display: block; box-sizing: border-box; height: 174px; width: 348px;"></canvas>
+          <canvas id="enrollmentsChart" width="697" height="348"
+            style="display: block; box-sizing: border-box; height: 174px; width: 348px;"></canvas>
         </div>
         <div class="widget stats-card">
           <h3 class="stats-title">Completion Rates</h3>
-          <canvas id="completionChart" width="697" height="697" style="display: block; box-sizing: border-box; height: 348px; width: 348px;"></canvas>
+          <canvas id="completionChart" width="697" height="697"
+            style="display: block; box-sizing: border-box; height: 348px; width: 348px;"></canvas>
         </div>
       </section>
-      
+
 
 
       <!-- Bottom Section: Lists -->
       <section class="dashboard-stats-cards">
-        
+
         <div class="widget stats-card">
           <h3 class="stats-title">Notifications</h3>
           <ul>
@@ -143,46 +149,47 @@
           </ol>
         </div>
 
-      <div class="stats-card export-data">
-  <h3 class="stats-title">Export Data</h3>
-  <div class="export-grid">
-    <button class="export-btn">⬇ Students</button>
-    <button class="export-btn">⬇ Instructors</button>
-    <button class="export-btn">⬇ Messages</button>
-  </div>
-</div></section>
- 
+        <div class="stats-card export-data">
+          <h3 class="stats-title">Export Data</h3>
+          <div class="export-grid">
+            <button class="export-btn">⬇ Students</button>
+            <button class="export-btn">⬇ Instructors</button>
+            <button class="export-btn">⬇ Messages</button>
+          </div>
+        </div>
+      </section>
+
 
       <section class="dashboard-widgets-quick">
-                <!-- Quick Actions -->
-<div class="stats-card quick-actions" style="
+        <!-- Quick Actions -->
+        <div class="stats-card quick-actions" style="
     width: fit-content;
 ">
-  <h3 class="stats-title">Quick Actions</h3>
-  <div class="actions-grid">
-    <div class="action-tile">
-      <span class="icon">📘</span>
-      <p>View courses</p>
-    </div>
-    <div class="action-tile">
-      <span class="icon">👨‍🏫</span>
-      <p>Add Instructor</p>
-    </div>
-    <div class="action-tile">
-      <span class="icon">🎓</span>
-      <p>View Students</p>
-    </div>
-    <div class="action-tile">
-      <span class="icon">✉️</span>
-      <p>View Messages</p>
-    </div>
-  </div>
-</div>
+          <h3 class="stats-title">Quick Actions</h3>
+          <div class="actions-grid">
+            <div class="action-tile">
+              <span class="icon">📘</span>
+              <p>View courses</p>
+            </div>
+            <div class="action-tile">
+              <span class="icon">👨‍🏫</span>
+              <p>Add Instructor</p>
+            </div>
+            <div class="action-tile">
+              <span class="icon">🎓</span>
+              <p>View Students</p>
+            </div>
+            <div class="action-tile">
+              <span class="icon">✉️</span>
+              <p>View Messages</p>
+            </div>
+          </div>
+        </div>
 
-<!-- Export Data -->
+        <!-- Export Data -->
 
       </section>
-      
+
     </main>
   </div>
 
@@ -209,10 +216,10 @@
         <div class="footer-section">
           <h4>Follow Us</h4>
           <div class="social-icons">
-            <a href="#" class="social-icon">📘</a>
-            <a href="#" class="social-icon">📷</a>
-            <a href="#" class="social-icon">🐦</a>
-            <a href="#" class="social-icon">💼</a>
+            <a href="#" class="social-icon facebook"> <i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon instagram"> <i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
       </div>
@@ -226,4 +233,5 @@
   <script src="../script.js"></script>
 
 </body>
+
 </html>

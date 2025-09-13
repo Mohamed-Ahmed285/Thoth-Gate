@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard - Students</title>
-        <link rel="icon" href="../imgs/logo.png" type="image/x-icon">
+    <link rel="icon" href="../imgs/logo.png" type="image/x-icon">
 
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="admin-styles.css">
-        <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
 </head>
+
 <body>
     <header class="main-header">
         <div class="header-content">
@@ -18,7 +23,7 @@
                 <img src="../imgs/logo.png" alt="Th𝕆th Gate Logo" class="logo-image">
                 <h1 class="site-logo">Th𝕆th Gate</h1>
             </div>
-             <button class="hamburger-menu" id="hamburgerMenu">
+            <button class="hamburger-menu" id="hamburgerMenu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -34,7 +39,7 @@
 
                 </ul>
             </nav>
-                 <div class="switchers-container">
+            <div class="switchers-container">
                 <button class="theme-switcher" id="themeSwitcher" title="Toggle Dark Mode">
                     <span class="theme-icon">🌙</span>
                 </button>
@@ -44,7 +49,7 @@
             </div>
         </div>
     </header>
-       <div class="mobile-sidebar" id="mobileSidebar">
+    <div class="mobile-sidebar" id="mobileSidebar">
         <div class="sidebar-header">
             <div class="logo-container">
                 <img src="../imgs/logo.png" alt="Th𝕆th Gate Logo" class="logo-image">
@@ -76,7 +81,7 @@
     </div>
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
     <div class="admin-layout">
-     
+
         <main class="admin-main-content">
             <section class="admin-section">
                 <div class="admin-section-header">
@@ -84,41 +89,43 @@
                     <input type="text" class="search-bar" placeholder="Search students...">
                 </div>
                 <div class="admin-table-responsive">
-                       <table class="admin-table">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Course</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>001</td>
-                            <td>Mohamed Ahmed</td>
-                            <td>mido@example.com</td>
-                            <td>Maths</td>
-                            <td class="btns-td">
-                                <button class="btn btn-view" onclick="  window.location.href = 'admin-view-student.html';">View</button>
-                                <button class="btn btn-remove">Remove</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>002</td>
-                            <td>Ammar mohamed</td>
-                            <td>Ammar@example.com</td>
-                            <td>Maths</td>
-                            <td class="btns-td">
-                                <button class="btn btn-view" onclick="  window.location.href = 'admin-view-student.html';">View</button>
-                                <button class="btn btn-remove">Remove</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Course</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>001</td>
+                                <td>Mohamed Ahmed</td>
+                                <td>mido@example.com</td>
+                                <td>Maths</td>
+                                <td class="btns-td">
+                                    <button class="btn btn-view"
+                                        onclick="  window.location.href = 'admin-view-student.html';">View</button>
+                                    <button class="btn btn-remove">Remove</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>002</td>
+                                <td>Ammar mohamed</td>
+                                <td>Ammar@example.com</td>
+                                <td>Maths</td>
+                                <td class="btns-td">
+                                    <button class="btn btn-view"
+                                        onclick="  window.location.href = 'admin-view-student.html';">View</button>
+                                    <button class="btn btn-remove">Remove</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-             
+
                 <div class="pagination">
                     <button class="btn">Previous</button>
                     <span class="page-numbers">1 | 2 | 3</span>
@@ -150,10 +157,10 @@
                 <div class="footer-section">
                     <h4>Follow Us</h4>
                     <div class="social-icons">
-                        <a href="#" class="social-icon">📘</a>
-                        <a href="#" class="social-icon">📷</a>
-                        <a href="#" class="social-icon">🐦</a>
-                        <a href="#" class="social-icon">💼</a>
+                        <a href="#" class="social-icon facebook"> <i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon instagram"> <i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
@@ -162,9 +169,10 @@
             </div>
         </div>
     </footer>
-            <script src="admin.js"></script>
-              <script src="../script.js"></script>
+    <script src="admin.js"></script>
+    <script src="../script.js"></script>
 
 
 </body>
+
 </html>

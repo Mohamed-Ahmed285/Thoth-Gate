@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,8 +8,13 @@
 	<link rel="icon" href="../imgs/logo.png" type="image/x-icon" />
 	<link rel="stylesheet" href="../styles.css" />
 	<link rel="stylesheet" href="admin-styles.css" />
-	<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet" />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&display=swap"
+		rel="stylesheet" />
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
 </head>
+
 <body class="view-student">
 	<header class="main-header">
 		<div class="header-content">
@@ -39,39 +45,39 @@
 					<span class="language-text">EN</span>
 				</button>
 			</div>
-			
+
 		</div>
 	</header>
-        <div class="mobile-sidebar" id="mobileSidebar">
-        <div class="sidebar-header">
-            <div class="logo-container">
-                <img src="../imgs/logo.png" alt="Th𝕆th Gate Logo" class="logo-image">
-                <h1 class="site-logo">Th𝕆th Gate</h1>
-            </div>
-            <button class="close-sidebar" id="closeSidebar">
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-        <nav class="sidebar-nav">
-            <ul>
-                <li><a href="admin-home.html">Home</a></li>
-                <li><a href="admin-instructors.html">Instructors</a></li>
-                <li><a href="admin-students.html">Students</a></li>
-                <li><a href="admin-messages.html">Messages</a></li>
+	<div class="mobile-sidebar" id="mobileSidebar">
+		<div class="sidebar-header">
+			<div class="logo-container">
+				<img src="../imgs/logo.png" alt="Th𝕆th Gate Logo" class="logo-image">
+				<h1 class="site-logo">Th𝕆th Gate</h1>
+			</div>
+			<button class="close-sidebar" id="closeSidebar">
+				<span></span>
+				<span></span>
+			</button>
+		</div>
+		<nav class="sidebar-nav">
+			<ul>
+				<li><a href="admin-home.html">Home</a></li>
+				<li><a href="admin-instructors.html">Instructors</a></li>
+				<li><a href="admin-students.html">Students</a></li>
+				<li><a href="admin-messages.html">Messages</a></li>
 				<li><a href="admin-notifications.html">Notifications</a></li>
-            </ul>
-        </nav>
-        <div class="sidebar-switchers">
-            <button class="theme-switcher" id="sidebarThemeSwitcher" title="Toggle Dark Mode">
-                <span class="theme-icon">🌙</span>
-            </button>
-            <button class="language-switcher" id="sidebarLanguageSwitcher" title="Switch Language">
-                <span class="language-text">EN</span>
-            </button>
-        </div>
-    </div>
-    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+			</ul>
+		</nav>
+		<div class="sidebar-switchers">
+			<button class="theme-switcher" id="sidebarThemeSwitcher" title="Toggle Dark Mode">
+				<span class="theme-icon">🌙</span>
+			</button>
+			<button class="language-switcher" id="sidebarLanguageSwitcher" title="Switch Language">
+				<span class="language-text">EN</span>
+			</button>
+		</div>
+	</div>
+	<div class="sidebar-overlay" id="sidebarOverlay"></div>
 
 
 	<div class="admin-layout">
@@ -88,29 +94,30 @@
 						<li><strong>Name:</strong> Mohamed Ahmed</li>
 						<li><strong>Email:</strong> mido@example.com</li>
 						<li><strong>Current Grade:</strong> 1st secoundry</li>
-						<li><strong>Quizes</strong><button class="btn" onclick=" window.location.href = 'admin-view-student-quizes.html';">View</button></li>
+						<li><strong>Quizes</strong><button class="btn"
+								onclick=" window.location.href = 'admin-view-student-quizes.html';">View</button></li>
 					</ul>
-                     <div style="display: contents;";>
-                            <h3>Lectures Access:</h3>
-                            <ul class="course-list">
-    <li class="course">
-        <strong>Course 1</strong>
-        <ul class="lectures">
-            <li>Lecture 1</li>
-            <li>Lecture 2</li>
-            <li>Lecture 3</li>
-        </ul>
-    </li>
+					<div style="display: contents;" ;>
+						<h3>Lectures Access:</h3>
+						<ul class="course-list">
+							<li class="course">
+								<strong>Course 1</strong>
+								<ul class="lectures">
+									<li>Lecture 1</li>
+									<li>Lecture 2</li>
+									<li>Lecture 3</li>
+								</ul>
+							</li>
 
-    							<li class="course">
-      						  <strong>Course 2</strong>
-        <ul class="lectures">
-            <li>Lecture 1</li>
-            <li>Lecture 2</li>
-      			  </ul>
-   			 </li>
-			</ul>
-            </div>
+							<li class="course">
+								<strong>Course 2</strong>
+								<ul class="lectures">
+									<li>Lecture 1</li>
+									<li>Lecture 2</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</div>
 				<div class="widget-container">
 					<div class="widget">
@@ -130,7 +137,8 @@
 								<option value="lecture2">Lecture 2</option>
 								<option value="lecture3">Lecture 3</option>
 							</select>
-							<button type="submit" class="btn btn-edit" id="Grant" onclick="Grant()" style="margin-top:1rem;">Grant Access</button>
+							<button type="submit" class="btn btn-edit" id="Grant" onclick="Grant()"
+								style="margin-top:1rem;">Grant Access</button>
 						</form>
 					</div>
 					<div class="widget">
@@ -164,13 +172,14 @@
 							</div>
 							<div id="chatEndDateContainer" style="display:none;">
 								<label for="chatEndDate"><strong>End Date for Chat Access:</strong></label>
-								<input type="date" id="chatEndDate" name="chatEndDate" style="width:100%;margin-bottom:1rem;">
+								<input type="date" id="chatEndDate" name="chatEndDate"
+									style="width:100%;margin-bottom:1rem;">
 							</div>
 							<button type="submit" class="btn btn-edit" style="margin-top:1rem;">Save</button>
 						</form>
 					</div>
 				</div>
-				
+
 				<div id="accessMessage" style="margin-top:1rem;"></div>
 			</section>
 		</main>
@@ -201,10 +210,10 @@
 				<div class="footer-section">
 					<h4>Follow Us</h4>
 					<div class="social-icons">
-						<a href="#" class="social-icon">📘</a>
-						<a href="#" class="social-icon">📷</a>
-						<a href="#" class="social-icon">🐦</a>
-						<a href="#" class="social-icon">💼</a>
+						<a href="#" class="social-icon facebook"> <i class="fab fa-facebook-f"></i></a>
+						<a href="#" class="social-icon instagram"> <i class="fab fa-instagram"></i></a>
+						<a href="#" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+						<a href="#" class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
 					</div>
 				</div>
 			</div>
@@ -213,71 +222,72 @@
 			</div>
 		</div>
 	</footer>
-    <script>  
+	<script>
 
-                
-document.getElementById('grantAccessForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    var course = document.getElementById('courseSelect').value;
-    var lecture = document.getElementById('lectureSelect').value;
-    var msg = '';
 
-    if(course && lecture) {
-        msg = 'Access granted to ' + course + ' / ' + lecture;
-    } else if(course) {
-        msg = 'Access granted to course: ' + course;
-    } else if(lecture) {
-        msg = 'Access granted to lecture: ' + lecture;
-    } else {
-        msg = 'Please select a course or lecture.';
-    }
+		document.getElementById('grantAccessForm').addEventListener('submit', function (e) {
+			e.preventDefault();
+			var course = document.getElementById('courseSelect').value;
+			var lecture = document.getElementById('lectureSelect').value;
+			var msg = '';
 
-    var messageDiv = document.getElementById('accessMessage');
-    messageDiv.innerHTML = '<div class="admin-message">'+msg+'</div>';
+			if (course && lecture) {
+				msg = 'Access granted to ' + course + ' / ' + lecture;
+			} else if (course) {
+				msg = 'Access granted to course: ' + course;
+			} else if (lecture) {
+				msg = 'Access granted to lecture: ' + lecture;
+			} else {
+				msg = 'Please select a course or lecture.';
+			}
 
-    // Make the message disappear after 3 seconds (3000ms)
-    setTimeout(function() {
-        messageDiv.innerHTML = '';
-    }, 3000);
-});
-        
-        
-        
-        
-        
-        
-document.querySelectorAll(".course > strong").forEach(course => {
-    course.addEventListener("click", () => {
-        course.parentElement.classList.toggle("open");
-    });
-});
+			var messageDiv = document.getElementById('accessMessage');
+			messageDiv.innerHTML = '<div class="admin-message">' + msg + '</div>';
 
-document.getElementById('chatAccessCheckbox').addEventListener('change', function() {
-	document.getElementById('chatEndDateContainer').style.display = this.checked ? 'block' : 'none';
-});
+			// Make the message disappear after 3 seconds (3000ms)
+			setTimeout(function () {
+				messageDiv.innerHTML = '';
+			}, 3000);
+		});
 
-document.getElementById('gradeChatAccessForm').addEventListener('submit', function(e) {
-	e.preventDefault();
-	var checked = document.getElementById('chatAccessCheckbox').checked;
-	var endDate = document.getElementById('chatEndDate').value;
-	var msg = '';
-	if (checked) {
-		msg = 'Grade chat access enabled for current grade';
-		if (endDate) {
-			msg += ' until ' + endDate;
-		}
-	} else {
-		msg = 'Grade chat access removed for current grade';
-	}
-	var messageDiv = document.getElementById('accessMessage');
-	messageDiv.innerHTML = '<div class="admin-message">'+msg+'</div>';
-	setTimeout(function() {
-		messageDiv.innerHTML = '';
-	}, 3000);
-});
 
-</script>
+
+
+
+
+		document.querySelectorAll(".course > strong").forEach(course => {
+			course.addEventListener("click", () => {
+				course.parentElement.classList.toggle("open");
+			});
+		});
+
+		document.getElementById('chatAccessCheckbox').addEventListener('change', function () {
+			document.getElementById('chatEndDateContainer').style.display = this.checked ? 'block' : 'none';
+		});
+
+		document.getElementById('gradeChatAccessForm').addEventListener('submit', function (e) {
+			e.preventDefault();
+			var checked = document.getElementById('chatAccessCheckbox').checked;
+			var endDate = document.getElementById('chatEndDate').value;
+			var msg = '';
+			if (checked) {
+				msg = 'Grade chat access enabled for current grade';
+				if (endDate) {
+					msg += ' until ' + endDate;
+				}
+			} else {
+				msg = 'Grade chat access removed for current grade';
+			}
+			var messageDiv = document.getElementById('accessMessage');
+			messageDiv.innerHTML = '<div class="admin-message">' + msg + '</div>';
+			setTimeout(function () {
+				messageDiv.innerHTML = '';
+			}, 3000);
+		});
+
+	</script>
 	<script src="admin.js"></script>
 	<script src="../script.js"></script>
 </body>
+
 </html>
