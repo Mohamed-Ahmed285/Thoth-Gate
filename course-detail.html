@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Th𝕆th Gate - Course Detail</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="imgs/logo.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body class="course-detail-page">
-       <div id="loader">
+    <div id="loader">
         <!-- You can add an image, a CSS spinner, or text here -->
         <div class="spinner"></div>
         <p>Loading...</p>
@@ -47,6 +51,9 @@
                     <span class="language-text">EN</span>
                 </button>
             </div>
+            <span class="student-points" title="Your Points">
+                Points: <span id="studentPointsValue">0</span>
+            </span>
         </div>
     </header>
 
@@ -72,6 +79,10 @@
                 <li><a href="profile.html">Profile</a></li>
                 <li><a href="#" class="logout-btn" onclick="logout()">Logout</a></li>
             </ul>
+            <span class="student-points-side" title="Your Points"
+                style="  justify-self: center;margin: 50px auto;display: block;">
+                Points: <span id="studentPointsValue">0</span>
+            </span>
         </nav>
 
         <div class="sidebar-switchers">
@@ -172,7 +183,8 @@
                         </div>
                         <div class="video-info" id="videoInfo">
                             <h2 id="currentLectureTitle">Introduction to Algebra</h2>
-                            <p id="currentLectureDescription">Learn the fundamentals of algebraic expressions, variables, and basic operations.</p>
+                            <p id="currentLectureDescription">Learn the fundamentals of algebraic expressions,
+                                variables, and basic operations.</p>
                             <button class="quiz-btn" onclick="  window.location.href = 'modalOverlay.html';">
                                 <span class="quiz-icon">📝</span>
                                 Take Quiz
@@ -224,4 +236,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

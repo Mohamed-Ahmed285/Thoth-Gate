@@ -1818,6 +1818,11 @@ body.dark-mode .exam-instructions ul li {
     min-height: calc(100vh - 200px);
 }
 
+.profile-main-points {
+    padding: 2rem 0;
+    min-height: calc(100vh - 200px);
+}
+
 .profile-header {
     display: flex;
     justify-content: space-between;
@@ -2463,6 +2468,11 @@ html {
 
 /* Dark Mode Styles for Profile Page */
 body.dark-mode .profile-main {
+    background: linear-gradient(135deg, #0f1724 0%, #0b0f1a 100%);
+    color: #e7eef8;
+}
+
+body.dark-mode .profile-main-points {
     background: linear-gradient(135deg, #0f1724 0%, #0b0f1a 100%);
     color: #e7eef8;
 }
@@ -5730,5 +5740,132 @@ body.dark-mode .deleted-message {
     .delete-modal-actions {
         /* flex-direction: column; */
         gap: 0.7rem;
+    }
+}
+
+/* Responsive Fixes for Points History Page */
+body.profile-page-points .profile-main-points {
+    padding: 2rem 1rem;
+}
+
+body.profile-page-points .academic-stats-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+/* Ensure stat-cards shrink nicely */
+body.profile-page-points .stat-card {
+    /* background: #fff;
+    border: 2px solid #d4af37;
+    border-radius: 12px; */
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.profile-page-points .stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Fonts inside stat cards */
+body.profile-page-points .stat-card .stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    /* color: #243a6b; */
+}
+
+body.profile-page-points .stat-card .stat-label {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+    /* color: #555; */
+}
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+    body.profile-page-points .profile-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    body.profile-page-points .profile-btns {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    body.profile-page-points .profile-btns .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    body.profile-page-points .stat-card {
+        padding: 0.8rem;
+    }
+
+    body.profile-page-points .stat-card .stat-number {
+        font-size: 1.2rem;
+    }
+
+    body.profile-page-points .stat-card .stat-label {
+        font-size: 1rem;
+    }
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+@media (max-width:1200px) {
+    .header-content {
+        justify-content: space-around;
+    }
+}
+
+
+
+.student-points,
+.student-points-side {
+    display: inline-block;
+    /* background: linear-gradient(90deg, #ffd700 60%, #fffbe6 100%); */
+    color: #d4af37;
+    font-weight: bold;
+    border-radius: 18px;
+    padding: 0.35em 1em;
+    /* margin-left: 0.5em; */
+    font-size: 1.05em;
+    box-shadow: 0 2px 8px rgba(124, 92, 0, 0.08);
+    letter-spacing: 0.5px;
+    vertical-align: middle;
+    border: 1px solid #d4af37;
+    transition: background 0.2s, color 0.2s;
+}
+
+/* Student points badge style (dark mode) */
+body.dark-mode .student-points,
+body.dark-mode .student-points-side {
+    background: #44402a;
+    color: rgb(255, 224, 102);
+    box-shadow: rgba(255, 224, 102, 0.08) 0px 2px 8px;
+    border: 1px solid rgba(255, 224, 102, 0.2);
+}
+
+@media (max-width:768px) {
+    .student-points {
+        display: none;
+    }
+
+    .header-content {
+        justify-content: space-between;
     }
 }

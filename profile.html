@@ -51,6 +51,9 @@
                     <span class="language-text">EN</span>
                 </button>
             </div>
+            <span class="student-points" title="Your Points">
+                Points: <span id="studentPointsValue">0</span>
+            </span>
         </div>
     </header>
 
@@ -76,6 +79,10 @@
                 <li><a href="profile.html" class="active">Profile</a></li>
                 <li><a href="#" class="logout-btn" onclick="logout()">Logout</a></li>
             </ul>
+            <span class="student-points-side" title="Your Points"
+                style="  justify-self: center;margin: 50px auto;display: block;">
+                Points: <span id="studentPointsValue">0</span>
+            </span>
         </nav>
 
         <div class="sidebar-switchers">
@@ -207,6 +214,10 @@
                             <div class="stat-label">Attendance</div>
                         </div>
                     </div>
+                    <a href="points-history.html" class="btn primary"
+                        style="margin-top: 2rem; text-align: center;display: flex;justify-content: center;align-self: center;justify-self: center;">View
+                        Points History</a>
+
                 </div>
             </div>
         </div>

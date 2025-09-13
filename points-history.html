@@ -3,18 +3,18 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exam Session Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Points History - Th𝕆th Gate</title>
+    <link rel="icon" href="imgs/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap"
         rel="stylesheet">
-
 </head>
 
-<body class="session-detials">
+<body class="profile-page-points">
     <div id="loader">
-        <!-- You can add an image, a CSS spinner, or text here -->
         <div class="spinner"></div>
         <p>Loading...</p>
     </div>
@@ -34,11 +34,11 @@
 
             <nav class="main-nav">
                 <ul>
-                    <li><a href="home.html" class="active">Home</a></li>
+                    <li><a href="home.html">Home</a></li>
                     <li><a href="courses.html">Courses</a></li>
                     <li><a href="chat.html">Chat</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="profile.html" class="active">Profile</a></li>
                     <li><a href="#" class="logout-btn" onclick="logout()">Logout</a></li>
                 </ul>
             </nav>
@@ -56,7 +56,6 @@
             </span>
         </div>
     </header>
-
     <!-- Mobile Sidebar -->
     <div class="mobile-sidebar" id="mobileSidebar">
         <div class="sidebar-header">
@@ -72,11 +71,11 @@
 
         <nav class="sidebar-nav">
             <ul>
-                <li><a href="home.html" class="active">Home</a></li>
+                <li><a href="home.html">Home</a></li>
                 <li><a href="courses.html">Courses</a></li>
                 <li><a href="chat.html">Chat</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="profile.html">Profile</a></li>
+                <li><a href="profile.html" class="active">Profile</a></li>
                 <li><a href="#" class="logout-btn" onclick="logout()">Logout</a></li>
             </ul>
             <span class="student-points-side" title="Your Points"
@@ -98,43 +97,43 @@
     <!-- Sidebar Overlay -->
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-    <main class="container" style="max-width:600px; margin-top:3rem;">
-        <h2 class="section-title">Exam Session Details</h2>
-        <div class="profile-card-exam" style="padding:2rem; text-align:left; margin-top:50px;margin-bottom:50px;">
-            <div class="detail-group">
-                <label>Student:</label>
-                <span id="studentName">Student</span>
+    <main class="profile-main-points">
+        <div class="container">
+            <div class="profile-header">
+                <h2 class="section-title">Points History</h2>
+                <div class="profile-btns" style="display: flex; flex-direction:row; gap:1rem;">
+                    <a href="profile.html" class="btn primary">Back to Profile</a>
+                </div>
             </div>
-            <div class="detail-group">
-                <label>Exam:</label>
-                <span id="examName">Grammer</span>
+            <div class="profile-content">
+                <div class="academic-stats-section">
+                    <div id="pointsHistoryList">
+                        <div class="stat-card" style="margin-bottom:1rem;">
+                            <div class="stat-number">+10 pts</div>
+                            <div class="stat-label">Quiz Completion</div>
+                            <div style="color:#666;font-size:0.95rem;">Completed Math Quiz 1</div>
+                            <div style="font-size:0.85rem;color:#aaa;">2025-09-10 14:23</div>
+                        </div>
+                        <div class="stat-card" style="margin-bottom:1rem;">
+                            <div class="stat-number">+5 pts</div>
+                            <div class="stat-label">Participation</div>
+                            <div style="color:#666;font-size:0.95rem;">Active in Science Discussion</div>
+                            <div style="font-size:0.85rem;color:#aaa;">2025-09-08 09:10</div>
+                        </div>
+                        <div class="stat-card" style="margin-bottom:1rem;">
+                            <div class="stat-number">+15 pts</div>
+                            <div class="stat-label">Assignment Excellence</div>
+                            <div style="color:#666;font-size:0.95rem;">Outstanding History Assignment</div>
+                            <div style="font-size:0.85rem;color:#aaa;">2025-09-05 17:45</div>
+                        </div>
+                        <!-- Add more static entries as needed -->
+                    </div>
+                </div>
             </div>
-            <div class="detail-group">
-                <label>Lecture:</label>
-                <span id="examName">Grammer</span>
-            </div>
-            <div class="detail-group">
-                <label>Subject:</label>
-                <span id="examName">Grammer</span>
-            </div>
-            <div class="detail-group">
-                <label>Score:</label>
-                <span id="examScore">2 / 2</span>
-            </div>
-            <div class="detail-group">
-                <label>Status:</label>
-                <span id="examStatus">Submitted</span>
-            </div>
-            <div class="detail-group">
-                <label>Time Taken:</label>
-                <span id="timeTaken">15s</span>
-            </div>
-
-            <a href="modelAnswer.html" class="course-btn"
-                style="width: max-content; justify-self: center; margin-top:15px">Model Answer</a>
-
         </div>
     </main>
+
+
     <footer class="main-footer">
         <div class="container">
             <div class="footer-content">
@@ -172,6 +171,7 @@
             </div>
         </div>
     </footer>
+
 
     <script src="script.js"></script>
 </body>

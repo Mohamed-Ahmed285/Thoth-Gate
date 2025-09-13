@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Course Lectures - Th𝕆th Gate</title>
     <link rel="icon" href="imgs/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body class="courses-page">
-       <div id="loader">
+    <div id="loader">
         <!-- You can add an image, a CSS spinner, or text here -->
         <div class="spinner"></div>
         <p>Loading...</p>
@@ -21,7 +25,7 @@
                 <h1 class="site-logo">Th𝕆th Gate</h1>
             </div>
 
-   <!-- Hamburger Menu Button -->
+            <!-- Hamburger Menu Button -->
             <button class="hamburger-menu" id="hamburgerMenu">
                 <span></span>
                 <span></span>
@@ -37,6 +41,7 @@
                     <li><a href="profile.html">Profile</a></li>
                     <li><a href="#" class="logout-btn" onclick="logout()">Logout</a></li>
                 </ul>
+
             </nav>
             <div class="switchers-container">
                 <button class="theme-switcher" id="themeSwitcher" title="Toggle Dark Mode">
@@ -46,9 +51,12 @@
                     <span class="language-text">EN</span>
                 </button>
             </div>
+            <span class="student-points" title="Your Points">
+                Points: <span id="studentPointsValue">0</span>
+            </span>
         </div>
     </header>
-     <!-- Mobile Sidebar -->
+    <!-- Mobile Sidebar -->
     <div class="mobile-sidebar" id="mobileSidebar">
         <div class="sidebar-header">
             <div class="logo-container">
@@ -70,6 +78,10 @@
                 <li><a href="profile.html">Profile</a></li>
                 <li><a href="#" class="logout-btn" onclick="logout()">Logout</a></li>
             </ul>
+            <span class="student-points-side" title="Your Points"
+                style="  justify-self: center;margin: 50px auto;display: block;">
+                Points: <span id="studentPointsValue">0</span>
+            </span>
         </nav>
 
         <div class="sidebar-switchers">
@@ -91,19 +103,22 @@
                 <div class="lectures-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 340px)); gap: 2rem;
                 justify-content: center;">
                     <!-- Example lectures, replace with dynamic content as needed -->
-                    <div class="course-card lecture-card" onclick="window.location.href='course-detail.html'" style="cursor:pointer;">
+                    <div class="course-card lecture-card" onclick="window.location.href='course-detail.html'"
+                        style="cursor:pointer;">
                         <div class="course-content">
                             <h3 class="lecture-title">Lecture 1: Introduction to Mathematics</h3>
                             <p class="lecture-description">Overview of key concepts and course structure.</p>
                         </div>
                     </div>
-                    <div class="course-card lecture-card" onclick="window.location.href='course-detail.html'" style="cursor:pointer;">
+                    <div class="course-card lecture-card" onclick="window.location.href='course-detail.html'"
+                        style="cursor:pointer;">
                         <div class="course-content">
                             <h3 class="lecture-title">Lecture 2: Algebraic Foundations</h3>
                             <p class="lecture-description">Fundamentals of algebra and problem solving.</p>
                         </div>
                     </div>
-                    <div class="course-card lecture-card" onclick="window.location.href='course-detail.html'" style="cursor:pointer;">
+                    <div class="course-card lecture-card" onclick="window.location.href='course-detail.html'"
+                        style="cursor:pointer;">
                         <div class="course-content">
                             <h3 class="lecture-title">Lecture 3: Geometry Essentials</h3>
                             <p class="lecture-description">Shapes, theorems, and geometric reasoning.</p>
@@ -153,4 +168,5 @@
     </footer>
     <script src="script.js"></script>
 </body>
+
 </html>
